@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="0304ec72-b3f6-4517-adfe-694342fe1ba7"
+  name="Helper" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <suppliersInternal>
+    <dependency
+      Id="056ebb8f-2bcb-454f-8689-c68320b1dec0">
+      <packageMoniker
+        Id="1d03547f-ce9a-4534-bc1a-19815829bf65"
+        LastKnownName="Model"
+        LastKnownLocation="Package2_1553.uml" />
+    </dependency>
+  </suppliersInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="b6440d29-cdde-448b-8da0-557babfcb93e"
+        name="FileParser"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedOperationsInternal>
+          <operation
+            Id="4dcd14d7-c814-4b39-8a74-db1cf1b94ac1"
+            name="FileParser"
+            isLeaf="false"
+            isStatic="true"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="b5370ea0-6d9c-46d3-a882-aa34341c20ad"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="cce96e53-1f54-4d97-b6ac-780287dffdf0"
+                      LastKnownName="string"
+                      LastKnownLocation="Package_1646.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="cce96e53-1f54-4d97-b6ac-780287dffdf0"
+        name="string" />
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

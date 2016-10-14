@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="efddaa6c-df4e-40eb-85eb-3a558fca040c"
+  name="Presentation" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <suppliersInternal>
+    <dependency
+      Id="b633fb2c-5fd1-4bdb-b6ad-ebd7ded9e667">
+      <packageMoniker
+        Id="fdab79b6-56f5-4086-9e20-85bba296728d"
+        LastKnownName="Process"
+        LastKnownLocation="Package1_1553.uml" />
+    </dependency>
+  </suppliersInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="b1f305b0-07e0-4125-a49b-e221f16fbe9c"
+        name="LobbyView"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedOperationsInternal>
+          <operation
+            Id="e76f3834-bd6c-4551-8af3-99de7d0bb5d3"
+            name="ShowWelcome"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="30d7cd33-db03-4200-98a8-5c2b2692f5a4"
+        name="LevelView"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedOperationsInternal>
+          <operation
+            Id="6faf77c1-0aba-4a20-9ef2-bee1668b28ea"
+            name="Print"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="b5a19628-02ae-4793-9a77-6c7a81fc6285"
+        name="InputController"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedOperationsInternal>
+          <operation
+            Id="5820aa17-43d4-4d5b-a394-6d8c0aee8be6"
+            name="AskUserInput"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="6fca540d-8ac3-4e72-82ea-a7fb6123f2a3"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="38ed0a40-c8cf-4c4d-a078-c8dff6e6aff1"
+                      LastKnownName="Char"
+                      LastKnownLocation="Package_1553.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="27f147ed-f1b1-4d17-9fe9-13133b00a453"
+        name="UpdateGameController"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="38ed0a40-c8cf-4c4d-a078-c8dff6e6aff1"
+        name="Char" />
+    </packageHasNamedElement>
+  </packagedElements>
+</package>
