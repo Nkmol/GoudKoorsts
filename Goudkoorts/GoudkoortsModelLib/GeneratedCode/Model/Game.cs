@@ -6,28 +6,64 @@
 //------------------------------------------------------------------------------
 namespace Model
 {
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
-	using System.Text;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Timers;
 
-	public class Game
+    public class Game : iUpdateable
 	{
+        public const int TIME_INTERVAL = 10000; // Miliseconds
+
+
+        public int TimeTick
+        {
+            get;
+            private set;
+        }
+
 		public virtual Timer Timer
 		{
 			get;
 			set;
 		}
 
+        public Board Board
+        {
+            get;
+            set;
+        }
+
+        public Game()
+        {
+            // Create Timer
+            Timer = new Timer();
+            Timer.Elapsed += new ElapsedEventHandler((source, e) => Update());
+            Timer.Interval = 1000;
+
+            // Load game objects
+            GenerateGame();
+        }
+
 		public virtual void GenerateGame()
 		{
-			throw new System.NotImplementedException();
+            // Create board
+            Board = Board.Generate();
 		}
 
 		public virtual void Update()
 		{
-			throw new System.NotImplementedException();
+            Console.WriteLine(++TimeTick); // visual test
+            if (TimeTick >= TIME_INTERVAL / 1000) TimeTick = 0;
+            
+            // TODO : Board.Lock()
 		}
+
+        public void Run()
+        {
+            Timer.Enabled = true;
+        }
 
 	}
 }
