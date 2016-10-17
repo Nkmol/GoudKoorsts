@@ -19,6 +19,18 @@ namespace Model
 			set;
 		}
 
+	    public Loods Wharf
+	    {
+	        get; set;
+        }
+
+	    public BaanVak(int row, int column, char symbol)
+	    {
+	        this.Row = row;
+	        this.Column = column;
+	        this.Symbol = symbol;
+	    }
+
 	}
 }
 
