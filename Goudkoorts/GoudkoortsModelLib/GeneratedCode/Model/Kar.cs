@@ -19,11 +19,34 @@ namespace Model
 			set;
 		}
 
+        public bool MoveAble // Groene strook
+        {
+            set;
+            get;
+        }
+
+        public BaanVak Vak
+        {
+            get;
+            set;
+        }
+
+        public Kar(BaanVak vak)
+        {
+            Vak = vak;
+        }
+
 		public virtual void Update()
 		{
-			throw new System.NotImplementedException();
-		}
+            if (!MoveAble)
+                return;
 
-	}
+            // Move Ship
+
+            // Psuedo code
+            // Get next BaanVak : Vak.Board.SetVak(this, Vak.Coords + Vak.Direction);
+        }
+
+    }
 }
 
