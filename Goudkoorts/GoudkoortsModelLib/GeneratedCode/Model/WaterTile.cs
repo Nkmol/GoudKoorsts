@@ -10,23 +10,12 @@ namespace Model
 	using System.Collections.Generic;
 	using System.Linq;
 	using System.Text;
-    using System.Drawing;
 
-	public class Vak
-	{
-        // Het symbool van het desbetreffende vakje
-        public char Symbol { get; set; }
-
-        public Point Coords { get; set; }
-
-        public Board Board { get; set; }
-
-	    public Vak(Point coords, Board board = null)
-	    {
-            Coords = coords;
-	        Board = board;
-	    }
-
-	}
+    public class WaterTile : Tile
+    {
+        public WaterTile(Point coords, Board board = null) : base(coords, board)
+        {
+        }
+    }
 }
 

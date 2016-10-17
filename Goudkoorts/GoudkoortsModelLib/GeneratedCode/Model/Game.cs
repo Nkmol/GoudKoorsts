@@ -39,7 +39,7 @@ namespace Model
         {
             // Create Timer
             Timer = new Timer();
-            Timer.Elapsed += new ElapsedEventHandler((source, e) => Update());
+            Timer.Elapsed += new ElapsedEventHandler((source, e) => Tick());
             Timer.Interval = 1000;
 
             // Load game objects

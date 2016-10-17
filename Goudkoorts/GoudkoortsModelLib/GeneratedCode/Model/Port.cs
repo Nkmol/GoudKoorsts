@@ -11,9 +11,9 @@ namespace Model
 	using System.Linq;
 	using System.Text;
 
-    public class WaterVak : Vak
+    public class PortTile : RailTile
     {
-        public WaterVak(Point coords, Board board = null) : base(coords, board)
+        public PortTile(Point coords, char symbol, Board board = null) : base(coords, symbol, board)
         {
         }
     }

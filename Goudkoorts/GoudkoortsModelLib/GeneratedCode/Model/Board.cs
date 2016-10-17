@@ -13,19 +13,19 @@ namespace Model
 
 	public class Board
 	{
-		public virtual List<List<Vak>> Field
+		public virtual List<List<Tile>> Field
 		{
 			get;
 			set;
 		}
 
-		public virtual IEnumerable<Vak> Vak
+		public virtual IEnumerable<Tile> Vak
 		{
 			get;
 			set;
 		}
 
-		public virtual IEnumerable<Loods> Loods
+		public virtual IEnumerable<Storage> Loods
 		{
 			get;
 			set;

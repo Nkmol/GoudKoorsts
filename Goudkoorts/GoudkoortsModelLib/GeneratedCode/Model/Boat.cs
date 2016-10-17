@@ -12,7 +12,7 @@ namespace Model
     using System.Linq;
     using System.Text;
 
-    public class Boot : ITickAble
+    public class Boat : ITickAble
 	{
         public readonly Point direction;
         public static int MAX_CARGO = 8;
@@ -23,7 +23,7 @@ namespace Model
             set;
         }
 
-        public VaarVak Vak
+        public SailTile Tile
         {
             get;
             set;
@@ -35,11 +35,11 @@ namespace Model
 			private set;
 		}
 
-        public Boot(VaarVak vak)
+        public Boat(SailTile tile)
         {
             direction = new Point(-1, 0); // Boat always moves from right to left.
 
-            Vak = vak;
+            Tile = tile;
         }
 
         public bool addCargo()
