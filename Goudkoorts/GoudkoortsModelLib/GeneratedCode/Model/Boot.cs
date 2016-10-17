@@ -12,7 +12,7 @@ namespace Model
     using System.Linq;
     using System.Text;
 
-    public class Boot : iUpdateable
+    public class Boot : ITickAble
 	{
         public readonly Point direction;
         public static int MAX_CARGO = 8;
@@ -52,7 +52,7 @@ namespace Model
             return true;
         }
 
-		public virtual void Update()
+		public virtual void Tick()
 		{
             // Move Ship
 

@@ -11,7 +11,7 @@ namespace Model
 	using System.Linq;
 	using System.Text;
 
-	public class Kar : iUpdateable
+	public class Kar : ITickAble
 	{
 		public virtual bool isEmpty
 		{
@@ -36,7 +36,7 @@ namespace Model
             Vak = vak;
         }
 
-		public virtual void Update()
+		public virtual void Tick()
 		{
             if (!MoveAble)
                 return;

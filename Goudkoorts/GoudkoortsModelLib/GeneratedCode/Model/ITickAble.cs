@@ -11,10 +11,9 @@ namespace Model
 	using System.Linq;
 	using System.Text;
 
-	public interface iUpdateable 
+	public interface ITickAble 
 	{
-		void Update();
-
+		void Tick();
 	}
 }
 
