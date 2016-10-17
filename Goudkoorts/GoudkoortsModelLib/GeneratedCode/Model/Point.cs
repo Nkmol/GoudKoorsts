@@ -3,11 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace GoudkoortsModelLib.GeneratedCode.Model
+namespace Model
 {
-    public class Point
+    public struct Point
     {
-        public int X { get; set; }
-        public int Y { get; set; }
+        public int x { get; set; }
+        public int y { get; set; }
+
+        public Point(int x, int y)
+        {
+            this.x = x;
+            this.y = y;
+        }
     }
 }

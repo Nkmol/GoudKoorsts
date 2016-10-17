@@ -10,9 +10,39 @@ namespace Model
 	using System.Collections.Generic;
 	using System.Linq;
 	using System.Text;
+    using System.Timers;
 
 	public class Loods
 	{
+        private static int SPAWN_TIME = 8000;
+
+        private Timer timer;
+
+        public Vak Vak
+        {
+            set;
+            get;
+        }
+        public Loods(Vak vak)
+        {
+            Vak = vak;
+
+            // Create timer
+            timer = new Timer();
+            timer.Elapsed += new ElapsedEventHandler((source, e) => spawnCart());
+            timer.Interval = SPAWN_TIME;
+        }
+
+        public void run()
+        {
+            timer.Enabled = true;
+        }
+
+        public void spawnCart()
+        {
+            // Psuedo code
+            // Spawn a cart : Vak.Board.placeObject(this, Vak.Coords + new Point(1, 0)); // BaanVak always right of Loods
+        }
 	}
 }
 

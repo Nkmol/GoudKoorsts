@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
   Id="1d03547f-ce9a-4534-bc1a-19815829bf65"
   name="Model" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -1391,13 +1391,13 @@
           </stereotypeInstance>
         </appliedStereotypesInternal>
         <suppliersInternal>
-          <dependency
-            Id="c84bbc78-d448-49dc-9d47-a17ce4f0d064">
+          <interfaceRealization
+            Id="8642b6ed-b032-484c-83be-870cacdd0076">
             <interfaceMoniker
               Id="876d2ffc-16db-4b99-9537-c670566e64d7"
               LastKnownName="iUpdateable"
               LastKnownLocation="Package2_1553.uml" />
-          </dependency>
+          </interfaceRealization>
         </suppliersInternal>
         <ownedAttributesInternal>
           <property
@@ -1537,7 +1537,7 @@
             </appliedStereotypesInternal>
           </operation>
           <operation
-            Id="d7c06f76-d92c-40ec-ab25-5f4d7bdbd1f3"
+            Id="8897d8ab-e475-4be3-baa6-8a9812ceb48d"
             name="Update"
             isLeaf="false"
             isStatic="false"
