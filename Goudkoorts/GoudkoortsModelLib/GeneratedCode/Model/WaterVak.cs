@@ -11,8 +11,11 @@ namespace Model
 	using System.Linq;
 	using System.Text;
 
-	public class WaterVak : Vak
-	{
-	}
+    public class WaterVak : Vak
+    {
+        public WaterVak(Point coords, Board board = null) : base(coords, board)
+        {
+        }
+    }
 }
 

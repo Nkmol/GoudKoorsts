@@ -13,7 +13,7 @@ namespace Model
 
 	public class Board
 	{
-		public virtual List<List<GoudkoortsModel::Model::Vak>> Field
+		public virtual List<List<Vak>> Field
 		{
 			get;
 			set;

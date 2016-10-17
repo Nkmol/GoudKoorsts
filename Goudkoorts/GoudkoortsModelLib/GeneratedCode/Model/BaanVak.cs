@@ -19,6 +19,16 @@ namespace Model
 			set;
 		}
 
+	    public Loods Wharf
+	    {
+	        get; set;
+        }
+
+	    public BaanVak(Point coords, char symbol, Board board = null) : base(coords, board)
+	    {
+	        this.Symbol = symbol;
+	    }
+
 	}
 }
 

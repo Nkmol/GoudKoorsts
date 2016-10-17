@@ -39,6 +39,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GeneratedCode\Helper\FileParser.cs" />
+    <Compile Include="GeneratedCode\Model\BaanVak.cs" />
+    <Compile Include="GeneratedCode\Model\Board.cs" />
+    <Compile Include="GeneratedCode\Model\Boot.cs" />
+    <Compile Include="GeneratedCode\Model\Game.cs" />
+    <Compile Include="GeneratedCode\Model\iUpdateable.cs" />
+    <Compile Include="GeneratedCode\Model\Kade.cs" />
+    <Compile Include="GeneratedCode\Model\Kar.cs" />
+    <Compile Include="GeneratedCode\Model\Loods.cs" />
+    <Compile Include="GeneratedCode\Model\Point.cs" />
+    <Compile Include="GeneratedCode\Model\RangeerVak.cs" />
+    <Compile Include="GeneratedCode\Model\SwitchVak.cs" />
+    <Compile Include="GeneratedCode\Model\VaarVak.cs" />
+    <Compile Include="GeneratedCode\Model\Vak.cs" />
+    <Compile Include="GeneratedCode\Model\WaterVak.cs" />
+    <Compile Include="GeneratedCode\Presentation\InputController.cs" />
+    <Compile Include="GeneratedCode\Presentation\LevelView.cs" />
+    <Compile Include="GeneratedCode\Presentation\LobbyView.cs" />
+    <Compile Include="GeneratedCode\Process\GameController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
