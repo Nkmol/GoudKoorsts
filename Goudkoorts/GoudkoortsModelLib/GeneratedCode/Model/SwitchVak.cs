@@ -11,8 +11,11 @@ namespace Model
 	using System.Linq;
 	using System.Text;
 
-	public class SwitchVak : BaanVak
-	{
-	}
+    public class SwitchVak : BaanVak
+    {
+        public SwitchVak(Point coords, char symbol, Board board = null) : base(coords, symbol, board)
+        {
+        }
+    }
 }
 

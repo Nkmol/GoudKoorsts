@@ -13,7 +13,11 @@ namespace Model
 
 	public class VaarVak : WaterVak
 	{
-		public virtual Boot Boot
+        public VaarVak(Point coords, Board board = null) : base(coords, board)
+        {
+        }
+
+        public virtual Boot Boot
 		{
 			get;
 			set;

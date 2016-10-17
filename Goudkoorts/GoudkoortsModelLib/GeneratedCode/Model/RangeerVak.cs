@@ -11,8 +11,11 @@ namespace Model
 	using System.Linq;
 	using System.Text;
 
-	public class RangeerVak : BaanVak
-	{
-	}
+    public class RangeerVak : BaanVak
+    {
+        public RangeerVak(Point coords, char symbol, Board board = null) : base(coords, symbol, board)
+        {
+        }
+    }
 }
 

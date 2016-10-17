@@ -21,10 +21,9 @@ namespace Model
 
         public Board Board { get; set; }
 
-	    public Vak(int row, int column, Board board = null)
+	    public Vak(Point coords, Board board = null)
 	    {
-	        Coords.x = row;
-	        Coords.y = column;
+            Coords = coords;
 	        Board = board;
 	    }
 

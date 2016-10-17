@@ -11,8 +11,11 @@ namespace Model
 	using System.Linq;
 	using System.Text;
 
-	public class Kade : BaanVak
-	{
-	}
+    public class Kade : BaanVak
+    {
+        public Kade(Point coords, char symbol, Board board = null) : base(coords, symbol, board)
+        {
+        }
+    }
 }
 

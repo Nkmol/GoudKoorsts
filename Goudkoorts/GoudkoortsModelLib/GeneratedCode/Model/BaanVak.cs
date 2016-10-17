@@ -24,10 +24,8 @@ namespace Model
 	        get; set;
         }
 
-	    public BaanVak(int row, int column, char symbol)
+	    public BaanVak(Point coords, char symbol, Board board = null) : base(coords, board)
 	    {
-	        this.Row = row;
-	        this.Column = column;
 	        this.Symbol = symbol;
 	    }
 
