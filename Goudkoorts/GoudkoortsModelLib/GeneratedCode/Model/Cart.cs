@@ -11,7 +11,7 @@ namespace Model
 	using System.Linq;
 	using System.Text;
 
-	public class Kar : iUpdateable
+	public class Cart : ITickAble
 	{
 		public virtual bool isEmpty
 		{
@@ -25,18 +25,18 @@ namespace Model
             get;
         }
 
-        public BaanVak Vak
+        public RailTile Tile
         {
             get;
             set;
         }
 
-        public Kar(BaanVak vak)
+        public Cart(RailTile tile)
         {
-            Vak = vak;
+            Tile = tile;
         }
 
-		public virtual void Update()
+		public virtual void Tick()
 		{
             if (!MoveAble)
                 return;

@@ -12,7 +12,7 @@ namespace Model
     using System.Text;
     using System.Timers;
 
-    public class Game : iUpdateable
+    public class Game : ITickAble
 	{
         public const int TIME_INTERVAL = 10000; // Miliseconds
 
@@ -39,7 +39,7 @@ namespace Model
         {
             // Create Timer
             Timer = new Timer();
-            Timer.Elapsed += new ElapsedEventHandler((source, e) => Update());
+            Timer.Elapsed += new ElapsedEventHandler((source, e) => Tick());
             Timer.Interval = 1000;
 
             // Load game objects
@@ -52,7 +52,7 @@ namespace Model
             Board = Board.Generate();
 		}
 
-		public virtual void Update()
+		public virtual void Tick()
 		{
             Console.WriteLine(++TimeTick); // visual test
             if (TimeTick >= TIME_INTERVAL / 1000) TimeTick = 0;

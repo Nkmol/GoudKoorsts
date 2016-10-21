@@ -11,9 +11,9 @@ namespace Model
 	using System.Linq;
 	using System.Text;
 
-    public class SwitchVak : BaanVak
+    public class SwitchTile : RailTile
     {
-        public SwitchVak(Point coords, char symbol, Board board = null) : base(coords, symbol, board)
+        public SwitchTile(Point coords, char symbol, Board board = null) : base(coords, symbol, board)
         {
         }
     }
