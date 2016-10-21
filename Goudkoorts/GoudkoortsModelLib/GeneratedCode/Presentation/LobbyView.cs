@@ -15,7 +15,10 @@ namespace Presentation
 	{
 		public virtual void ShowWelcome()
 		{
-			throw new System.NotImplementedException();
+			// TODO
+            Console.WriteLine("Druk op een key om het spel te beginnen");
+		    Console.ReadKey();
+            Console.Clear();
 		}
 
 	}

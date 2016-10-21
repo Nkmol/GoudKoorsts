@@ -4,6 +4,11 @@
 //     Changes to this file will be lost if the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using System.Dynamic;
+using System.Runtime.CompilerServices;
+using System.Security.Cryptography.X509Certificates;
+
 namespace Model
 {
 	using System;
@@ -21,10 +26,42 @@ namespace Model
 
         public Board Board { get; set; }
 
+        public Object Inside { get; set; } // TODO: Change to Interface of object that can go inside a tile? placeAble?
+
 	    public Tile(Point coords, Board board = null)
 	    {
             Coords = coords;
 	        Board = board;
+	    }
+
+	    private static readonly Dictionary<char, Func<Point, Tile>> tileMapping = new Dictionary<char, Func<Point, Tile>>()
+	    {
+	        { '~', p => new WaterTile(p) },
+            { '-', p => new SailTile(p) },
+            { '.', p => new RailTile(p, char.MaxValue) },
+            { 'L', p =>
+                {
+                    Tile tile = new Tile(p);
+                    tile.Inside = new Storage(tile);
+                    return tile;
+                }
+            },
+            { 'S', p => new SwitchTile(p, char.MaxValue) },
+            { 'K', p => new PortTile(p, char.MaxValue) },
+            { 'B', p =>
+                {
+                    SailTile sail = new SailTile(p);
+                    sail.Boat = new Boat(sail);
+                    return sail;
+                }
+            },
+            { 'G', p => new ParkTile(p, Char.MaxValue) },
+        };
+
+	    public static Tile Create(char c, Point p)
+	    {
+	        c = Char.ToUpper(c);
+	        return tileMapping[c](p);
 	    }
 
 	}

@@ -27,12 +27,6 @@ namespace Process
 			set;
 		}
 
-		public virtual object inputController
-		{
-			get;
-			set;
-		}
-
 		public virtual Game game
 		{
 			get;
@@ -44,9 +38,21 @@ namespace Process
 			throw new System.NotImplementedException();
 		}
 
+	    public GameController()
+	    {
+            // create models
+            game = new Game();
+
+            // create Views
+            levelView = new LevelView();
+            lobbyView = new LobbyView();
+        }
+
 		public virtual void Start()
 		{
-			throw new System.NotImplementedException();
+            lobbyView.ShowWelcome();
+
+            game.Run();
 		}
 
 		public virtual void Run()

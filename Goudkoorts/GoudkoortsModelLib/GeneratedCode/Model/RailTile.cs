@@ -19,11 +19,6 @@ namespace Model
 			set;
 		}
 
-	    public Storage Storage
-	    {
-	        get; set;
-        }
-
 	    public RailTile(Point coords, char symbol, Board board = null) : base(coords, board)
 	    {
 	        this.Symbol = symbol;

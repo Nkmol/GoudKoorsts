@@ -4,6 +4,9 @@
 //     Changes to this file will be lost if the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Helper;
+
 namespace Model
 {
 	using System;
@@ -37,9 +40,35 @@ namespace Model
 			set;
 		}
 
-		public virtual Board Generate()
+	    public const string Level = "goudkoortsmap.txt";
+
+		public static Board Generate()
 		{
-			throw new System.NotImplementedException();
+            Board board = new Board();
+		    var enumerator = FileParser.readFileLines(Board.Level).GetEnumerator();
+
+		    int y = 0;
+		    while (enumerator.MoveNext())
+		    {
+		        int x = 0;
+		        foreach (char c in enumerator.Current)
+		        {
+		            Point p = new Point(x, y);
+		            Tile tile = Tile.Create(c, p);
+
+		            tile.Board = board; // set parent
+
+		            board.Field[x][y] = tile; // Add to the field
+
+                    x++;
+                }
+		        y++;
+		    }
+
+            // Clean
+            enumerator.Dispose();
+
+            return board;
 		}
 
 	}
