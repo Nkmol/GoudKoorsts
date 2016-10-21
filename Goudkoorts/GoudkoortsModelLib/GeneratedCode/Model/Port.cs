@@ -13,7 +13,7 @@ namespace Model
 
     public class PortTile : RailTile
     {
-        public PortTile(Point coords, char symbol, Board board = null) : base(coords, symbol, board)
+        public PortTile(Point coords, char symbol, Board board = null) : base(coords, board)
         {
         }
     }
