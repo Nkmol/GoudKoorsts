@@ -4,6 +4,10 @@
 //     Changes to this file will be lost if the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using GoudkoortsModelLib.GeneratedCode.Presentation;
+using Model;
+
 namespace Presentation
 {
 	using System;
@@ -13,9 +17,21 @@ namespace Presentation
 
 	public class LevelView
 	{
-		public virtual void Print()
+
+		public virtual void Print(Board board)
 		{
-			throw new System.NotImplementedException();
+            Console.Clear();
+            Console.WriteLine("Time :" + Math.Round(board.Game.TimeTick / 1000f));
+		    Console.WriteLine();
+
+            foreach (List<Tile> row in board.Field)
+		    {
+		        foreach (Tile tile in row)
+		        {
+		            Console.Write(TileView.Create(tile));
+		        }
+                Console.WriteLine();
+		    }
 		}
 
 	}

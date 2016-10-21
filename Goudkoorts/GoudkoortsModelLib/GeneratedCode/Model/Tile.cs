@@ -26,7 +26,8 @@ namespace Model
 
         public Board Board { get; set; }
 
-        public Object Inside { get; set; } // TODO: Change to Interface of object that can go inside a tile? placeAble?
+	    protected Object _contain;
+        public virtual Object Contain { get { return _contain; } set { _contain = value; } } // TODO: Change to Interface of object that can go inside a tile? PlaceAbleTileObject?
 
 	    public Tile(Point coords, Board board = null)
 	    {
@@ -36,13 +37,14 @@ namespace Model
 
 	    private static readonly Dictionary<char, Func<Point, Tile>> tileMapping = new Dictionary<char, Func<Point, Tile>>()
 	    {
-	        { '~', p => new WaterTile(p) },
+            { ' ', p => new Tile(p) },
+            { '~', p => new WaterTile(p) },
             { '-', p => new SailTile(p) },
             { '.', p => new RailTile(p, char.MaxValue) },
             { 'L', p =>
                 {
                     Tile tile = new Tile(p);
-                    tile.Inside = new Storage(tile);
+                    tile.Contain = new Storage(tile);
                     return tile;
                 }
             },
@@ -51,7 +53,7 @@ namespace Model
             { 'B', p =>
                 {
                     SailTile sail = new SailTile(p);
-                    sail.Boat = new Boat(sail);
+                    sail.Contain = new Boat(sail);
                     return sail;
                 }
             },

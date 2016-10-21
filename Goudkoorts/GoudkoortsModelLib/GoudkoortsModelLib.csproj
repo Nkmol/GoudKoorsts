@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GeneratedCode\Helper\DynamicDoubleList.cs" />
     <Compile Include="GeneratedCode\Helper\FileParser.cs" />
     <Compile Include="GeneratedCode\Model\RailTile.cs" />
     <Compile Include="GeneratedCode\Model\Board.cs" />
@@ -49,7 +50,7 @@
     <Compile Include="GeneratedCode\Model\Cart.cs" />
     <Compile Include="GeneratedCode\Model\Storage.cs" />
     <Compile Include="GeneratedCode\Model\Point.cs" />
-    <Compile Include="GeneratedCode\Model\RangeerVak.cs" />
+    <Compile Include="GeneratedCode\Model\ParkTile.cs" />
     <Compile Include="GeneratedCode\Model\SwitchTile.cs" />
     <Compile Include="GeneratedCode\Model\SailTile.cs" />
     <Compile Include="GeneratedCode\Model\Tile.cs" />
@@ -57,6 +58,7 @@
     <Compile Include="GeneratedCode\Presentation\InputController.cs" />
     <Compile Include="GeneratedCode\Presentation\LevelView.cs" />
     <Compile Include="GeneratedCode\Presentation\LobbyView.cs" />
+    <Compile Include="GeneratedCode\Presentation\TileView.cs" />
     <Compile Include="GeneratedCode\Process\GameController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

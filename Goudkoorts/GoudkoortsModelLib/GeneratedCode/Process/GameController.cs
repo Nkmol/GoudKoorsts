@@ -42,6 +42,7 @@ namespace Process
 	    {
             // create models
             game = new Game();
+	        game.Timer.Elapsed += new System.Timers.ElapsedEventHandler((source, e) => onTick());
 
             // create Views
             levelView = new LevelView();
@@ -52,13 +53,21 @@ namespace Process
 		{
             lobbyView.ShowWelcome();
 
-            game.Run();
+            Run();
 		}
 
 		public virtual void Run()
 		{
-			throw new System.NotImplementedException();
-		}
+            game.Run();
+            levelView.Print(game.Board);
+
+            while(true) { } // TODO cleaner way of net shutting down application
+        }
+
+	    public virtual void onTick()
+	    {
+            levelView.Print(game.Board);
+        }
 
 	}
 }
