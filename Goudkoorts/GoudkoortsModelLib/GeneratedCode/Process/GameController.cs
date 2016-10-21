@@ -27,12 +27,6 @@ namespace Process
 			set;
 		}
 
-		public virtual object inputController
-		{
-			get;
-			set;
-		}
-
 		public virtual Game game
 		{
 			get;
@@ -44,15 +38,36 @@ namespace Process
 			throw new System.NotImplementedException();
 		}
 
+	    public GameController()
+	    {
+            // create models
+            game = new Game();
+	        game.Timer.Elapsed += new System.Timers.ElapsedEventHandler((source, e) => onTick());
+
+            // create Views
+            levelView = new LevelView();
+            lobbyView = new LobbyView();
+        }
+
 		public virtual void Start()
 		{
-			throw new System.NotImplementedException();
+            lobbyView.ShowWelcome();
+
+            Run();
 		}
 
 		public virtual void Run()
 		{
-			throw new System.NotImplementedException();
-		}
+            game.Run();
+            levelView.Print(game.Board);
+
+            while(true) { } // TODO cleaner way of net shutting down application
+        }
+
+	    public virtual void onTick()
+	    {
+            levelView.Print(game.Board);
+        }
 
 	}
 }

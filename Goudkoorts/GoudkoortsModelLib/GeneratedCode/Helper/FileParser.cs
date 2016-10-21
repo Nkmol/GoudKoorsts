@@ -4,6 +4,9 @@
 //     Changes to this file will be lost if the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using System.IO;
+
 namespace Helper
 {
 	using System;
@@ -13,10 +16,17 @@ namespace Helper
 
 	public class FileParser
 	{
-		public FileParser()
-		{
-		}
-
-	}
+        public static IEnumerable<string> readFileLines(string path)
+        {
+            string line;
+            using (var reader = File.OpenText(path))
+            {
+                while ((line = reader.ReadLine()) != null)
+                {
+                    yield return line;
+                }
+            }
+        }
+    }
 }
 

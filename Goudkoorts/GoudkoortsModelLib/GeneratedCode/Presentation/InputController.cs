@@ -13,9 +13,10 @@ namespace Presentation
 
 	public class InputController
 	{
-		public virtual Char AskUserInput()
+		public static Char AskUserInput()
 		{
-			throw new System.NotImplementedException();
+		    var key = Console.ReadKey().KeyChar;
+		    return key;
 		}
 
 	}

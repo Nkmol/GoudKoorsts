@@ -41,6 +41,7 @@ namespace Model
             Timer = new Timer();
             Timer.Elapsed += new ElapsedEventHandler((source, e) => Tick());
             Timer.Interval = 1000;
+            TimeTick = TIME_INTERVAL;
 
             // Load game objects
             GenerateGame();
@@ -50,14 +51,17 @@ namespace Model
 		{
             // Create board
             Board = Board.Generate();
+		    Board.Game = this;
 		}
 
 		public virtual void Tick()
 		{
-            Console.WriteLine(++TimeTick); // visual test
-            if (TimeTick >= TIME_INTERVAL / 1000) TimeTick = 0;
-            
-            // TODO : Board.Lock()
+            if (TimeTick <= 0)
+                TimeTick = TIME_INTERVAL;
+            else
+                TimeTick -= 1000;
+
+		    // TODO : Board.Lock()
 		}
 
         public void Run()

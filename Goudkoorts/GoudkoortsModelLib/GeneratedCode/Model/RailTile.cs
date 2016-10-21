@@ -13,18 +13,19 @@ namespace Model
 
 	public class RailTile : Tile
 	{
-		public virtual Cart cart
-		{
-			get;
-			set;
-		}
-
-	    public Storage Storage
-	    {
-	        get; set;
+        public override Object Contain
+        {
+            get { return _contain; }
+            set
+            {
+                if (value is Boat)
+                    _contain = value;
+                else
+                    throw new ArgumentException();
+            }
         }
 
-	    public RailTile(Point coords, char symbol, Board board = null) : base(coords, board)
+        public RailTile(Point coords, char symbol, Board board = null) : base(coords, board)
 	    {
 	        this.Symbol = symbol;
 	    }
