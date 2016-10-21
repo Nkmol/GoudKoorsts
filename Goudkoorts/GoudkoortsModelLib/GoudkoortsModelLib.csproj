@@ -40,20 +40,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GeneratedCode\Helper\FileParser.cs" />
-    <Compile Include="GeneratedCode\Model\BaanVak.cs" />
+    <Compile Include="GeneratedCode\Model\RailTile.cs" />
     <Compile Include="GeneratedCode\Model\Board.cs" />
-    <Compile Include="GeneratedCode\Model\Boot.cs" />
+    <Compile Include="GeneratedCode\Model\Boat.cs" />
     <Compile Include="GeneratedCode\Model\Game.cs" />
-    <Compile Include="GeneratedCode\Model\iUpdateable.cs" />
-    <Compile Include="GeneratedCode\Model\Kade.cs" />
-    <Compile Include="GeneratedCode\Model\Kar.cs" />
-    <Compile Include="GeneratedCode\Model\Loods.cs" />
+    <Compile Include="GeneratedCode\Model\ITickAble.cs" />
+    <Compile Include="GeneratedCode\Model\Port.cs" />
+    <Compile Include="GeneratedCode\Model\Cart.cs" />
+    <Compile Include="GeneratedCode\Model\Storage.cs" />
     <Compile Include="GeneratedCode\Model\Point.cs" />
     <Compile Include="GeneratedCode\Model\RangeerVak.cs" />
-    <Compile Include="GeneratedCode\Model\SwitchVak.cs" />
-    <Compile Include="GeneratedCode\Model\VaarVak.cs" />
-    <Compile Include="GeneratedCode\Model\Vak.cs" />
-    <Compile Include="GeneratedCode\Model\WaterVak.cs" />
+    <Compile Include="GeneratedCode\Model\SwitchTile.cs" />
+    <Compile Include="GeneratedCode\Model\SailTile.cs" />
+    <Compile Include="GeneratedCode\Model\Tile.cs" />
+    <Compile Include="GeneratedCode\Model\WaterTile.cs" />
     <Compile Include="GeneratedCode\Presentation\InputController.cs" />
     <Compile Include="GeneratedCode\Presentation\LevelView.cs" />
     <Compile Include="GeneratedCode\Presentation\LobbyView.cs" />

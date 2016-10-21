@@ -11,24 +11,11 @@ namespace Model
 	using System.Linq;
 	using System.Text;
 
-	public class BaanVak : Vak
-	{
-		public virtual Kar Kar
-		{
-			get;
-			set;
-		}
-
-	    public Loods Wharf
-	    {
-	        get; set;
+    public class WaterTile : Tile
+    {
+        public WaterTile(Point coords, Board board = null) : base(coords, board)
+        {
         }
-
-	    public BaanVak(Point coords, char symbol, Board board = null) : base(coords, board)
-	    {
-	        this.Symbol = symbol;
-	    }
-
-	}
+    }
 }
 

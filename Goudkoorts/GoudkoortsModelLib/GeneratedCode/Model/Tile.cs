@@ -10,12 +10,23 @@ namespace Model
 	using System.Collections.Generic;
 	using System.Linq;
 	using System.Text;
+    using System.Drawing;
 
-    public class Kade : BaanVak
-    {
-        public Kade(Point coords, char symbol, Board board = null) : base(coords, symbol, board)
-        {
-        }
-    }
+	public class Tile
+	{
+        // Het symbool van het desbetreffende vakje
+        public char Symbol { get; set; }
+
+        public Point Coords { get; set; }
+
+        public Board Board { get; set; }
+
+	    public Tile(Point coords, Board board = null)
+	    {
+            Coords = coords;
+	        Board = board;
+	    }
+
+	}
 }
 

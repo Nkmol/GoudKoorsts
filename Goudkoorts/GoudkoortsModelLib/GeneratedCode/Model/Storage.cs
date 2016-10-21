@@ -12,20 +12,20 @@ namespace Model
 	using System.Text;
     using System.Timers;
 
-	public class Loods
+	public class Storage
 	{
         private static int SPAWN_TIME = 8000;
 
         private Timer timer;
 
-        public Vak Vak
+        public Tile Tile
         {
             set;
             get;
         }
-        public Loods(Vak vak)
+        public Storage(Tile tile)
         {
-            Vak = vak;
+            Tile = tile;
 
             // Create timer
             timer = new Timer();

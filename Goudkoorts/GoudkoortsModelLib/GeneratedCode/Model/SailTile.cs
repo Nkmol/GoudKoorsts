@@ -11,9 +11,17 @@ namespace Model
 	using System.Linq;
 	using System.Text;
 
-	public interface iUpdateable 
+	public class SailTile : WaterTile
 	{
-		void Update();
+        public SailTile(Point coords, Board board = null) : base(coords, board)
+        {
+        }
+
+        public virtual Boat Boat
+		{
+			get;
+			set;
+		}
 
 	}
 }

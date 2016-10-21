@@ -11,17 +11,23 @@ namespace Model
 	using System.Linq;
 	using System.Text;
 
-	public class VaarVak : WaterVak
+	public class RailTile : Tile
 	{
-        public VaarVak(Point coords, Board board = null) : base(coords, board)
-        {
-        }
-
-        public virtual Boot Boot
+		public virtual Cart cart
 		{
 			get;
 			set;
 		}
+
+	    public Storage Storage
+	    {
+	        get; set;
+        }
+
+	    public RailTile(Point coords, char symbol, Board board = null) : base(coords, board)
+	    {
+	        this.Symbol = symbol;
+	    }
 
 	}
 }
