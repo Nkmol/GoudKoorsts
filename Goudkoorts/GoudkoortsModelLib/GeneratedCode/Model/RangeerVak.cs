@@ -13,7 +13,7 @@ namespace Model
 
     public class ParkTile : RailTile
     {
-        public ParkTile(Point coords, char symbol, Board board = null) : base(coords, symbol, board)
+        public ParkTile(Point coords, Board board = null) : base(coords, board)
         {
         }
     }

@@ -29,10 +29,7 @@ namespace Model
             DirectionVertical *= -1;
         }
 
-        public bool isOccupied()
-        {
-            return (this.Cart != null);
-        }
+
 
     }
 }
