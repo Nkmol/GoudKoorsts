@@ -41,19 +41,8 @@ namespace Model
 		{
 			//throw new System.NotImplementedException();
 
-
-
 		}
 
-	    public void PlaceObject(ITickAble moveAbleObject, Tile tile, Point direction)
-	    {
-            // Get the tile coords
-	        Point currentCoords = tile.Coords;
-
-            //if(Field[currentCoords.x][currentCoords.y].IsOccupied)
-            /// Moet ff checks voeren hier TODO
-
-	    }
 
 	    public void Lock()
 	    {

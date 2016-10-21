@@ -28,7 +28,7 @@ namespace Model
 	    }
 
 
-        public bool isOccupied()
+        public bool IsOccupied()
         {
             return (this.Cart != null);
         }
