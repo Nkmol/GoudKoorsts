@@ -14,9 +14,7 @@ namespace Model
 
 	public class Tile
 	{
-        // Het symbool van het desbetreffende vakje
-        public char Symbol { get; set; }
-
+       
         public Point Coords { get; set; }
 
         public Board Board { get; set; }
@@ -26,6 +24,8 @@ namespace Model
             Coords = coords;
 	        Board = board;
 	    }
+
+
 
 	}
 }

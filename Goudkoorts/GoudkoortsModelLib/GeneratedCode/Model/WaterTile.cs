@@ -15,6 +15,8 @@ namespace Model
     {
         public WaterTile(Point coords, Board board = null) : base(coords, board)
         {
+            this.Coords = coords;
+            this.Board = board;
         }
     }
 }

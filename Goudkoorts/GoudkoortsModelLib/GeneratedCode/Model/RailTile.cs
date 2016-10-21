@@ -13,22 +13,25 @@ namespace Model
 
 	public class RailTile : Tile
 	{
-		public virtual Cart cart
+        public Point Direction { get; set; }
+
+		public virtual Cart Cart
 		{
 			get;
 			set;
 		}
 
-	    public Storage Storage
+	    public RailTile(Point coords, Board board = null) : base(coords, board)
 	    {
-	        get; set;
-        }
-
-	    public RailTile(Point coords, char symbol, Board board = null) : base(coords, board)
-	    {
-	        this.Symbol = symbol;
+	        this.Coords = coords;
+	        this.Board = board;
 	    }
 
+
+        public bool isOccupied()
+        {
+            return (this.Cart != null);
+        }
 	}
 }
 

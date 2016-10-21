@@ -13,9 +13,27 @@ namespace Model
 
     public class SwitchTile : RailTile
     {
-        public SwitchTile(Point coords, char symbol, Board board = null) : base(coords, symbol, board)
+        public int DirectionVertical;
+
+        public SwitchTile(Point coords, Board board = null) : base(coords, board)
         {
+            this.Coords = coords;
+            this.Board = board;
+
+            DirectionVertical = 1;
+            
         }
+
+        public void SetOppositeDirection()
+        {
+            DirectionVertical *= -1;
+        }
+
+        public bool isOccupied()
+        {
+            return (this.Cart != null);
+        }
+
     }
 }
 
