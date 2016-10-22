@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="GeneratedCode\Helper\DynamicDoubleList.cs" />
     <Compile Include="GeneratedCode\Helper\FileParser.cs" />
+    <Compile Include="GeneratedCode\Model\IDirection.cs" />
     <Compile Include="GeneratedCode\Model\MovingObject.cs" />
     <Compile Include="GeneratedCode\Model\RailTile.cs" />
     <Compile Include="GeneratedCode\Model\Board.cs" />

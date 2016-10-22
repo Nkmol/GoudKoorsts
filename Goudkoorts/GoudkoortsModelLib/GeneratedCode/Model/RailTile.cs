@@ -11,7 +11,7 @@ namespace Model
 	using System.Linq;
 	using System.Text;
 
-	public class RailTile : Tile
+	public class RailTile : Tile, IDirection
 	{
         public Point Direction { get; set; }
 

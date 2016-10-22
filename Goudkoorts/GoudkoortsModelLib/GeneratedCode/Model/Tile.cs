@@ -5,8 +5,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.Data.SqlTypes;
 using System.Dynamic;
 using System.Runtime.CompilerServices;
+using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 
 namespace Model
@@ -33,8 +35,7 @@ namespace Model
 	        Board = board;
 	    }
 
-
-	    private static readonly Dictionary<char, Func<Point, Tile>> tileMapping = new Dictionary<char, Func<Point, Tile>>()
+	    private static readonly Dictionary<char, Func<Point, Tile>> TileMapping = new Dictionary<char, Func<Point, Tile>>()
 	    {
             { ' ', p => new Tile(p) },
             { '~', p => new WaterTile(p) },
@@ -61,11 +62,33 @@ namespace Model
 
 	    public static Tile Create(char c, Point p)
 	    {
-	        c = Char.ToUpper(c);
-	        return tileMapping[c](p);
+	        c = char.ToUpper(c);
+	        return TileMapping[c](p);
 	    }
 
+        // Determines which sides to look
+        // Also determines lookup priority
+        protected static Point[] Sides = new Point[]
+        {
+            Point.Right, 
+            Point.Up,
+            Point.Down,
+            Point.Left, 
+        };
 
+        // Look around itself to find next Tile
+        public T Next<T>() where T : Tile
+	    {
+	        foreach (Point side in Sides)
+	        {
+	            Point newCoords = Coords + side;
+                Tile tile = Board.GetTile(newCoords);
+	            if (tile != null && tile is T)
+	                return (T)tile;
+	        }
+
+	        return null;
+	    }
 	}
 }
 
