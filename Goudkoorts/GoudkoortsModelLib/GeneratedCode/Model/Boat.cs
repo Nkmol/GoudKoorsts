@@ -4,6 +4,9 @@
 //     Changes to this file will be lost if the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using GoudkoortsModelLib.GeneratedCode.Model;
+
 namespace Model
 {
     using Helper;
@@ -12,7 +15,7 @@ namespace Model
     using System.Linq;
     using System.Text;
 
-    public class Boat : ITickAble
+    public class Boat : MovingObject
 	{
         public readonly Point direction;
         public static int MAX_CARGO = 8;
@@ -52,14 +55,32 @@ namespace Model
             return true;
         }
 
-		public virtual void Tick()
+        public override void Tick()
 		{
             // Move Ship
-
-			// Psuedo code
-            // Get next VaarVak : Vak.Board.SetVak(this, Vak.Coords + direction);
+		    Move();
+		    // Psuedo code
+		    // Get next VaarVak : Vak.Board.SetVak(this, Vak.Coords + direction);
 		}
 
-	}
+
+        public override void Move()
+        {
+            Point newCoords = Tile.Coords + Tile.Direction;
+
+            //TODO Check if we can get rid of the cast
+            Tile tile = Tile.Board.Field[newCoords.x][newCoords.y];
+
+            if (tile is SailTile)
+            {
+                SailTile nextTile = (SailTile)tile;
+
+                Tile.Contain = null;
+                nextTile.Contain = this;
+                Tile.Board.Field[newCoords.x][newCoords.y] = nextTile;
+            }
+
+        }
+    }
 }
 

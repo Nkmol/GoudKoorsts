@@ -16,8 +16,12 @@ namespace Model
 
 	public class SailTile : WaterTile
 	{
+	    public Point Direction { get; set; }
+
         public SailTile(Point coords, Board board = null) : base(coords, board)
         {
+            this.Coords = coords;
+            this.Board = board;
         }
 
         public override Object Contain

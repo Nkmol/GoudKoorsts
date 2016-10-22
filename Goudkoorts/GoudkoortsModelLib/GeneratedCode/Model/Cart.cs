@@ -4,6 +4,10 @@
 //     Changes to this file will be lost if the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using GoudkoortsModelLib.GeneratedCode.Model;
+using Microsoft.Win32;
+
 namespace Model
 {
 	using System;
@@ -11,7 +15,7 @@ namespace Model
 	using System.Linq;
 	using System.Text;
 
-	public class Cart : ITickAble
+	public class Cart : MovingObject
 	{
 		public virtual bool isEmpty
 		{
@@ -36,17 +40,41 @@ namespace Model
             Tile = tile;
         }
 
-		public virtual void Tick()
-		{
+        public override void Tick()
+        {
             if (!MoveAble)
                 return;
 
-            // Move Ship
-
+            // Move Cart
+            Move();
             // Psuedo code
             // Get next BaanVak : Vak.Board.SetVak(this, Vak.Coords + Vak.Direction);
         }
 
+	    public override void Move()
+	    {
+	        Point newCoords = Tile.Coords + Tile.Direction;
+
+            //TODO Check if we can get rid of the cast
+	        Tile tile = Tile.Board.Field[newCoords.x][newCoords.y];
+
+	        if (tile is RailTile)
+	        {
+	            RailTile nextTile = (RailTile)tile;
+
+	            if (!nextTile.IsOccupied())
+	            {
+	                Tile.Contain = null;
+                    nextTile.Contain = this;
+	                Tile.Board.Field[newCoords.x][newCoords.y] = nextTile;
+	            }
+	            else
+	            {
+                    // collision
+
+	            }
+	        }
+	    }
     }
 }
 

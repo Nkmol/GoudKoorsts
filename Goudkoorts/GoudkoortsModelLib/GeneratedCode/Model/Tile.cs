@@ -19,9 +19,7 @@ namespace Model
 
 	public class Tile
 	{
-        // Het symbool van het desbetreffende vakje
-        public char Symbol { get; set; }
-
+       
         public Point Coords { get; set; }
 
         public Board Board { get; set; }
@@ -35,12 +33,13 @@ namespace Model
 	        Board = board;
 	    }
 
+
 	    private static readonly Dictionary<char, Func<Point, Tile>> tileMapping = new Dictionary<char, Func<Point, Tile>>()
 	    {
             { ' ', p => new Tile(p) },
             { '~', p => new WaterTile(p) },
             { '-', p => new SailTile(p) },
-            { '.', p => new RailTile(p, char.MaxValue) },
+            { '.', p => new RailTile(p) },
             { 'L', p =>
                 {
                     Tile tile = new Tile(p);
@@ -48,8 +47,8 @@ namespace Model
                     return tile;
                 }
             },
-            { 'S', p => new SwitchTile(p, char.MaxValue) },
-            { 'K', p => new PortTile(p, char.MaxValue) },
+            { 'S', p => new SwitchTile(p) },
+            { 'K', p => new PortTile(p) },
             { 'B', p =>
                 {
                     SailTile sail = new SailTile(p);
@@ -57,7 +56,7 @@ namespace Model
                     return sail;
                 }
             },
-            { 'G', p => new ParkTile(p, Char.MaxValue) },
+            { 'G', p => new ParkTile(p) },
         };
 
 	    public static Tile Create(char c, Point p)
@@ -65,6 +64,7 @@ namespace Model
 	        c = Char.ToUpper(c);
 	        return tileMapping[c](p);
 	    }
+
 
 	}
 }

@@ -49,6 +49,7 @@ namespace Model
 
 		public static Board Generate()
 		{
+
             Board board = new Board();
 		    var enumerator = FileParser.readFileLines(Level).GetEnumerator();
 
@@ -75,6 +76,13 @@ namespace Model
 
             return board;
 		}
+
+
+	    public void Lock()
+	    {
+	        
+	    }
+         
 
 	}
 }

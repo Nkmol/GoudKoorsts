@@ -13,6 +13,8 @@ namespace Model
 
 	public class RailTile : Tile
 	{
+        public Point Direction { get; set; }
+
         public override Object Contain
         {
             get { return _contain; }
@@ -25,11 +27,17 @@ namespace Model
             }
         }
 
-        public RailTile(Point coords, char symbol, Board board = null) : base(coords, board)
+	    public RailTile(Point coords, Board board = null) : base(coords, board)
 	    {
-	        this.Symbol = symbol;
+	        this.Coords = coords;
+	        this.Board = board;
 	    }
 
+
+        public bool IsOccupied()
+        {
+            return (this.Contain != null);
+        }
 	}
 }
 
