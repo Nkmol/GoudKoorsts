@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GeneratedCode\Helper\FileParser.cs" />
+    <Compile Include="GeneratedCode\Model\MovingObject.cs" />
     <Compile Include="GeneratedCode\Model\RailTile.cs" />
     <Compile Include="GeneratedCode\Model\Board.cs" />
     <Compile Include="GeneratedCode\Model\Boat.cs" />
