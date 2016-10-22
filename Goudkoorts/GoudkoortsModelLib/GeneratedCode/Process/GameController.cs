@@ -33,6 +33,17 @@ namespace Process
 			set;
 		}
 
+        public static List<char> SwitchButtons = new List<char>()
+        {
+            'A',
+            'S',
+            'D',
+            'X',
+            'C'
+        };
+
+  
+
 		public virtual void Stop()
 		{
 			throw new System.NotImplementedException();
@@ -58,15 +69,23 @@ namespace Process
 
 		public virtual void Run()
 		{
+            
             game.Run();
             levelView.Print(game.Board);
 
 		    while (true) // TODO cleaner way of net shutting down application
 		    {
 		       char key = Char.ToUpper(InputController.AskUserInput());
-                 
+
+		       //SwitchTile sw = game.Board.Field[5][7] as SwitchTile;
+               //Console.WriteLine("\n"+sw.Direction.y);
+
+		        int index = GetKeyIndex(key);
+
                // Validation necessary
-               Board.Switches[key].Switch();
+               Board.Switches[index].Switch();
+
+               //Console.WriteLine(sw.Direction.y);
 		    
             } 
         }
@@ -76,6 +95,10 @@ namespace Process
             levelView.Print(game.Board);
         }
 
+	    public int GetKeyIndex(char key)
+	    {
+	        return SwitchButtons.FindIndex(x => x == key);
+	    }
 	}
 }
 
