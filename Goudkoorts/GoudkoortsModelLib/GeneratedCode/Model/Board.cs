@@ -5,85 +5,83 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.Collections.Generic;
 using Helper;
 
 namespace Model
 {
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
-	using System.Text;
+    public class Board
+    {
+        public const string Level = "goudkoortsmap.txt";
 
-	public class Board
-	{
-		public virtual DynamicDoubleList<Tile> Field
-		{
-			get;
-			set;
-		}
+        public Board()
+        {
+            Field = new DynamicDoubleList<Tile>();
+        }
 
-        public virtual IEnumerable<Tile> Vak
-		{
-			get;
-			set;
-		}
+        public virtual DynamicDoubleList<Tile> Field { get; set; }
 
-		public virtual IEnumerable<Storage> Loods
-		{
-			get;
-			set;
-		}
+        public virtual IEnumerable<Tile> Vak { get; set; }
 
-		public virtual Game Game
-		{
-			get;
-			set;
-		}
+        public virtual IEnumerable<Storage> Loods { get; set; }
 
-	    public Board()
-	    {
-	        Field = new DynamicDoubleList<Tile>();
-	    }
+        public virtual Game Game { get; set; }
 
-	    public const string Level = "goudkoortsmap.txt";
+        public static Board Generate()
+        {
+            var board = new Board();
+            var enumerator = FileParser.readFileLines(Level).GetEnumerator();
 
-		public static Board Generate()
-		{
+            var y = 0;
+            while (enumerator.MoveNext())
+            {
+                var x = 0;
+                foreach (var c in enumerator.Current)
+                {
+                    var p = new Point(x, y);
+                    var tile = Tile.Create(c, p);
 
-            Board board = new Board();
-		    var enumerator = FileParser.readFileLines(Level).GetEnumerator();
+                    tile.Board = board; // set parent
 
-		    int y = 0;
-		    while (enumerator.MoveNext())
-		    {
-		        int x = 0;
-		        foreach (char c in enumerator.Current)
-		        {
-		            Point p = new Point(x, y);
-		            Tile tile = Tile.Create(c, p);
-
-		            tile.Board = board; // set parent
-
-		            board.Field[x, y] = tile; // Add to the field
+                    board.Field[x, y] = tile; // Add to the field
 
                     x++;
                 }
-		        y++;
-		    }
+                y++;
+            }
 
             // Clean
             enumerator.Dispose();
 
+            // Determ direction
+//            foreach (var row in board.Field)
+//		    {
+//		        foreach (Tile tile in row)
+//		        {
+//		            if (tile.Contain is Storage)
+//		            {
+//                        RailTile next = tile.Next<RailTile>();
+//                        next.Direction = Point.Right;
+//                        do
+//		                {
+//		                    next = next.Next<RailTile>();
+//                            next.Direction = Point.Right;
+//                        } while (next != null);
+//		                return board;
+//		            }
+//		        }
+//		    }
+
             return board;
-		}
+        }
 
+        public Tile GetTile(Point p)
+        {
+            return Field[p.x, p.y];
+        }
 
-	    public void Lock()
-	    {
-	        
-	    }
-         
-
-	}
+        public void Lock()
+        {
+        }
+    }
 }
-

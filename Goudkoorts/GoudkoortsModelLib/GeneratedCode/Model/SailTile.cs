@@ -14,7 +14,7 @@ namespace Model
 	using System.Linq;
 	using System.Text;
 
-	public class SailTile : WaterTile
+	public class SailTile : WaterTile, IDirection
 	{
 	    public Point Direction { get; set; }
 
