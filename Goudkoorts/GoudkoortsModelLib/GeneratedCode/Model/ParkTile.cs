@@ -15,6 +15,8 @@ namespace Model
     {
         public ParkTile(Point coords, Board board = null) : base(coords, board)
         {
+            Coords = coords;
+            this.Board = board;
         }
     }
 }

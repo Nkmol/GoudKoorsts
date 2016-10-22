@@ -15,11 +15,17 @@ namespace Model
 	{
         public Point Direction { get; set; }
 
-		public virtual Cart Cart
-		{
-			get;
-			set;
-		}
+        public override Object Contain
+        {
+            get { return _contain; }
+            set
+            {
+                if (value is Boat)
+                    _contain = value;
+                else
+                    throw new ArgumentException();
+            }
+        }
 
 	    public RailTile(Point coords, Board board = null) : base(coords, board)
 	    {
@@ -30,7 +36,7 @@ namespace Model
 
         public bool IsOccupied()
         {
-            return (this.Cart != null);
+            return (this.Contain != null);
         }
 	}
 }

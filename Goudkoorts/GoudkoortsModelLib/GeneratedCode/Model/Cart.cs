@@ -64,8 +64,8 @@ namespace Model
 
 	            if (!nextTile.IsOccupied())
 	            {
-	                Tile.Cart = null;
-	                nextTile.Cart = this;
+	                Tile.Contain = null;
+                    nextTile.Contain = this;
 	                Tile.Board.Field[newCoords.x][newCoords.y] = nextTile;
 	            }
 	            else

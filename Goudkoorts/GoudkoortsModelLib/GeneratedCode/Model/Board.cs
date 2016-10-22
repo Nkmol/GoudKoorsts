@@ -4,6 +4,9 @@
 //     Changes to this file will be lost if the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Helper;
+
 namespace Model
 {
 	using System;
@@ -13,13 +16,13 @@ namespace Model
 
 	public class Board
 	{
-		public virtual List<List<Tile>> Field
+		public virtual DynamicDoubleList<Tile> Field
 		{
 			get;
 			set;
 		}
 
-		public virtual IEnumerable<Tile> Vak
+        public virtual IEnumerable<Tile> Vak
 		{
 			get;
 			set;
@@ -37,10 +40,41 @@ namespace Model
 			set;
 		}
 
-		public virtual Board Generate()
-		{
-			//throw new System.NotImplementedException();
+	    public Board()
+	    {
+	        Field = new DynamicDoubleList<Tile>();
+	    }
 
+	    public const string Level = "goudkoortsmap.txt";
+
+		public static Board Generate()
+		{
+
+            Board board = new Board();
+		    var enumerator = FileParser.readFileLines(Level).GetEnumerator();
+
+		    int y = 0;
+		    while (enumerator.MoveNext())
+		    {
+		        int x = 0;
+		        foreach (char c in enumerator.Current)
+		        {
+		            Point p = new Point(x, y);
+		            Tile tile = Tile.Create(c, p);
+
+		            tile.Board = board; // set parent
+
+		            board.Field[x, y] = tile; // Add to the field
+
+                    x++;
+                }
+		        y++;
+		    }
+
+            // Clean
+            enumerator.Dispose();
+
+            return board;
 		}
 
 

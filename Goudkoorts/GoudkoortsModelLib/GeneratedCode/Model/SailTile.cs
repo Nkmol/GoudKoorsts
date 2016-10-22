@@ -4,6 +4,9 @@
 //     Changes to this file will be lost if the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using System.ComponentModel;
+
 namespace Model
 {
 	using System;
@@ -21,12 +24,18 @@ namespace Model
             this.Board = board;
         }
 
-        public virtual Boat Boat
-		{
-			get;
-			set;
-		}
+        public override Object Contain
+        {
+            get { return _contain; }
+            set
+            {
+                if(value is Boat)
+                    _contain = value;
+                else
+                    throw new ArgumentException();
+            }
+        }
 
-	}
+    }
 }
 

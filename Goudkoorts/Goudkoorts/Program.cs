@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Process;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,8 @@ namespace Goudkoorts
     {
         static void Main(string[] args)
         {
-
+            GameController gameController = new GameController();
+            gameController.Start();
         }
     }
 }

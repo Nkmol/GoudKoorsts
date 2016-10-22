@@ -13,8 +13,10 @@ namespace Model
 
     public class PortTile : RailTile
     {
-        public PortTile(Point coords, char symbol, Board board = null) : base(coords, board)
+        public PortTile(Point coords, Board board = null) : base(coords, board)
         {
+            this.Coords = coords;
+            this.Board = board;
         }
     }
 }
