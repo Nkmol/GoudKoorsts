@@ -20,13 +20,13 @@ namespace Model
             this.Coords = coords;
             this.Board = board;
 
-            DirectionVertical = 1;
+            Direction = new Point(0, 1);
             
         }
 
         public void SetOppositeDirection()
         {
-            DirectionVertical *= -1;
+            Direction *= new Point(0, -1);
         }
 
 
