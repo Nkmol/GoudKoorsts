@@ -61,7 +61,14 @@ namespace Process
             game.Run();
             levelView.Print(game.Board);
 
-            while(true) { } // TODO cleaner way of net shutting down application
+		    while (true) // TODO cleaner way of net shutting down application
+		    {
+		       char key = Char.ToUpper(InputController.AskUserInput());
+                 
+               // Validation necessary
+               Board.Switches[key].Switch();
+		    
+            } 
         }
 
 	    public virtual void onTick()

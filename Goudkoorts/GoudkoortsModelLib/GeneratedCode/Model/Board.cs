@@ -5,6 +5,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.Runtime.CompilerServices;
+using GoudkoortsModelLib.GeneratedCode.Helper;
 using Helper;
 
 namespace Model
@@ -21,6 +23,12 @@ namespace Model
 			get;
 			set;
 		}
+
+	    public static Dictionary<Char, SwitchTile> Switches
+	    {
+	        get; 
+            set;
+	    }
 
         public virtual IEnumerable<Tile> Vak
 		{
@@ -51,7 +59,9 @@ namespace Model
 		{
 
             Board board = new Board();
+            Switches = new Dictionary<Char, SwitchTile>();
 		    var enumerator = FileParser.readFileLines(Level).GetEnumerator();
+		    int keyCounter = 0;
 
 		    int y = 0;
 		    while (enumerator.MoveNext())
@@ -63,6 +73,14 @@ namespace Model
 		            Tile tile = Tile.Create(c, p);
 
 		            tile.Board = board; // set parent
+
+
+		            if (tile is SwitchTile)  // check if Tile belongs to the switches
+		            {
+		                SwitchTile switchTile = (SwitchTile)tile;
+                        var key = GameButtons.SwitchButtons[keyCounter++];
+                        Switches.Add(key, switchTile); // increase the counter to fetch the next key
+		            }
 
 		            board.Field[x, y] = tile; // Add to the field
 
