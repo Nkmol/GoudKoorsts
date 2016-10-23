@@ -5,11 +5,87 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+
+using System.Runtime.CompilerServices;
 using System.Collections.Generic;
 using Helper;
+using Process;
 
 namespace Model
 {
+
+	using System;
+	using System.Collections.Generic;
+	using System.Linq;
+	using System.Text;
+
+	public class Board
+	{
+		public virtual DynamicDoubleList<Tile> Field
+		{
+			get;
+			set;
+		}
+
+        public static Dictionary<int, SwitchTile> Switches
+        {
+            get;
+            set;
+        }
+
+        public virtual IEnumerable<Tile> Vak
+		{
+			get;
+			set;
+		}
+
+		public virtual IEnumerable<Storage> Loods
+		{
+			get;
+			set;
+		}
+
+		public virtual Game Game
+		{
+			get;
+			set;
+		}
+
+	    public Board()
+	    {
+	        Field = new DynamicDoubleList<Tile>();
+	    }
+
+	    public const string Level = "goudkoortsmap.txt";
+
+		public static Board Generate()
+		{
+
+            Board board = new Board();
+            Switches = new Dictionary<int, SwitchTile>();
+		    var enumerator = FileParser.readFileLines(Level).GetEnumerator();
+		    int keyCounter = 0;
+
+		    int y = 0;
+		    while (enumerator.MoveNext())
+		    {
+		        int x = 0;
+		        foreach (char c in enumerator.Current)
+		        {
+		            Point p = new Point(x, y);
+		            Tile tile = Tile.Create(c, p);
+
+		            tile.Board = board; // set parent
+                    
+
+		            if (tile is SwitchTile)  // check if Tile belongs to the switches
+		            {
+		                SwitchTile switchTile = (SwitchTile)tile;
+                        Switches.Add(keyCounter++, switchTile); // increase the counter to fetch the next key
+		            }
+
+		            board.Field[x, y] = tile; // Add to the field
+=======
     public class Board
     {
         public const string Level = "goudkoortsmap.txt";
@@ -44,6 +120,7 @@ namespace Model
                     tile.Board = board; // set parent
 
                     board.Field[x, y] = tile; // Add to the field
+>>>>>>> ee55b8f88269ba1ed3ac1731d94102607ebcb746
 
                     x++;
                 }
