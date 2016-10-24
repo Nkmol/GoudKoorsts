@@ -18,14 +18,14 @@ namespace Model
 	{
         public Point Direction { get; set; }
 
-        public Tile Next => Board.GetTile(Coords + Direction);
+        public Tile Next => Board.Field.Get(Coords + Direction);
 
         public override Object Contain
         {
             get { return _contain; }
             set
             {
-                if (value is Boat)
+                if (value is Cart)
                     _contain = value;
                 else
                     throw new ArgumentException();

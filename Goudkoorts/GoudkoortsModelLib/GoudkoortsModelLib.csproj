@@ -43,6 +43,7 @@
     <Compile Include="GeneratedCode\Helper\FileParser.cs" />
     <Compile Include="GeneratedCode\Model\DirectionTile.cs" />
     <Compile Include="GeneratedCode\Model\IDirection.cs" />
+    <Compile Include="GeneratedCode\Model\IRunAble.cs" />
     <Compile Include="GeneratedCode\Model\MovingObject.cs" />
     <Compile Include="GeneratedCode\Model\RailTile.cs" />
     <Compile Include="GeneratedCode\Model\Board.cs" />

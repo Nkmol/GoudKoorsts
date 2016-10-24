@@ -121,7 +121,7 @@ namespace Model
 	            Point newCoords = Coords + side;
 	            if (!Board.IsInside(newCoords)) continue;
 
-                Tile tile = Board.GetTile(newCoords);
+                Tile tile = Board.Field.Get(newCoords);
 	            if (tile != null && tile is T)
 	                yield return (T)tile;
 	        }

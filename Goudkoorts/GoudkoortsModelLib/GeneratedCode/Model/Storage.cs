@@ -4,6 +4,9 @@
 //     Changes to this file will be lost if the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using System.Diagnostics;
+
 namespace Model
 {
 	using System;
@@ -12,8 +15,8 @@ namespace Model
 	using System.Text;
     using System.Timers;
 
-	public class Storage
-	{
+	public class Storage : ITickAble, IRunAble
+    {
         private static int SPAWN_TIME = 8000;
 
         private Timer timer;
@@ -29,20 +32,33 @@ namespace Model
 
             // Create timer
             timer = new Timer();
-            timer.Elapsed += new ElapsedEventHandler((source, e) => spawnCart());
+            timer.Elapsed += new ElapsedEventHandler((source, e) => Tick());
             timer.Interval = SPAWN_TIME;
         }
 
-        public void run()
-        {
-            timer.Enabled = true;
-        }
-
-        public void spawnCart()
+        public void SpawnCart()
         {
             // Psuedo code
             // Spawn a cart : Vak.Board.placeObject(this, Vak.Coords + new Point(1, 0)); // BaanVak always right of Loods
+            RailTile tile = Tile.Board.Field.Get<RailTile>(Tile.Coords + Point.Right);
+
+            if (tile?.IsOccupied() == true)
+                return; // TODO
+            else
+                tile.Contain = new Cart(tile);
+
+            Debug.Write("Cart spawned");
         }
-	}
+
+        public void Tick()
+        {
+            SpawnCart();
+        }
+
+        public void Run()
+        {
+            timer.Enabled = true;
+        }
+    }
 }
 

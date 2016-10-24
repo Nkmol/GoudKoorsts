@@ -4,36 +4,17 @@
 //     Changes to this file will be lost if the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using System;
+using System.Collections.Generic;
+using Model;
+using Presentation;
+
 namespace Process
 {
-	using Model;
-	using Presentation;
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
-	using System.Text;
-
-	public class GameController
-	{
-		public virtual LobbyView lobbyView
-		{
-			get;
-			set;
-		}
-
-		public virtual LevelView levelView
-		{
-			get;
-			set;
-		}
-
-		public virtual Game game
-		{
-			get;
-			set;
-		}
-
-        public static List<char> SwitchButtons = new List<char>()
+    public class GameController
+    {
+        public static List<char> SwitchButtons = new List<char>
         {
             'A',
             'S',
@@ -42,45 +23,48 @@ namespace Process
             'C'
         };
 
-  
-
-		public virtual void Stop()
-		{
-			throw new System.NotImplementedException();
-		}
-
-	    public GameController()
-	    {
+        public GameController()
+        {
             // create models
-            game = new Game();
-	        game.Timer.Elapsed += new System.Timers.ElapsedEventHandler((source, e) => onTick());
+            Game = new Game();
+            Game.Timer.Elapsed += (source, e) => DrawTick();
 
             // create Views
-            levelView = new LevelView();
-            lobbyView = new LobbyView();
+            LevelView = new LevelView();
+            LobbyView = new LobbyView();
         }
 
-		public virtual void Start()
-		{
-            lobbyView.ShowWelcome();
+        public virtual LobbyView LobbyView { get; set; }
+
+        public virtual LevelView LevelView { get; set; }
+
+        public virtual Game Game { get; set; }
+
+        public virtual void Stop()
+        {
+            throw new NotImplementedException();
+        }
+
+        public virtual void Start()
+        {
+            LobbyView.ShowWelcome();
 
             Run();
-		}
+        }
 
-		public virtual void Run()
-		{
-            
-            game.Run();
-            levelView.Print(game.Board);
+        public virtual void Run()
+        {
+            Game.Run();
+            LevelView.Print(Game.Board);
 
-		    while (true) // TODO cleaner way of net shutting down application
-		    {
-		       char key = Char.ToUpper(InputController.AskUserInput());
+            while (true) // TODO cleaner way of not shutting down application
+            {
+                var key = char.ToUpper(InputController.AskUserInput());
 
-		       //SwitchTile sw = game.Board.Field[5][7] as SwitchTile;
-               //Console.WriteLine("\n"+sw.Direction.y);
+                //SwitchTile sw = game.Board.Field[5][7] as SwitchTile;
+                //Console.WriteLine("\n"+sw.Direction.y);
 
-		        int index = GetKeyIndex(key);
+                var index = GetKeyIndex(key);
 
                 // Validation necessary
                 if(index != -1)
@@ -88,20 +72,19 @@ namespace Process
 
                 //Console.WriteLine(sw.Direction.y);
 
-                 var collection = game.Board.Field.Get<WaterTile>();
+                
 		    
             } 
         }
 
-	    public virtual void onTick()
-	    {
-            levelView.Print(game.Board);
+        public virtual void DrawTick()
+        {
+            LevelView.Print(Game.Board);
         }
 
-	    public int GetKeyIndex(char key)
-	    {
-	        return SwitchButtons.FindIndex(x => x == key);
-	    }
-	}
+        public int GetKeyIndex(char key)
+        {
+            return SwitchButtons.FindIndex(x => x == key);
+        }
+    }
 }
-

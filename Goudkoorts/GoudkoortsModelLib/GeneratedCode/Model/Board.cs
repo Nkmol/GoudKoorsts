@@ -8,6 +8,7 @@
 
 using System.Runtime.CompilerServices;
 using System.Collections.Generic;
+using GoudkoortsModelLib.GeneratedCode.Model;
 using Helper;
 using Process;
 
@@ -19,8 +20,8 @@ namespace Model
 	using System.Linq;
 	using System.Text;
 
-	public class Board
-	{
+	public class Board : ITickAble, IRunAble
+    {
 		public virtual DynamicDoubleList<Tile> Field
 		{
 			get;
@@ -108,11 +109,6 @@ namespace Model
             return board;
         }
 
-        public Tile GetTile(Point p)
-        {
-            return Field[p.y][p.x];
-        }
-
         public bool IsInside(Point coords)
         {
             return coords.y > 0 && coords.x > 0 && coords.y < Field.Count &&
@@ -126,6 +122,26 @@ namespace Model
 
         public void Lock()
         {
+        }
+
+        public List<T> GetAllThatContains<T>()
+        {
+            return (from b in Field from a in b select a.Contain).OfType<T>().ToList();
+        }
+
+        public void Tick()
+        {
+            foreach (ITickAble s in GetAllThatContains<ITickAble>())
+                s.Tick();
+        }
+
+        public void Run()
+        {
+            // Activate all tickAble object inside the board
+
+            // Activate runables
+            foreach (IRunAble s in GetAllThatContains<IRunAble>())
+                s.Run();
         }
     }
 }
