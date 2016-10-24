@@ -68,7 +68,12 @@ namespace Process
 
                 // Validation necessary
                 if(index != -1)
-                    Board.Switches[index].Switch();
+                Board.Switches[index].Switch();
+
+                //Console.WriteLine(sw.Direction.y);
+
+                
+		    
             } 
         }
 

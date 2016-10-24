@@ -46,6 +46,13 @@ namespace Model
 			set;
 		}
 
+        public PortTile Port
+        {
+            get;
+            set;
+        }
+
+
 		public virtual Game Game
 		{
 			get;
@@ -92,6 +99,10 @@ namespace Model
                 y++;
             }
 
+
+
+            board.Port = (PortTile)board.Field.Get<PortTile>().First();
+
             // Clean
             enumerator.Dispose();
 
@@ -102,6 +113,11 @@ namespace Model
         {
             return coords.y > 0 && coords.x > 0 && coords.y < Field.Count &&
                    coords.x < Field[coords.y].Count;
+        }
+
+        public List<T> GetAllThatContains<T>()
+        {
+            return (from b in Field from a in b select a.Contain).OfType<T>().ToList();
         }
 
         public void Lock()

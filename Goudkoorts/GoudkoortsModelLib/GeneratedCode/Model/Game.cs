@@ -69,6 +69,8 @@ namespace Model
 
 
 
+             Board.GetAllThatContains<Boat>().First().Tick();
+
 		    // TODO : Board.Lock()
 		}
 

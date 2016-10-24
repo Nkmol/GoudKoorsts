@@ -36,7 +36,13 @@ namespace Helper
             }
         }
 
+<<<<<<< HEAD
+
+
+        public List<T> Get<TClass>() where TClass : T
+=======
         public List<T> GetAll<TClass>() where TClass : T
+>>>>>>> 53073d6d4fde197f900bb3723dfa956a06e71b2c
         {
             return new List<T>(_typeArray[typeof(TClass)].Values);
         }
@@ -54,5 +60,9 @@ namespace Helper
             else
                 return default(TClass);
         }
+<<<<<<< HEAD
+
+=======
+>>>>>>> 53073d6d4fde197f900bb3723dfa956a06e71b2c
     }
 }
