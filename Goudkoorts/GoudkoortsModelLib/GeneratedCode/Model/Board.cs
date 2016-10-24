@@ -45,6 +45,13 @@ namespace Model
 			set;
 		}
 
+        public PortTile Port
+        {
+            get;
+            set;
+        }
+
+
 		public virtual Game Game
 		{
 			get;
@@ -90,6 +97,10 @@ namespace Model
                 }
                 y++;
             }
+
+
+
+            board.Port = (PortTile)board.Field.Get<PortTile>().First();
 
             // Clean
             enumerator.Dispose();

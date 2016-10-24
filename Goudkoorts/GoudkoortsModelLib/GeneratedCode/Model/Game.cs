@@ -65,7 +65,7 @@ namespace Model
             else
                 TimeTick -= 1000;
 
-             Board.Game.Board.Field.GetAllThatContains<Boat>().First().Tick();
+             Board.GetAllThatContains<Boat>().First().Tick();
 
 		    // TODO : Board.Lock()
 		}

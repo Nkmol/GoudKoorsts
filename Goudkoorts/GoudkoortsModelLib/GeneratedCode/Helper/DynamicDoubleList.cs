@@ -43,7 +43,7 @@ namespace Helper
 
 
 
-        public List<T> GetAll<TClass>() where TClass : T
+        public List<T> Get<TClass>() where TClass : T
         {
             var type = typeof(TClass);
 
