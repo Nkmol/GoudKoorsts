@@ -4,15 +4,14 @@
 //     Changes to this file will be lost if the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
 namespace Model
 {
 	using System;
-	using System.Collections.Generic;
-	using System.Linq;
-	using System.Text;
 
-	public interface ITickAble 
+	public interface ITickAble
 	{
+        // What to do for every tick
 		void Tick();
 
 	}

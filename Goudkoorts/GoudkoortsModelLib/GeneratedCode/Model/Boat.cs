@@ -61,7 +61,7 @@ namespace Model
                 // Check if the boat should dock
                 int x = Tile.Coords.x;
                 int y = Tile.Coords.y - 1;
-
+                
                 if(Tile.Board.Field[x][y] is PortTile)
                 {
                     if (Cargo < MAX_CARGO)

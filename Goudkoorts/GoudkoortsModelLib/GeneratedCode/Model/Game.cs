@@ -15,10 +15,9 @@ namespace Model
     using System.Text;
     using System.Timers;
 
-    public class Game : ITickAble
+    public class Game : ITickAble, IRunAble
 	{
-        public const int TIME_INTERVAL = 10000; // Miliseconds
-
+        public const int TimeInterval = 10000; // Miliseconds
 
         public int TimeTick
         {
@@ -44,7 +43,7 @@ namespace Model
             Timer = new Timer();
             Timer.Elapsed += new ElapsedEventHandler((source, e) => Tick());
             Timer.Interval = 1000;
-            TimeTick = TIME_INTERVAL;
+            TimeTick = TimeInterval;
 
 
             // Load game objects
@@ -60,10 +59,15 @@ namespace Model
 
 		public virtual void Tick()
 		{
-            if (TimeTick <= 0)
-                TimeTick = TIME_INTERVAL;
-            else
-                TimeTick -= 1000;
+		    if (TimeTick <= 0)
+		    {
+                Board.Tick();
+                TimeTick = TimeInterval;
+		    }
+		    else
+		        TimeTick -= 1000;
+
+
 
 		    // TODO : Board.Lock()
 		}
@@ -71,6 +75,9 @@ namespace Model
         public void Run()
         {
             Timer.Enabled = true;
+
+            // Activate any Runnable in board
+            Board.Run();
         }
 
 	}
