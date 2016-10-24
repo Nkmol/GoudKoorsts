@@ -8,6 +8,7 @@
 
 using System.Runtime.CompilerServices;
 using System.Collections.Generic;
+using GoudkoortsModelLib.GeneratedCode.Model;
 using Helper;
 using Process;
 
@@ -19,8 +20,8 @@ namespace Model
 	using System.Linq;
 	using System.Text;
 
-	public class Board
-	{
+	public class Board : ITickAble, IRunAble
+    {
 		public virtual DynamicDoubleList<Tile> Field
 		{
 			get;
@@ -110,6 +111,28 @@ namespace Model
 
         public void Lock()
         {
+        }
+
+        public void Tick()
+        {
+            var result = (from b in Field from a in b select a.Contain).OfType<MovingObject>();
+            foreach (MovingObject s in result)
+            {
+                s.Tick();
+            }
+        }
+
+        public void Run()
+        {
+            // Activate all tickAble object inside the board
+
+            // Activate runables
+            // TODO Replace with custom selectOf<> method
+            var result = (from b in Field from a in b select a.Contain).OfType<IRunAble>() ;
+            foreach (IRunAble s in result)
+            {
+                s.Run();
+            }
         }
     }
 }

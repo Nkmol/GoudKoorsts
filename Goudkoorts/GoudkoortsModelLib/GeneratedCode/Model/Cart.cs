@@ -53,10 +53,8 @@ namespace Model
 
 	    public override void Move()
 	    {
-	        Point newCoords = Tile.Coords + Tile.Direction;
-
             //TODO Check if we can get rid of the cast
-	        Tile tile = Tile.Board.Field[newCoords.x][newCoords.y];
+	        Tile tile = Tile.Board.GetTile(Tile.Coords + Tile.Direction);
 
 	        if (tile is RailTile)
 	        {
@@ -66,11 +64,10 @@ namespace Model
 	            {
 	                Tile.Contain = null;
                     nextTile.Contain = this;
-	                Tile.Board.Field[newCoords.x][newCoords.y] = nextTile;
 	            }
 	            else
 	            {
-                    // collision
+                    //TODO collision
 
 	            }
 	        }

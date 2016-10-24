@@ -15,7 +15,7 @@ namespace Model
     using System.Text;
     using System.Timers;
 
-    public class Game : ITickAble
+    public class Game : ITickAble, IRunAble
 	{
         public const int TIME_INTERVAL = 10000; // Miliseconds
 
@@ -65,12 +65,17 @@ namespace Model
             else
                 TimeTick -= 1000;
 
+
+
 		    // TODO : Board.Lock()
 		}
 
         public void Run()
         {
             Timer.Enabled = true;
+
+            // Activate any Runnable in board
+            Board.Run();
         }
 
 	}

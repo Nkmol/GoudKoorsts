@@ -25,7 +25,7 @@ namespace Model
             get { return _contain; }
             set
             {
-                if (value is Boat)
+                if (value is Cart)
                     _contain = value;
                 else
                     throw new ArgumentException();
