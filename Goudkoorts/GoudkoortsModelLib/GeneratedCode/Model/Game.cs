@@ -4,6 +4,9 @@
 //     Changes to this file will be lost if the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using System.Security.Cryptography;
+
 namespace Model
 {
     using System;
@@ -42,6 +45,7 @@ namespace Model
             Timer.Elapsed += new ElapsedEventHandler((source, e) => Tick());
             Timer.Interval = 1000;
             TimeTick = TIME_INTERVAL;
+
 
             // Load game objects
             GenerateGame();

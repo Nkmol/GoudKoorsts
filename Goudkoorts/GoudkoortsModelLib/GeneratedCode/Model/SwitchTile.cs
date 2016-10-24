@@ -13,7 +13,6 @@ namespace Model
 
     public class SwitchTile : RailTile
     {
-        public int DirectionVertical;
 
         public SwitchTile(Point coords, Board board = null) : base(coords, board)
         {
@@ -24,7 +23,7 @@ namespace Model
             
         }
 
-        public void SetOppositeDirection()
+        public void Switch()
         {
             Direction *= new Point(0, -1);
         }

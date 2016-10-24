@@ -5,47 +5,88 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+
+using System.Runtime.CompilerServices;
 using System.Collections.Generic;
 using Helper;
+using Process;
 
 namespace Model
 {
-    public class Board
-    {
-        public const string Level = "goudkoortsmap.txt";
 
-        public Board()
+	using System;
+	using System.Collections.Generic;
+	using System.Linq;
+	using System.Text;
+
+	public class Board
+	{
+		public virtual DynamicDoubleList<Tile> Field
+		{
+			get;
+			set;
+		}
+
+        public static Dictionary<int, SwitchTile> Switches
         {
-            Field = new DynamicDoubleList<Tile>();
+            get;
+            set;
         }
 
-        public virtual DynamicDoubleList<Tile> Field { get; set; }
+        public virtual IEnumerable<Tile> Vak
+		{
+			get;
+			set;
+		}
 
-        public virtual IEnumerable<Tile> Vak { get; set; }
+		public virtual IEnumerable<Storage> Loods
+		{
+			get;
+			set;
+		}
 
-        public virtual IEnumerable<Storage> Loods { get; set; }
+		public virtual Game Game
+		{
+			get;
+			set;
+		}
 
-        public virtual Game Game { get; set; }
+	    public Board()
+	    {
+	        Field = new DynamicDoubleList<Tile>();
+	    }
 
-        public static Board Generate()
-        {
-            var board = new Board();
-            var enumerator = FileParser.readFileLines(Level).GetEnumerator();
+	    public const string Level = "goudkoortsmap.txt";
 
-            var y = 0;
-            while (enumerator.MoveNext())
-            {
-                var x = 0;
-                foreach (var c in enumerator.Current)
-                {
-                    var p = new Point(x, y);
-                    var tile = Tile.Create(c, p);
+		public static Board Generate()
+		{
 
-                    tile.Board = board; // set parent
+            Board board = new Board();
+            Switches = new Dictionary<int, SwitchTile>();
+		    var enumerator = FileParser.readFileLines(Level).GetEnumerator();
+		    int keyCounter = 0;
 
-                    board.Field[x, y] = tile; // Add to the field
+		    int y = 0;
+		    while (enumerator.MoveNext())
+		    {
+		        int x = 0;
+		        foreach (char c in enumerator.Current)
+		        {
+		            Point p = new Point(x, y);
+		            Tile tile = Tile.Create(c, p);
 
-                    x++;
+		            tile.Board = board; // set parent
+                    
+
+		            if (tile is SwitchTile)  // check if Tile belongs to the switches
+		            {
+		                SwitchTile switchTile = (SwitchTile)tile;
+                        Switches.Add(keyCounter++, switchTile); // increase the counter to fetch the next key
+		            }
+
+		            board.Field[x, y] = tile; // Add to the field
+
+                       x++;
                 }
                 y++;
             }
@@ -72,3 +113,4 @@ namespace Model
         }
     }
 }
+

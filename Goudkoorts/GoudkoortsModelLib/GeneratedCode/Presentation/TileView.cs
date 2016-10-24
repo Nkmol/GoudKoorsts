@@ -25,14 +25,7 @@ namespace GoudkoortsModelLib.GeneratedCode.Presentation
 
         public static char Create(Tile tile)
         {
-            Console.ForegroundColor = ConsoleColor.White;
-            if (tile is IDirection && ((IDirection)tile).Direction != null) Console.ForegroundColor = ConsoleColor.Cyan;
-
-            string search;
-            if (tile.Contain != null)
-                search = tile.Contain.GetType().Name;
-            else
-                search = tile.GetType().Name;
+            var search = tile.Contain?.GetType().Name ?? tile.GetType().Name;
 
             return TileView.tileViewMapping[search];
         }
