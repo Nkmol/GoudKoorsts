@@ -115,11 +115,6 @@ namespace Model
                    coords.x < Field[coords.y].Count;
         }
 
-        public List<T> GetAllThatContains<T>()
-        {
-            return (from b in Field from a in b select a.Contain).OfType<T>().ToList();
-        }
-
         public void Lock()
         {
         }
