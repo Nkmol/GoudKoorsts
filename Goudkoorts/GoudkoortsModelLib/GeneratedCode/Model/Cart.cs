@@ -54,7 +54,7 @@ namespace Model
 	    public override void Move()
 	    {
             //TODO Check if we can get rid of the cast
-	        Tile tile = Tile.Board.GetTile(Tile.Coords + Tile.Direction);
+	        Tile tile = Tile.Board.Field.Get(Tile.Coords + Tile.Direction);
 
 	        if (tile is RailTile)
 	        {

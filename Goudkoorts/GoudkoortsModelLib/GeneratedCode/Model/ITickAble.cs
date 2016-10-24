@@ -13,6 +13,7 @@ namespace Model
 	{
         // What to do for every tick
 		void Tick();
+
 	}
 }
 

@@ -98,11 +98,6 @@ namespace Model
             return board;
         }
 
-        public Tile GetTile(Point p)
-        {
-            return Field[p.y][p.x];
-        }
-
         public bool IsInside(Point coords)
         {
             return coords.y > 0 && coords.x > 0 && coords.y < Field.Count &&

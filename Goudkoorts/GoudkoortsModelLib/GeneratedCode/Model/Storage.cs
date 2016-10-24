@@ -40,7 +40,7 @@ namespace Model
         {
             // Psuedo code
             // Spawn a cart : Vak.Board.placeObject(this, Vak.Coords + new Point(1, 0)); // BaanVak always right of Loods
-            RailTile tile = (RailTile)Tile.Board.GetTile(Tile.Coords + Point.Right);
+            RailTile tile = (RailTile)Tile.Board.Field.Get(Tile.Coords + Point.Right);
 
             if (!tile.IsOccupied())
                 Environment.Exit(0); // TODO

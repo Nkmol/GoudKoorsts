@@ -67,10 +67,9 @@ namespace Process
                 var index = GetKeyIndex(key);
 
                 // Validation necessary
-                Board.Switches[index].Switch();
-
-                //Console.WriteLine(sw.Direction.y);
-            }
+                if(index != -1)
+                    Board.Switches[index].Switch();
+            } 
         }
 
         public virtual void DrawTick()

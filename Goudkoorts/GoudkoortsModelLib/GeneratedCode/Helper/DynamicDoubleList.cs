@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Model;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
@@ -10,8 +11,11 @@ using Model;
 
 namespace Helper
 {
-    public class DynamicDoubleList<T> : List<List<T>> 
+    public class DynamicDoubleList<T> : List<List<T>>
     {
+
+        private Dictionary<Type, Dictionary<Point, T>> _typeArray = new Dictionary<Type, Dictionary<Point, T>>();
+
         // Only meant for setting the Double List in a more dynamic way.
         public T this[int x, int y]
         {
@@ -20,8 +24,25 @@ namespace Helper
                 if(y >= Count || base[y] == null)
                     Add(new List<T>());
 
+                if (!_typeArray.ContainsKey(value.GetType())){
+                    _typeArray.Add(value.GetType(), new Dictionary<Point, T>() { { new Point(x, y), value } });
+                } else {
+
+                    _typeArray[value.GetType()].Add(new Point(x, y), value);
+                }
+
                 base[y].Add(value);
             }
+        }
+
+        public List<T> GetAll<TClass>() where TClass : T
+        {
+            return new List<T>(_typeArray[typeof(TClass)].Values);
+        }
+
+        public T Get(Point p)
+        {
+            return base[p.y][p.x];
         }
     }
 }
