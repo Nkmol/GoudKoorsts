@@ -35,6 +35,34 @@ namespace Model
 	        Board = board;
 	    }
 
+
+
+	    private static readonly Dictionary<char, Func<Point, Tile>> TileMapping = new Dictionary<char, Func<Point, Tile>>()
+	    {
+            { ' ', p => new Tile(p) },
+            { '~', p => new WaterTile(p) },
+            { '-', p => new SailTile(p) },
+            { '.', p => new RailTile(p) },
+            { 'L', p =>
+                {
+                    Tile tile = new Tile(p);
+                    tile.Contain = new Storage(tile);
+                    return tile;
+                }
+            },
+            { 'S', p => new SwitchTile(p) },
+            { 'K', p => new PortTile(p) },
+            { 'B', p =>
+                {
+                    SailTile sail = new SailTile(p);
+                    sail.Contain = new Boat(sail);
+                    return sail;
+                }
+            },
+            { 'G', p => new ParkTile(p) },
+        };
+
+
 	    public static Tile Create(char c, Point p)
 	    {
             switch (c)

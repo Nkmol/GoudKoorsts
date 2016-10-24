@@ -43,6 +43,7 @@ namespace Model
             direction = new Point(-1, 0); // Boat always moves from right to left.
 
             Tile = tile;
+
         }
 
         public bool addCargo()
@@ -55,10 +56,32 @@ namespace Model
             return true;
         }
 
+        public void Dock()
+        {
+                // Check if the boat should dock
+                int x = Tile.Coords.x;
+                int y = Tile.Coords.y - 1;
+
+                if(Tile.Board.Field[x][y] is PortTile)
+                {
+                    if (Cargo < MAX_CARGO)
+                        Docked = true;
+                    else {
+                        Docked = false;
+                        Move();
+                    }
+                }
+            
+        }
+
         public override void Tick()
 		{
             // Move Ship
-		    Move();
+            //Cargo = 8;
+
+            
+
+            Dock();
 		    // Psuedo code
 		    // Get next VaarVak : Vak.Board.SetVak(this, Vak.Coords + direction);
 		}
@@ -71,14 +94,18 @@ namespace Model
             //TODO Check if we can get rid of the cast
             Tile tile = Tile.Board.Field[newCoords.x][newCoords.y];
 
-            if (tile is SailTile)
+            if(tile != null)
             {
-                SailTile nextTile = (SailTile)tile;
+                if (tile is SailTile)
+                {
+                    SailTile nextTile = (SailTile)tile;
 
-                Tile.Contain = null;
-                nextTile.Contain = this;
-                Tile.Board.Field[newCoords.x][newCoords.y] = nextTile;
+                    Tile.Contain = null;
+                    nextTile.Contain = this;
+                    //Tile.Board.Field[newCoords.x][newCoords.y] = nextTile;
+                }
             }
+
 
         }
     }

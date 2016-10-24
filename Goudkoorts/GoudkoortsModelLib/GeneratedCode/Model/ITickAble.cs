@@ -14,6 +14,7 @@ namespace Model
 	public interface ITickAble 
 	{
 		void Tick();
+
 	}
 }
 
