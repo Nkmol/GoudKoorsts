@@ -60,16 +60,8 @@ namespace Model
 
         public void Dock()
         {
-<<<<<<< HEAD
             // Check if the boat should dock
                 if ( (Tile.Coords.x == Tile.Board.Port.Coords.x) && ( (Tile.Coords.y + 1) == Tile.Board.Port.Coords.y) )
-=======
-                // Check if the boat should dock
-                int x = Tile.Coords.x;
-                int y = Tile.Coords.y - 1;
-                
-                if(Tile.Board.Field[x][y] is PortTile)
->>>>>>> 53073d6d4fde197f900bb3723dfa956a06e71b2c
                 {
                     if (Cargo < MAX_CARGO)
                         Docked = true;
@@ -103,8 +95,8 @@ namespace Model
 
             var Boat = this;
 
-            if(tile != null)
-            {
+            if(tile != null){
+
                 if (tile is SailTile)
                 {
                     tile.Contain = Boat;
