@@ -35,6 +35,7 @@ namespace Model
 	        Board = board;
 	    }
 
+
 	    private static readonly Dictionary<char, Func<Point, Tile>> TileMapping = new Dictionary<char, Func<Point, Tile>>()
 	    {
             { ' ', p => new Tile(p) },

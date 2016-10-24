@@ -82,10 +82,13 @@ namespace Process
 
 		        int index = GetKeyIndex(key);
 
-               // Validation necessary
-               Board.Switches[index].Switch();
+                // Validation necessary
+                if(index != -1)
+                Board.Switches[index].Switch();
 
-               //Console.WriteLine(sw.Direction.y);
+                //Console.WriteLine(sw.Direction.y);
+
+                var collection = game.Board.Field.GetAll<WaterTile>();
 		    
             } 
         }
