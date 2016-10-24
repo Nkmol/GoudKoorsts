@@ -50,5 +50,14 @@ namespace Helper
             return typesAdded[type];
         }
 
+        public TClass Get<TClass>(Point p) where TClass : T
+        {
+            T value = base[p.y][p.x];
+            if (value is TClass)
+                return (TClass)value;
+            else
+                return default(TClass);
+        }
+
     }
 }

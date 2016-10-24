@@ -20,6 +20,8 @@ namespace Model
         public readonly Point direction;
         public static int MAX_CARGO = 8;
 
+
+
         public bool Docked
         {
             get;
@@ -79,8 +81,6 @@ namespace Model
             // Move Ship
             //Cargo = 8;
 
-            
-
             Dock();
 		    // Psuedo code
 		    // Get next VaarVak : Vak.Board.SetVak(this, Vak.Coords + direction);
@@ -104,6 +104,15 @@ namespace Model
                     nextTile.Contain = this;
                     //Tile.Board.Field[newCoords.x][newCoords.y] = nextTile;
                 }
+            }
+            else
+            {
+                //
+                Tile.Coords = Tile.Board.Field.GetAll<SailTile>().Last().Coords;
+                SailTile nextTile = Tile.Board.Field.Get<SailTile>(Tile.Coords + Tile.Direction);
+                nextTile.Contain = this;
+                Cargo = 0;
+                
             }
 
 

@@ -88,7 +88,7 @@ namespace Process
 
                 //Console.WriteLine(sw.Direction.y);
 
-                var collection = game.Board.Field.GetAll<WaterTile>();
+                 var collection = game.Board.Field.GetAll<WaterTile>();
 		    
             } 
         }
