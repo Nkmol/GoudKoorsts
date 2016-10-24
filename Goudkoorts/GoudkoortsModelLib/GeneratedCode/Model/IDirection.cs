@@ -10,5 +10,8 @@ namespace Model
     interface IDirection
     {
         Point Direction { get; set; }
+
+//        Tile Next { get; }
+//        Tile Prev { get; }
     }
 }

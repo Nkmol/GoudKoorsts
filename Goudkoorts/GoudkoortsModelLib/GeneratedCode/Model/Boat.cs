@@ -15,7 +15,7 @@ namespace Model
     using System.Linq;
     using System.Text;
 
-    public class Boat : MovingObject, ITickAble
+    public class Boat : MovingObject
 	{
         public readonly Point direction;
         public static int MAX_CARGO = 8;

@@ -36,6 +36,7 @@ namespace Model
 	    }
 
 
+
 	    private static readonly Dictionary<char, Func<Point, Tile>> TileMapping = new Dictionary<char, Func<Point, Tile>>()
 	    {
             { ' ', p => new Tile(p) },
@@ -61,11 +62,46 @@ namespace Model
             { 'G', p => new ParkTile(p) },
         };
 
+
 	    public static Tile Create(char c, Point p)
 	    {
-	        c = char.ToUpper(c);
-	        return TileMapping[c](p);
+            switch (c)
+            {
+                case '~':
+                    return new WaterTile(p);
+                case '￩':
+                case '￪':
+                case '￫':
+                case '￬':
+                    return new SailTile(p, c);
+                case '←':
+                case '↑':
+                case '→':
+                case '↓':
+                    return new RailTile(p, c);
+                case 'L':
+                    {
+                        Tile tile = new Tile(p);
+                        tile.Contain = new Storage(tile);
+                        return tile;
+                    }
+                case 'S':
+                    return new SwitchTile(p);
+                case 'K':
+                    return new PortTile(p);
+                case 'B':
+                    {
+                        SailTile sail = new SailTile(p);
+                        sail.Contain = new Boat(sail);
+                        return sail;
+                    }
+                case 'G':
+                    return new ParkTile(p);
+                default:
+                    return new Tile(p);
+            }
 	    }
+
 
         // Determines which sides to look
         // Also determines lookup priority
@@ -77,18 +113,20 @@ namespace Model
             Point.Left, 
         };
 
-        // Look around itself to find next Tile
-        public T Next<T>() where T : Tile
+        // Look around itself to find next candidate Tiles
+        public IEnumerable<T> NextAll<T>() where T : Tile
 	    {
 	        foreach (Point side in Sides)
 	        {
 	            Point newCoords = Coords + side;
+	            if (!Board.IsInside(newCoords)) continue;
+
                 Tile tile = Board.GetTile(newCoords);
 	            if (tile != null && tile is T)
-	                return (T)tile;
+	                yield return (T)tile;
 	        }
 
-	        return null;
+	        yield return null;
 	    }
 	}
 }

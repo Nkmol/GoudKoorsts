@@ -7,30 +7,32 @@ using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using Model;
 
 namespace Helper
 {
     public class DynamicDoubleList<T> : List<List<T>>
     {
+
         Dictionary<Type, List<T>> typesAdded = new Dictionary<Type, List<T>>();
 
         Dictionary<Point, T> specifics = new Dictionary<Point, T>();
-        
+       
+        // Only meant for setting the Double List in a more dynamic way.
         public T this[int x, int y]
         {
-            get
-            {
-                return base[y][x];
-            }
             set
             {
                 if(y >= Count || base[y] == null)
                     Add(new List<T>());
 
-                if (!typesAdded.ContainsKey(typeof(T))){
-                    typesAdded.Add(typeof(T), new List<T> { value });
+                
+
+                if (!typesAdded.ContainsKey(value.GetType())){
+                    typesAdded.Add(value.GetType(), new List<T> { value });
                 } else {
-                    typesAdded[typeof(T)].Add(value);
+
+                    typesAdded[value.GetType()].Add(value);
                 }
 
                 specifics.Add(new Point(x, y), value);
@@ -43,7 +45,9 @@ namespace Helper
 
         public List<T> GetAll<TClass>() where TClass : T
         {
-            return typesAdded[typeof(TClass)];
+            var type = typeof(TClass);
+
+            return typesAdded[type];
         }
 
     }

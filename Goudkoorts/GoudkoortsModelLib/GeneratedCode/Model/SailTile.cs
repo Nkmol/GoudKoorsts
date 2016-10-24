@@ -18,10 +18,25 @@ namespace Model
 	{
 	    public Point Direction { get; set; }
 
+        public Tile Next => Board.GetTile(Coords + Direction);
+
+        private static readonly Dictionary<char, Point> DirectionMapping = new Dictionary<char, Point>()
+        {
+            {'￫', Point.Right},
+            {'￩', Point.Left},
+            {'￪', Point.Up},
+            {'￬', Point.Down},
+        };
+
         public SailTile(Point coords, Board board = null) : base(coords, board)
         {
             this.Coords = coords;
             this.Board = board;
+        }
+
+        public SailTile(Point coords, char direction, Board board = null) : this(coords, board)
+        {
+            Direction = DirectionMapping[direction];
         }
 
         public override Object Contain
