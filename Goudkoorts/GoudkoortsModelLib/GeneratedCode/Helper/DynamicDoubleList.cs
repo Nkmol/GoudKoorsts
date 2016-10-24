@@ -14,10 +14,8 @@ namespace Helper
     public class DynamicDoubleList<T> : List<List<T>>
     {
 
-        Dictionary<Type, List<T>> typesAdded = new Dictionary<Type, List<T>>();
+        private Dictionary<Type, Dictionary<Point, T>> _typeArray = new Dictionary<Type, Dictionary<Point, T>>();
 
-        Dictionary<Point, T> specifics = new Dictionary<Point, T>();
-       
         // Only meant for setting the Double List in a more dynamic way.
         public T this[int x, int y]
         {
@@ -26,29 +24,25 @@ namespace Helper
                 if(y >= Count || base[y] == null)
                     Add(new List<T>());
 
-                
-
-                if (!typesAdded.ContainsKey(value.GetType())){
-                    typesAdded.Add(value.GetType(), new List<T> { value });
+                if (!_typeArray.ContainsKey(value.GetType())){
+                    _typeArray.Add(value.GetType(), new Dictionary<Point, T>() { { new Point(x, y), value } });
                 } else {
 
-                    typesAdded[value.GetType()].Add(value);
+                    _typeArray[value.GetType()].Add(new Point(x, y), value);
                 }
-
-                specifics.Add(new Point(x, y), value);
 
                 base[y].Add(value);
             }
         }
 
-
-
         public List<T> GetAll<TClass>() where TClass : T
         {
-            var type = typeof(TClass);
-
-            return typesAdded[type];
+            return new List<T>(_typeArray[typeof(TClass)].Values);
         }
 
+        public T Get(Point p)
+        {
+            return base[p.y][p.x];
+        }
     }
 }
