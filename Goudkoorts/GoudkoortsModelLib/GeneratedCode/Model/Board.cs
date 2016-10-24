@@ -53,31 +53,18 @@ namespace Model
             // Clean
             enumerator.Dispose();
 
-            // Determ direction
-//            foreach (var row in board.Field)
-//		    {
-//		        foreach (Tile tile in row)
-//		        {
-//		            if (tile.Contain is Storage)
-//		            {
-//                        RailTile next = tile.Next<RailTile>();
-//                        next.Direction = Point.Right;
-//                        do
-//		                {
-//		                    next = next.Next<RailTile>();
-//                            next.Direction = Point.Right;
-//                        } while (next != null);
-//		                return board;
-//		            }
-//		        }
-//		    }
-
             return board;
         }
 
         public Tile GetTile(Point p)
         {
-            return Field[p.x, p.y];
+            return Field[p.y][p.x];
+        }
+
+        public bool IsInside(Point coords)
+        {
+            return coords.y > 0 && coords.x > 0 && coords.y < Field.Count &&
+                   coords.x < Field[coords.y].Count;
         }
 
         public void Lock()
