@@ -23,12 +23,6 @@ namespace Model
 			set;
 		}
 
-        public bool MoveAble // Groene strook
-        {
-            set;
-            get;
-        }
-
         public RailTile Tile
         {
             get;
@@ -40,9 +34,14 @@ namespace Model
             Tile = tile;
         }
 
+	    public bool isMoveAble()
+	    {
+	        return true;
+	    }
+
         public override void Tick()
         {
-            if (!MoveAble)
+            if (!isMoveAble())
                 return;
 
             // Move Cart
@@ -53,23 +52,19 @@ namespace Model
 
 	    public override void Move()
 	    {
-            //TODO Check if we can get rid of the cast
-	        Tile tile = Tile.Board.Field.Get(Tile.Coords + Tile.Direction);
+            RailTile nextTile = Tile.Board.Field.Get<RailTile>(Tile.Coords + Tile.Direction);
 
-	        if (tile is RailTile)
+	        if (nextTile == null) return;
+
+	        if (!nextTile.IsOccupied())
 	        {
-	            RailTile nextTile = (RailTile)tile;
+	            Tile.Contain = null;
+	            nextTile.Contain = this;
+	        }
+	        else
+	        {
+	            //TODO collision
 
-	            if (!nextTile.IsOccupied())
-	            {
-	                Tile.Contain = null;
-                    nextTile.Contain = this;
-	            }
-	            else
-	            {
-                    //TODO collision
-
-	            }
 	        }
 	    }
     }

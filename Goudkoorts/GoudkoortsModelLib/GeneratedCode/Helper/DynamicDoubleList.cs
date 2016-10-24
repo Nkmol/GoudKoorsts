@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
@@ -43,6 +44,15 @@ namespace Helper
         public T Get(Point p)
         {
             return base[p.y][p.x];
+        }
+
+        public TClass Get<TClass>(Point p) where TClass : T
+        {
+            T value = base[p.y][p.x];
+            if (value is TClass)
+                return (TClass)value;
+            else
+                return default(TClass);
         }
     }
 }

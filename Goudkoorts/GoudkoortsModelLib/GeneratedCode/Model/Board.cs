@@ -108,13 +108,15 @@ namespace Model
         {
         }
 
+        public List<T> GetAllThatContains<T>()
+        {
+            return (from b in Field from a in b select a.Contain).OfType<T>().ToList();
+        }
+
         public void Tick()
         {
-            var result = (from b in Field from a in b select a.Contain).OfType<MovingObject>();
-            foreach (MovingObject s in result)
-            {
+            foreach (ITickAble s in GetAllThatContains<ITickAble>())
                 s.Tick();
-            }
         }
 
         public void Run()
@@ -122,12 +124,8 @@ namespace Model
             // Activate all tickAble object inside the board
 
             // Activate runables
-            // TODO Replace with custom selectOf<> method
-            var result = (from b in Field from a in b select a.Contain).OfType<IRunAble>() ;
-            foreach (IRunAble s in result)
-            {
+            foreach (IRunAble s in GetAllThatContains<IRunAble>())
                 s.Run();
-            }
         }
     }
 }

@@ -36,14 +36,14 @@ namespace Model
             timer.Interval = SPAWN_TIME;
         }
 
-        public void spawnCart()
+        public void SpawnCart()
         {
             // Psuedo code
             // Spawn a cart : Vak.Board.placeObject(this, Vak.Coords + new Point(1, 0)); // BaanVak always right of Loods
-            RailTile tile = (RailTile)Tile.Board.Field.Get(Tile.Coords + Point.Right);
+            RailTile tile = Tile.Board.Field.Get<RailTile>(Tile.Coords + Point.Right);
 
-            if (!tile.IsOccupied())
-                Environment.Exit(0); // TODO
+            if (tile?.IsOccupied() == true)
+                return; // TODO
             else
                 tile.Contain = new Cart(tile);
 
@@ -52,7 +52,7 @@ namespace Model
 
         public void Tick()
         {
-            spawnCart();
+            SpawnCart();
         }
 
         public void Run()
