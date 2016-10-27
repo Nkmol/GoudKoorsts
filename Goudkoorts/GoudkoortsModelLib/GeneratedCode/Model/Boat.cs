@@ -57,7 +57,8 @@ namespace Model
 
         public void Dock()
         {
-            // Check if the boat should dock
+            // Check if the boat should doc
+
                 if ( (Tile.Coords.x == Tile.Board.Port.Coords.x) && ( (Tile.Coords.y + 1) == Tile.Board.Port.Coords.y) )
                 {
                     if (Cargo < MAX_CARGO)
@@ -66,46 +67,49 @@ namespace Model
                         Docked = false;
                         Move();
                     }
-                }
+            }
+            else
+            {
+                Move();
+            }
             
         }
 
         public override void Tick()
 		{
-            // Move Ship
             //Cargo = 8;
-            //Cargo = 8;
-
             Dock();
-		    // Psuedo code
-		    // Get next VaarVak : Vak.Board.SetVak(this, Vak.Coords + direction);
 		}
 
 
         public override void Move()
         {
-            Point newCoords = Tile.Coords - direction;
 
-            //TODO Check if we can get rid of the cast
-            //Tile tile = Tile.Board.Field[newCoords.x][newCoords.y];
-            SailTile tile = Tile.Board.Field.Get<SailTile>(newCoords);
-
+            var t = Tile.Coords;
+            var d = direction;
             var Boat = this;
 
+            SailTile tile = null;
+            Point newCoords = Tile.Coords + direction;
+
+            if (newCoords.x != -1)
+            {
+                tile = Tile.Board.Field.Get<SailTile>(newCoords);
+            }
+                
             if(tile != null){
 
-                if (tile is SailTile)
-                {
-                    tile.Contain = Boat;
-                    Tile = tile;
-                }                
-            }
-            else
-            {
+               Tile.Contain = null;
+               tile.Contain = Boat;
+               Tile = tile;
+                                
+            } else {
                 //
                 Tile.Coords = Tile.Board.Field.Get<SailTile>().Last().Coords;
-                SailTile nextTile = Tile.Board.Field.Get<SailTile>(Tile.Coords - Tile.Direction);
+                Tile.Contain = null;
+                SailTile nextTile = Tile.Board.Field.Get<SailTile>(Tile.Coords);
                 nextTile.Contain = Boat;
+                Tile = nextTile;
                 Cargo = 0;
                 
             }

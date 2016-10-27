@@ -89,12 +89,16 @@ namespace Model
 
 		            tile.Board = board; // set parent
                     
-
+                    // TODO overloading method for special preperation for each Tile Type
 		            if (tile is SwitchTile)  // check if Tile belongs to the switches
 		            {
 		                SwitchTile switchTile = (SwitchTile)tile;
                         Switches.Add(keyCounter++, switchTile); // increase the counter to fetch the next key
-		            }
+		            } 
+
+                    // TODO Ugly 
+                    if(c == 'B')
+                        board.MovsRef.Add((Boat)tile.Contain);
 
 		            board.Field[x, y] = tile; // Add to the field
 

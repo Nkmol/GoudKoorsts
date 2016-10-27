@@ -20,6 +20,8 @@ namespace Model
 
 //        public Tile Next => Board.Field.Get(Coords + Direction);
 
+
+
         private static readonly Dictionary<char, Point> DirectionMapping = new Dictionary<char, Point>()
         {
             {'￫', Point.Right},
@@ -44,11 +46,16 @@ namespace Model
             get { return _contain; }
             set
             {
-                if(value is Boat)
+                if (value is Boat)
                     _contain = value;
                 else
-                    throw new ArgumentException();
+                    _contain = null;
             }
+        }
+
+        public void Unset ()
+        {
+
         }
 
     }

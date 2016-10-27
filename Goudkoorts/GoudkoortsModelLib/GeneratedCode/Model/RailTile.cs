@@ -27,6 +27,7 @@ namespace Model
             }
         }
 
+
 	    private static readonly Dictionary<char, Point> DirectionMapping = new Dictionary<char, Point>()
 	    {
 	        {'→', Point.Right},
