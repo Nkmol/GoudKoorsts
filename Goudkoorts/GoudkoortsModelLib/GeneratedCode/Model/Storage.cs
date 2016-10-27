@@ -17,7 +17,7 @@ namespace Model
 
 	public class Storage : ITickAble, IRunAble
     {
-        private static int SPAWN_TIME = 8000;
+        private static int SPAWN_TIME = 1000;
 
         private Timer timer;
 
@@ -45,9 +45,11 @@ namespace Model
             if (tile?.IsOccupied() == true)
                 return; // TODO
             else
-                tile.Contain = new Cart(tile);
-
-            Debug.Write("Cart spawned");
+            {
+                Cart cart = new Cart(tile);
+                tile.Contain = cart;
+                tile.Board.MovsRef.Add(cart);
+            }
         }
 
         public void Tick()

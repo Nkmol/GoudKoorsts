@@ -21,14 +21,7 @@ namespace Model
         public static int MAX_CARGO = 8;
 
 
-
         public bool Docked
-        {
-            get;
-            set;
-        }
-
-        public SailTile Tile
         {
             get;
             set;
@@ -39,6 +32,10 @@ namespace Model
 			get;
 			private set;
 		}
+
+	    public SailTile Tile
+	    {
+	        get; set; }
 
         public Boat(SailTile tile)
         {

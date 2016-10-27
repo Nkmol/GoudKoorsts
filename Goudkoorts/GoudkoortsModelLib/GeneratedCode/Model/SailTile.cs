@@ -18,7 +18,7 @@ namespace Model
 	{
 	    public Point Direction { get; set; }
 
-        public Tile Next => Board.Field.Get(Coords + Direction);
+//        public Tile Next => Board.Field.Get(Coords + Direction);
 
         private static readonly Dictionary<char, Point> DirectionMapping = new Dictionary<char, Point>()
         {

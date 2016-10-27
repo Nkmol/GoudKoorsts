@@ -59,10 +59,15 @@ namespace Model
 			set;
 		}
 
-	    public Board()
+        public SynchronizedCollection<MovingObject> MovsRef { get; set; }
+
+
+        public Board()
 	    {
 	        Field = new DynamicDoubleList<Tile>();
+            MovsRef = new SynchronizedCollection<MovingObject>();
 	    }
+
 
 	    public const string Level = "goudkoortsmap.txt";
 
@@ -71,14 +76,13 @@ namespace Model
 
             Board board = new Board();
             Switches = new Dictionary<int, SwitchTile>();
-		    var enumerator = FileParser.readFileLines(Level).GetEnumerator();
 		    int keyCounter = 0;
 
 		    int y = 0;
-		    while (enumerator.MoveNext())
+		    foreach (var row in FileParser.readFileLines(Level))
 		    {
 		        int x = 0;
-		        foreach (char c in enumerator.Current)
+		        foreach (char c in row)
 		        {
 		            Point p = new Point(x, y);
 		            Tile tile = Tile.Create(c, p);
@@ -103,9 +107,6 @@ namespace Model
 
             board.Port = (PortTile)board.Field.Get<PortTile>().First();
 
-            // Clean
-            enumerator.Dispose();
-
             return board;
         }
 
@@ -126,7 +127,7 @@ namespace Model
 
         public void Tick()
         {
-            foreach (ITickAble s in GetAllThatContains<ITickAble>())
+            foreach (MovingObject s in MovsRef)
                 s.Tick();
         }
 
