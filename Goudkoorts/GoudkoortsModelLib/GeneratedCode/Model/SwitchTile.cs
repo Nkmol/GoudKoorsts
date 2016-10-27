@@ -13,22 +13,50 @@ namespace Model
 
     public class SwitchTile : RailTile
     {
+        public Point OpenSide { get; set; }
+        private static readonly Dictionary<char, Point> DirectionMap = new Dictionary<char, Point>()
+        {
+            {'>', Point.Right},
+            {'<', Point.Left},
+            {'S', null }
+        };
 
         public SwitchTile(Point coords, Board board = null) : base(coords, board)
         {
             this.Coords = coords;
             this.Board = board;
 
-            Direction = new Point(0, 1);
-            
+            OpenSide = Point.Up;
+        }
+
+        public SwitchTile(Point coords, char direction, Board board = null) : this(coords, board)
+        {
+            Direction = DirectionMap[direction];
         }
 
         public void Switch()
         {
-            Direction *= new Point(0, -1);
+            OpenSide *= new Point(0, -1);
         }
 
+        public override RailTile GetNext()
+        {
+            RailTile nextTile;
+            if (Direction == null)
+                nextTile = Board.Field.Get<RailTile>(Coords + OpenSide);
+            else
+            {
+                nextTile = base.GetNext();
+                // If accedantially gave Switch a Direction in editor, when it is not needed. Chcek if this is true to get vertically next tile.
+                if (nextTile == null)
+                {
+                    Direction = null;
+                    GetNext();
+                }
+            }
 
+            return nextTile;
+        }
 
     }
 }

@@ -27,8 +27,7 @@ namespace Model
             }
         }
 
-
-	    private static readonly Dictionary<char, Point> DirectionMapping = new Dictionary<char, Point>()
+	    private static readonly Dictionary<char, Point> DirectionMap = new Dictionary<char, Point>()
 	    {
 	        {'→', Point.Right},
 	        {'←', Point.Left},
@@ -44,13 +43,18 @@ namespace Model
 
         public RailTile(Point coords, char direction, Board board = null) : this(coords, board)
         {
-            Direction = DirectionMapping[direction];
+            Direction = DirectionMap[direction];
         }
 
 
         public bool IsOccupied()
         {
             return (this.Contain != null);
+        }
+
+	    public virtual RailTile GetNext()
+	    {
+            return Board.Field.Get<RailTile>(Coords + Direction);
         }
 	}
 }
