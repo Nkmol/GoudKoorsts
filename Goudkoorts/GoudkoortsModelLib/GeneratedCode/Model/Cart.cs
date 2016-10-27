@@ -5,6 +5,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System;
 using GoudkoortsModelLib.GeneratedCode.Model;
 
 namespace Model
@@ -38,19 +39,27 @@ namespace Model
 
         public override void Move()
         {
-            if (Tile is SwitchTile)
-                return;
+            dynamic nextTile = Tile.GetNext();
 
-            var nextTile = Tile.Board.Field.Get<RailTile>(Tile.Coords + Tile.Direction);
+            if (nextTile == null) return; 
 
-            if (nextTile == null) return;
-
-            if (!nextTile.IsOccupied())
+            if (!nextTile.IsOccupied() && CanMoveTo(nextTile))
             {
                 Tile.Contain = null;
                 nextTile.Contain = this;
                 this.Tile = nextTile;
             }
+        }
+
+        private bool CanMoveTo(RailTile nextTile)
+        {
+            return true;
+        }
+
+        private bool CanMoveTo(SwitchTile tile)
+        {
+            // Check if tile switch is open
+            return Tile.Direction.x != 0 && Tile.Direction.y == 0 || Tile.Direction.y != tile.OpenSide.y;
         }
     }
 }

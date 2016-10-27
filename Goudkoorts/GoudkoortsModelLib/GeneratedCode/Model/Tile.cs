@@ -86,7 +86,9 @@ namespace Model
                         return tile;
                     }
                 case 'S':
-                    return new SwitchTile(p);
+                case '>':
+                case '<':
+                    return new SwitchTile(p, c);
                 case 'K':
                     return new PortTile(p);
                 case 'B':
