@@ -7,11 +7,8 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    interface IDirection
+    public interface IDirection
     {
         Point Direction { get; set; }
-
-//        Tile Next { get; }
-//        Tile Prev { get; }
     }
 }

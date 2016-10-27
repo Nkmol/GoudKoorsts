@@ -6,38 +6,24 @@
 //------------------------------------------------------------------------------
 
 using GoudkoortsModelLib.GeneratedCode.Model;
-using Microsoft.Win32;
 
 namespace Model
 {
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
-	using System.Text;
-
-	public class Cart : MovingObject
-	{
-		public virtual bool isEmpty
-		{
-			get;
-			set;
-		}
-
-        public RailTile Tile
-        {
-            get;
-            set;
-        }
-
+    public class Cart : MovingObject
+    {
         public Cart(RailTile tile)
         {
             Tile = tile;
         }
 
-	    public bool isMoveAble()
-	    {
-	        return true;
-	    }
+        public virtual bool isEmpty { get; set; }
+
+        public RailTile Tile { get; set; }
+
+        public bool isMoveAble()
+        {
+            return true;
+        }
 
         public override void Tick()
         {
@@ -50,23 +36,21 @@ namespace Model
             // Get next BaanVak : Vak.Board.SetVak(this, Vak.Coords + Vak.Direction);
         }
 
-	    public override void Move()
-	    {
-            RailTile nextTile = Tile.Board.Field.Get<RailTile>(Tile.Coords + Tile.Direction);
+        public override void Move()
+        {
+            if (Tile is SwitchTile)
+                return;
 
-	        if (nextTile == null) return;
+            var nextTile = Tile.Board.Field.Get<RailTile>(Tile.Coords + Tile.Direction);
 
-	        if (!nextTile.IsOccupied())
-	        {
-	            Tile.Contain = null;
-	            nextTile.Contain = this;
-	        }
-	        else
-	        {
-	            //TODO collision
+            if (nextTile == null) return;
 
-	        }
-	    }
+            if (!nextTile.IsOccupied())
+            {
+                Tile.Contain = null;
+                nextTile.Contain = this;
+                this.Tile = nextTile;
+            }
+        }
     }
 }
-

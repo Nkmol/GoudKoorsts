@@ -59,10 +59,15 @@ namespace Model
 			set;
 		}
 
-	    public Board()
+        public SynchronizedCollection<MovingObject> MovsRef { get; set; }
+
+
+        public Board()
 	    {
 	        Field = new DynamicDoubleList<Tile>();
+            MovsRef = new SynchronizedCollection<MovingObject>();
 	    }
+
 
 	    public const string Level = "goudkoortsmap.txt";
 
@@ -71,26 +76,29 @@ namespace Model
 
             Board board = new Board();
             Switches = new Dictionary<int, SwitchTile>();
-		    var enumerator = FileParser.readFileLines(Level).GetEnumerator();
 		    int keyCounter = 0;
 
 		    int y = 0;
-		    while (enumerator.MoveNext())
+		    foreach (var row in FileParser.readFileLines(Level))
 		    {
 		        int x = 0;
-		        foreach (char c in enumerator.Current)
+		        foreach (char c in row)
 		        {
 		            Point p = new Point(x, y);
 		            Tile tile = Tile.Create(c, p);
 
 		            tile.Board = board; // set parent
                     
-
+                    // TODO overloading method for special preperation for each Tile Type
 		            if (tile is SwitchTile)  // check if Tile belongs to the switches
 		            {
 		                SwitchTile switchTile = (SwitchTile)tile;
                         Switches.Add(keyCounter++, switchTile); // increase the counter to fetch the next key
-		            }
+		            } 
+
+                    // TODO Ugly 
+                    if(c == 'B')
+                        board.MovsRef.Add((Boat)tile.Contain);
 
 		            board.Field[x, y] = tile; // Add to the field
 
@@ -102,9 +110,6 @@ namespace Model
 
 
             board.Port = (PortTile)board.Field.Get<PortTile>().First();
-
-            // Clean
-            enumerator.Dispose();
 
             return board;
         }
@@ -126,7 +131,7 @@ namespace Model
 
         public void Tick()
         {
-            foreach (ITickAble s in GetAllThatContains<ITickAble>())
+            foreach (MovingObject s in MovsRef)
                 s.Tick();
         }
 

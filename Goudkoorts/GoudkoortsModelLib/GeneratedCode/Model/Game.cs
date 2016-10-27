@@ -17,7 +17,7 @@ namespace Model
 
     public class Game : ITickAble, IRunAble
 	{
-        public const int TimeInterval = 10000; // Miliseconds
+        public const int TimeInterval = 1000; // Miliseconds
 
         public int TimeTick
         {
@@ -59,17 +59,14 @@ namespace Model
 
 		public virtual void Tick()
 		{
-		    if (TimeTick <= 0)
+            if (TimeTick <= 0)
 		    {
                 Board.Tick();
+                Board.GetAllThatContains<Boat>().First().Tick();
                 TimeTick = TimeInterval;
 		    }
 		    else
 		        TimeTick -= 1000;
-
-
-
-             //Board.GetAllThatContains<Boat>().First().Tick();
 
 		    // TODO : Board.Lock()
 		}

@@ -18,7 +18,7 @@ namespace Model
 	{
 	    public Point Direction { get; set; }
 
-        public Tile Next => Board.Field.Get(Coords + Direction);
+//        public Tile Next => Board.Field.Get(Coords + Direction);
 
 
 
