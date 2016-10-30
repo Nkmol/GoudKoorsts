@@ -47,6 +47,9 @@ namespace Model
                 Despawn();
             else
             {
+                if (nextTile is PortTile)
+                    Unload(nextTile);
+
                 if (!nextTile.IsOccupied() && CanMoveTo(nextTile))
                 {
                     Tile.Contain = null;
@@ -71,6 +74,20 @@ namespace Model
         {
             // Check if tile switch is open
             return Tile.Direction.x != 0 && Tile.Direction.y == 0 || Tile.Direction.y != tile.OpenSide.y;
+        }
+
+
+        private void Unload(PortTile tile)
+        {
+            SailTile boatTile = Tile.Board.Field.Get<SailTile>(new Point(tile.Coords.x, Tile.Coords.y - 1));
+
+            if (boatTile.Contain == null)
+                return;
+
+            Boat Boat = (Boat)boatTile.Contain;
+            Boat.addCargo();
+            this.isEmpty = true;
+
         }
 
         private bool CanMoveTo(ParkTile tile)
