@@ -18,6 +18,7 @@ namespace Model
     public class Game : ITickAble, IRunAble
 	{
         public const int TimeInterval = 1000; // Miliseconds
+        public int Score = 0;
 
         public int TimeTick
         {

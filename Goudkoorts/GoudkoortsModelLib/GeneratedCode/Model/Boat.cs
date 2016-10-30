@@ -53,6 +53,11 @@ namespace Model
             return true;
         }
 
+        public void AddScore()
+        {
+            Tile.Board.Game.Score += 10;
+        }
+
         public void Dock()
         {
             // Check if the boat should doc
@@ -62,6 +67,7 @@ namespace Model
                     if (Cargo < MAX_CARGO)
                         Docked = true;
                     else {
+                        AddScore();
                         Docked = false;
                         Move();
                     }
