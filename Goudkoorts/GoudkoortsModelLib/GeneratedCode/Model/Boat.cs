@@ -45,7 +45,7 @@ namespace Model
 
         public bool addCargo()
         {
-            if(Cargo >= MAX_CARGO)
+            if(Cargo > MAX_CARGO)
                 return false;
 
             Cargo++;
@@ -64,8 +64,8 @@ namespace Model
 
                 if ( (Tile.Coords.x == Tile.Board.Port.Coords.x) && ( (Tile.Coords.y + 1) == Tile.Board.Port.Coords.y) )
                 {
-                    if (Cargo < MAX_CARGO)
-                        Docked = true;
+                    if (Cargo <= MAX_CARGO) // Bug: Sail 1 cargo too early, but will interfere with addCargo if change
+                    Docked = true;
                     else {
                         AddScore();
                         Docked = false;
