@@ -28,6 +28,7 @@ namespace Process
             // create models
             Game = new Game();
             Game.Timer.Elapsed += (source, e) => DrawTick();
+            Game.GameOverAction = OnGameOver;
 
             // create Views
             LevelView = new LevelView();
@@ -71,9 +72,6 @@ namespace Process
                 Board.Switches[index].Switch();
 
                 //Console.WriteLine(sw.Direction.y);
-
-                
-		    
             } 
         }
 
@@ -85,6 +83,13 @@ namespace Process
         public int GetKeyIndex(char key)
         {
             return SwitchButtons.FindIndex(x => x == key);
+        }
+
+        public void OnGameOver()
+        {
+            //TODO
+            Console.Clear();
+            Console.WriteLine("GAME OVER");
         }
     }
 }

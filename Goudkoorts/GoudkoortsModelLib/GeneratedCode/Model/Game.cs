@@ -60,6 +60,7 @@ namespace Model
 
 		public virtual void Tick()
 		{
+		    Board.GetAllThatContains<Storage>().ForEach(x => x.Tick());
             if (TimeTick <= 0)
 		    {
                 Board.Tick();
@@ -79,6 +80,14 @@ namespace Model
             // Activate any Runnable in board
             Board.Run();
         }
+
+	    public Action GameOverAction;
+
+	    public void GameOver()
+	    {
+	        Timer.Enabled = false;
+	        GameOverAction();
+	    }
 
 	}
 }

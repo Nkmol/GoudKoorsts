@@ -7,6 +7,7 @@
 
 using System.Diagnostics;
 using Model;
+using Process;
 
 namespace Presentation
 {
@@ -36,9 +37,8 @@ namespace Presentation
                 Console.WriteLine();
 		    }
 
-            Console.WriteLine("\nDe volgende knoppen besturen de switches op map: ");
-            Console.WriteLine("Toetsbordknoppen: A, S, D, X, C");
-
+            Console.WriteLine("\nDe volgende knoppen besturen de switches op de map: ");
+            Console.WriteLine("Toetsenbord knoppen: {0}", string.Join(", ", GameController.SwitchButtons));
 		}
 
 	}

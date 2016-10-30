@@ -17,8 +17,8 @@ namespace Model
 
 	public class Storage : ITickAble, IRunAble, IContainObject
     {
-        private static int SPAWN_TIME = 1000;
-
+        private static int SPAWN_TIME = 5; // Seconds
+        private int CurrentTime;
         private Timer timer;
 
         public Tile Tile
@@ -31,9 +31,9 @@ namespace Model
             Tile = tile;
 
             // Create timer
-            timer = new Timer();
-            timer.Elapsed += new ElapsedEventHandler((source, e) => Tick());
-            timer.Interval = SPAWN_TIME;
+//            timer = new Timer();
+//            timer.Elapsed += new ElapsedEventHandler((source, e) => Tick());
+//            timer.Interval = SPAWN_TIME;
         }
 
         public void SpawnCart()
@@ -54,12 +54,20 @@ namespace Model
 
         public void Tick()
         {
-            SpawnCart();
+            if (CurrentTime >= SPAWN_TIME)
+            {
+                CurrentTime = 0;
+                SpawnCart();
+            }
+            else
+            {
+                CurrentTime++;
+            }
         }
 
         public void Run()
         {
-            timer.Enabled = true;
+//            timer.Enabled = true;
         }
     }
 }

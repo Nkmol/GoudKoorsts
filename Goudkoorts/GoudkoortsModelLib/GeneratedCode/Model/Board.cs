@@ -106,8 +106,6 @@ namespace Model
                 y++;
             }
 
-
-
             board.Port = (PortTile)board.Field.Get<PortTile>().First();
 
             return board;

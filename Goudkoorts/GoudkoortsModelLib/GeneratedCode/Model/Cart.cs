@@ -54,6 +54,12 @@ namespace Model
                 Despawn();
             else
             {
+                if (nextTile.IsOccupied() && CanMoveTo(nextTile))
+                {
+                    Tile.Board.Game.GameOver();
+                    return;
+                }
+
                 if (!nextTile.IsOccupied() && CanMoveTo(nextTile))
                 {
                     Tile.Contain = null;
