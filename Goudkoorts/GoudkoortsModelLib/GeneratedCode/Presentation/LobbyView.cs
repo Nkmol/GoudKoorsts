@@ -40,7 +40,11 @@ namespace Presentation
             Console.WriteLine("|      ~ : Zee                |  botsen met elkaar  |");
             Console.WriteLine("|      G : Parkeerplek        |                     |");
             Console.WriteLine("|      L : Loods              |                     |");
-            Console.WriteLine("|      S : Schakel            |                     |");
+            Console.WriteLine("| ┛ ┓ ┗ ┏: Schakel            |                     |");
+            Console.WriteLine("|" + new string('—', 51) + "|");
+            Console.WriteLine("| Vol karretje: rood                                |");
+            Console.WriteLine("| Leeg karretje: groen                              |");
+            Console.WriteLine("|" + new string('—', 51) + "|");
             Console.WriteLine("|" + new string('—', 51) + "|");
             Console.WriteLine("| Besturing van de switches                         |");
             Console.WriteLine("| Toetsbordknoppen: A, S, D, X, C                   |");

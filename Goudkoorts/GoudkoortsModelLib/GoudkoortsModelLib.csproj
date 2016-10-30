@@ -65,6 +65,7 @@
     <Compile Include="GeneratedCode\Presentation\CartView.cs" />
     <Compile Include="GeneratedCode\Presentation\ContainView.cs" />
     <Compile Include="GeneratedCode\Presentation\FactoryView.cs" />
+    <Compile Include="GeneratedCode\Presentation\GameOverView.cs" />
     <Compile Include="GeneratedCode\Presentation\IDrawAble.cs" />
     <Compile Include="GeneratedCode\Presentation\InputController.cs" />
     <Compile Include="GeneratedCode\Presentation\LevelView.cs" />
