@@ -42,7 +42,6 @@
   <ItemGroup>
     <Compile Include="GeneratedCode\Helper\DynamicDoubleList.cs" />
     <Compile Include="GeneratedCode\Helper\FileParser.cs" />
-    <Compile Include="GeneratedCode\Model\DirectionTile.cs" />
     <Compile Include="GeneratedCode\Model\IContainObject.cs" />
     <Compile Include="GeneratedCode\Model\IDirection.cs" />
     <Compile Include="GeneratedCode\Model\IRunAble.cs" />
@@ -80,6 +79,14 @@
     <Compile Include="GeneratedCode\Presentation\WaterView.cs" />
     <Compile Include="GeneratedCode\Process\GameController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Board_Generate.sequencediagram" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Board_Generate.sequencediagram.layout">
+      <DependentUpon>Board_Generate.sequencediagram</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

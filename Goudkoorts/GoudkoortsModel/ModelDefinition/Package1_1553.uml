@@ -2,7 +2,14 @@
 <package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
   Id="fdab79b6-56f5-4086-9e20-85bba296728d"
-  name="Process" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  name="Process"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="caa7ecc4-110b-4446-9815-4e1e2eba3fab"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DProcess"
+      tag="ViewCode" />
+  </referencesInternal>
   <suppliersInternal>
     <dependency
       Id="93dc67f4-7262-44e9-8b88-10b7b5b959b9">
@@ -79,6 +86,12 @@
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="94fb85d2-4a84-496d-833d-8b13e3b4e89e"
+            handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FSander%2FDropbox%2FAvans ICT%2FBlok 5%2FModeleren 3%2FGoudkoorts%2FGoudkoorts%2FGoudkoortsModelLib%2Fbin%2FDebug%2FGoudkoortsModelLib.dll&quot; Namespace%3DProcess Type%3DGameController"
+            tag="ViewCode" />
+        </referencesInternal>
         <appliedStereotypesInternal>
           <stereotypeInstance
             Id="c2558cba-674a-417e-8af1-2cd7e3f3953f"
@@ -103,7 +116,7 @@
                 <propertyInstance
                   Id="c7138cd7-8ba4-454a-a475-03f76be6d8fa"
                   name="IsStatic"
-                  value="false" />
+                  value="False" />
               </stereotypeInstanceHasPropertyInstances>
               <stereotypeInstanceHasPropertyInstances
                 Id="5282dc0c-c610-41c3-9563-05550082b04c">
@@ -122,71 +135,276 @@
             </propertyInstances>
           </stereotypeInstance>
         </appliedStereotypesInternal>
+        <targetEnds>
+          <association
+            Id="c6ce6460-81a0-4bc7-8952-a1cd81947b7b"
+            isDerived="false"
+            sourceEndRoleName="GameController"
+            targetEndRoleName="LobbyView"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="b1f305b0-07e0-4125-a49b-e221f16fbe9c"
+              LastKnownName="LobbyView"
+              LastKnownLocation="Package_1553.uml" />
+            <description>Property LobbyView references type LobbyView.</description>
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="90d2b708-68fd-42ea-be02-44323713f36f"
+                  name="GameController"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="96b2e7b1-0553-4e1b-a4ed-e50876112c1e"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="f95b6096-1dd3-4077-b647-af8a893329d4"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="1370b865-7d19-4c5d-8421-1ee1ef9cabbd"
+                  name="LobbyView"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="2155bd52-e583-4b74-b8fc-a69744c67c9a"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="5e143a42-5a65-4ebe-adbe-74c6573e68e9"
+                      name="Upper"
+                      value="1" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="797034a1-7abc-4194-9018-4dbeaf9a9e3f"
+            isDerived="false"
+            sourceEndRoleName="GameController"
+            targetEndRoleName="LevelView"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="30d7cd33-db03-4200-98a8-5c2b2692f5a4"
+              LastKnownName="LevelView"
+              LastKnownLocation="Package_1553.uml" />
+            <description>Property LevelView references type LevelView.</description>
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="78bab21b-24df-487b-b24f-df9e7a4fdd6a"
+                  name="GameController"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="6556222d-30bd-45ad-aa77-8aa05d5d09a4"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="f67e12a4-c23b-45d0-97df-9b3b62206e35"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="c77b6c61-d02a-4a40-9173-fc214f25d444"
+                  name="LevelView"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="df1a7d81-6263-4e0c-9472-f1ff03dd625a"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="e9881577-f7d7-4e2b-bdaa-10365a08bacd"
+                      name="Upper"
+                      value="1" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="44f7ad14-64f0-4112-9300-7afa445b1310"
+            isDerived="false"
+            sourceEndRoleName="GameController"
+            targetEndRoleName="Game"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="caac4a22-5df2-47ca-9be5-6690edac8fc7"
+              LastKnownName="Game"
+              LastKnownLocation="Package2_1553.uml" />
+            <description>Property Game references type Game.</description>
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="972b4809-0285-4864-a761-c8fa389d666c"
+                  name="GameController"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="64835f64-9fc5-412c-82e5-353e865f61ba"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="fe28b099-9ed9-4780-9535-40cccdff5223"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="f0574d33-ff4f-4cfb-9242-9673b87f3700"
+                  name="Game"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="d6eb1eca-7404-468e-ab65-41535aa7a8f3"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="1b13449d-4c25-4fde-88b2-29180f209e33"
+                      name="Upper"
+                      value="1" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
         <ownedAttributesInternal>
           <property
-            Id="f16a21d3-8364-436f-81eb-1708da50534f"
-            name="lobbyView"
+            Id="6925b7ad-9582-4cc0-8537-839dc9b038b7"
+            name="LobbyView"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
-            isUnique="false"
             isDerived="false"
             isDerivedUnion="false"
             aggregation="None"
             isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="d5ed3521-977c-4888-819d-7aaf159d1161"
+                handle="viewcode://./CodeSchema_Property?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FSander%2FDropbox%2FAvans ICT%2FBlok 5%2FModeleren 3%2FGoudkoorts%2FGoudkoorts%2FGoudkoortsModelLib%2Fbin%2FDebug%2FGoudkoortsModelLib.dll&quot; Namespace%3DProcess Type%3DGameController Member%3DLobbyView"
+                tag="ViewCode" />
+            </referencesInternal>
             <appliedStereotypesInternal>
               <stereotypeInstance
-                Id="1ac76ab8-ca7e-44e7-8bf8-356cc9af6694"
+                Id="48a10934-e8bb-477b-bf50-e82bfed6686c"
                 name="property"
                 profile="CSharpProfile">
                 <propertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="e24c8db8-ec83-48db-8d50-c1144f4f514b">
+                    Id="10fcc559-db62-47fc-8b40-6cf5e3cdd357">
                     <propertyInstance
-                      Id="69ddd339-bba9-45b6-af5b-2562a29721ab"
+                      Id="0e443e84-ab23-4699-84b4-21e32a0bea3c"
                       name="ClrAttributes" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="d66bf572-4f54-41b5-92ab-c6adc4e175c1">
+                    Id="0b2c82a6-7d0b-4f9a-9cbb-be9252e67831">
                     <propertyInstance
-                      Id="42d44837-a988-446d-85ff-b3a85ac2c53f"
+                      Id="b8c755b8-af27-455f-bd09-9f3cf83e0297"
                       name="Get"
-                      value="none" />
+                      value="public" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="28a4b418-adb6-4673-9240-11836befd5ae">
+                    Id="aa5f520e-17a0-4a60-8cee-3c8c1b687dc6">
                     <propertyInstance
-                      Id="47f8df5a-0ed0-4d4f-bb8b-8628886f8309"
+                      Id="b553dc22-41c6-48ad-bdd4-b39d399ad928"
                       name="HasBody"
                       value="false" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="c4ed9c02-a038-4638-8720-9049132fcd32">
+                    Id="55777ad1-9e96-4968-a609-7209b3428126">
                     <propertyInstance
-                      Id="de523e97-fc25-4207-9091-c98ea7e08414"
+                      Id="bd80f9f4-6747-40fe-a24f-7c39faaf3e12"
                       name="IsUnsafe"
                       value="false" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="628a6960-4f37-44ee-bcfa-452dade7d1f5">
+                    Id="57ac0cdd-212c-4f84-b1c8-57398565a051">
                     <propertyInstance
-                      Id="735d444d-3d45-4da0-929d-0db0f449dee5"
+                      Id="923f5a6f-a4dc-47a7-960c-34e349b86d20"
                       name="Inheritance"
                       value="none" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="3c08297b-ee79-4be5-b836-fa8764dd4443">
+                    Id="1ac9c23a-eeb7-4dcb-8eb1-763a7b18fb33">
                     <propertyInstance
-                      Id="48927cf7-87e3-4ccc-a12e-791a1db558e0"
+                      Id="d6f573ed-defb-4234-9c75-d225707a835d"
                       name="PackageVisibility"
                       value="internal" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="d87f6309-eaaa-4fa3-928a-64fea8c9d232">
+                    Id="96fa8554-27b5-44e9-9aee-c73866ca5fe5">
                     <propertyInstance
-                      Id="161c633e-940c-4a25-b32f-8c0a72eac406"
+                      Id="744c67d6-65a3-4386-acb7-32858474859a"
                       name="Set"
-                      value="none" />
+                      value="public" />
                   </stereotypeInstanceHasPropertyInstances>
                 </propertyInstances>
               </stereotypeInstance>
@@ -199,69 +417,74 @@
             </type_NamedElement>
           </property>
           <property
-            Id="c6f73ca0-1003-4e8f-b01e-552eede97d12"
-            name="levelView"
+            Id="24b69e2c-7827-4697-8c7b-fd13d141d1ef"
+            name="LevelView"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
-            isUnique="false"
             isDerived="false"
             isDerivedUnion="false"
             aggregation="None"
             isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="f739b9f7-a36e-49f6-a754-6cbde7bf60ea"
+                handle="viewcode://./CodeSchema_Property?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FSander%2FDropbox%2FAvans ICT%2FBlok 5%2FModeleren 3%2FGoudkoorts%2FGoudkoorts%2FGoudkoortsModelLib%2Fbin%2FDebug%2FGoudkoortsModelLib.dll&quot; Namespace%3DProcess Type%3DGameController Member%3DLevelView"
+                tag="ViewCode" />
+            </referencesInternal>
             <appliedStereotypesInternal>
               <stereotypeInstance
-                Id="973be410-e536-4e4d-9423-606a4211e518"
+                Id="2deebed4-d8dd-4d38-9b5d-49e2fc2f552b"
                 name="property"
                 profile="CSharpProfile">
                 <propertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="3151c10d-3a50-444a-8a64-eef55a65c4cf">
+                    Id="2dad6fc6-e94c-4c4f-8106-52041a426045">
                     <propertyInstance
-                      Id="ef2b954d-b7b3-4e06-8801-99ff3a02921a"
+                      Id="79d065de-9593-40dd-8d97-d768d01c186c"
                       name="ClrAttributes" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="2000f695-36f2-4b83-b884-eebd3b4b45af">
+                    Id="c0aeecce-a73e-424e-9ab3-aa51f631a6a7">
                     <propertyInstance
-                      Id="aedb7e2f-66ac-4a2d-af59-b4f6dd6b379d"
+                      Id="931652d7-865a-4dc3-b35b-eabf061086bc"
                       name="Get"
-                      value="none" />
+                      value="public" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="34a75c9a-6a94-446a-b7f5-d65ecfe71202">
+                    Id="7cfcc4d1-ac04-42c5-8d8e-0a87e44cbe9a">
                     <propertyInstance
-                      Id="efc5c1b1-0a88-4a8a-951d-828f11b42917"
+                      Id="face45a9-2a75-4deb-91fc-00161fdec21a"
                       name="HasBody"
                       value="false" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="e5c8eb01-6038-4495-940f-8c6f3bec9bd7">
+                    Id="7f2a2c13-47b3-4641-b891-b6ddac5daf2d">
                     <propertyInstance
-                      Id="c63221b6-e480-4eca-924f-50efbc7c0af3"
+                      Id="275e08c5-92df-4c91-9170-c4364bf9976e"
                       name="IsUnsafe"
                       value="false" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="68f3dd64-d637-43de-a1c1-5735b084c99c">
+                    Id="05b60a74-edbe-4418-9d9a-3066eec54a0a">
                     <propertyInstance
-                      Id="c5a5e485-8331-4f4a-98a5-fe43fd5f7ada"
+                      Id="0618b8cd-071a-40ad-b8bd-eec0aa894bd4"
                       name="Inheritance"
                       value="none" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="a1ff7ba4-4665-48a4-92c3-06a6766d347d">
+                    Id="141d0fce-dd3c-46c2-9dc9-987614b9fba8">
                     <propertyInstance
-                      Id="41a207b2-f7ee-440f-90dc-669520904d3d"
+                      Id="297dbb6e-a339-458f-96b6-090ebcc99c06"
                       name="PackageVisibility"
                       value="internal" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="ad9a787a-de0d-41f7-abd1-d340b014e4e9">
+                    Id="ff4e2b8a-9f13-4681-a189-08539fe034ce">
                     <propertyInstance
-                      Id="d8382036-5a2f-4995-abed-0ae57cc04c7c"
+                      Id="67fabf4e-e5bf-4ecf-84ef-592dd330268f"
                       name="Set"
-                      value="none" />
+                      value="public" />
                   </stereotypeInstanceHasPropertyInstances>
                 </propertyInstances>
               </stereotypeInstance>
@@ -274,138 +497,74 @@
             </type_NamedElement>
           </property>
           <property
-            Id="218c20bb-170a-463e-bfd7-2b88f70ca0c4"
-            name="inputController"
+            Id="5e3f0b96-0111-4022-9b66-35980078fb95"
+            name="Game"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
-            isUnique="false"
             isDerived="false"
             isDerivedUnion="false"
             aggregation="None"
             isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="3293d34e-6032-4e8e-8cae-883e6c9c042b"
+                handle="viewcode://./CodeSchema_Property?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FSander%2FDropbox%2FAvans ICT%2FBlok 5%2FModeleren 3%2FGoudkoorts%2FGoudkoorts%2FGoudkoortsModelLib%2Fbin%2FDebug%2FGoudkoortsModelLib.dll&quot; Namespace%3DProcess Type%3DGameController Member%3DGame"
+                tag="ViewCode" />
+            </referencesInternal>
             <appliedStereotypesInternal>
               <stereotypeInstance
-                Id="69ad22ca-c013-4f27-9551-0118912db36d"
+                Id="85d98935-6b7b-4a5d-b7f4-1da2da14db8f"
                 name="property"
                 profile="CSharpProfile">
                 <propertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="b5e72895-54de-4122-9c07-45bf6cab8fb7">
+                    Id="cccc6bc1-501e-4fc0-8b07-f438db333dbc">
                     <propertyInstance
-                      Id="9c79ba1a-c20b-43eb-a419-c7bb6f3087c2"
+                      Id="6e64118b-fe77-47ae-a0fb-58fc848be51b"
                       name="ClrAttributes" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="ed7f1dce-17e6-4799-952d-eeaa9a01bb0d">
+                    Id="743ce519-931c-4ee6-838b-877ba3ab7ad4">
                     <propertyInstance
-                      Id="7d0c67e2-a9c3-4714-9350-230897573f72"
+                      Id="b22394c0-adbe-43ed-91a4-799e6a1a2841"
                       name="Get"
-                      value="none" />
+                      value="public" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="a2b9a9a3-5ca5-438d-a284-04b8c9435c02">
+                    Id="35d0c0fc-9e94-4873-b044-dd51de50b0a8">
                     <propertyInstance
-                      Id="e30fd64d-7775-4eb0-81b2-d8b42ebdc8bb"
+                      Id="6d502097-127c-4249-bfab-4750bb52c84f"
                       name="HasBody"
                       value="false" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="ff05eaa0-7bd7-4196-96af-87ef9d4e2e5c">
+                    Id="8e470e2e-9c78-41b8-b410-64b9b5090a78">
                     <propertyInstance
-                      Id="f973762d-f710-4613-b371-06d6da050b8c"
+                      Id="3d1c5d8e-2119-47c2-b203-40d605c39642"
                       name="IsUnsafe"
                       value="false" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="ba274874-5b42-423a-a852-377de6e8248c">
+                    Id="89e525de-1263-46c1-b7ac-882747ab4d06">
                     <propertyInstance
-                      Id="3d33ff0e-f706-4596-a023-b4362b2dae78"
+                      Id="2653cdde-c553-4d30-b303-88b58d50d2b3"
                       name="Inheritance"
                       value="none" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="5bebc50c-92d3-4c91-9129-3632f6f74448">
+                    Id="0837b69e-2c1e-49c4-a3d7-92594c44e068">
                     <propertyInstance
-                      Id="584f373d-95bd-482b-be9c-b8308be2f1e0"
+                      Id="b55d07b0-c2f6-44c3-bd83-7e3b2f215ffb"
                       name="PackageVisibility"
                       value="internal" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="a368b699-2d2a-4de8-9bd3-e86210fbe3da">
+                    Id="fa1fda0a-e829-4499-a426-f00b993acb82">
                     <propertyInstance
-                      Id="eec0f5cc-45af-4a38-ae7b-73367b3d70b0"
+                      Id="96410fcd-d912-413b-8a27-20b22d9e30d7"
                       name="Set"
-                      value="none" />
-                  </stereotypeInstanceHasPropertyInstances>
-                </propertyInstances>
-              </stereotypeInstance>
-            </appliedStereotypesInternal>
-          </property>
-          <property
-            Id="f38aa50c-4271-49e9-ae15-cdb104c6701e"
-            name="game"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <appliedStereotypesInternal>
-              <stereotypeInstance
-                Id="5efa8ec9-781d-485f-a6f4-82036548d87d"
-                name="property"
-                profile="CSharpProfile">
-                <propertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="1a38bb24-317e-4dc5-9cda-5e109723f676">
-                    <propertyInstance
-                      Id="fe7c4d50-8338-4dd2-bac1-e4324cec4a5e"
-                      name="ClrAttributes" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="de84bb12-653f-4a19-a97a-d9add0114a72">
-                    <propertyInstance
-                      Id="c9a8c2b5-68ce-4765-a57a-499499a28f3d"
-                      name="Get"
-                      value="none" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="431f95ba-0be0-45b2-9922-7581abe7aa30">
-                    <propertyInstance
-                      Id="b361aede-001f-4188-92bc-a9a0f4240ba6"
-                      name="HasBody"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="9762eee9-5e5f-4504-9232-e43d8ca096ef">
-                    <propertyInstance
-                      Id="21545413-e4d9-48f8-afa0-f313af61678c"
-                      name="IsUnsafe"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="e80d93a0-f802-49e3-ba5d-58b43dece2d7">
-                    <propertyInstance
-                      Id="79017539-f01e-4961-9580-3f23f98b5734"
-                      name="Inheritance"
-                      value="none" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="cb7a4b1d-d2e8-4236-a094-a45dd0f4a720">
-                    <propertyInstance
-                      Id="71a291a5-ff1c-4687-952d-2b7fec517171"
-                      name="PackageVisibility"
-                      value="internal" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="c4cfd5fc-78cb-4086-826e-967ba68ec4b0">
-                    <propertyInstance
-                      Id="93fd9e02-a9f8-4655-8e4d-8c8c888ea754"
-                      name="Set"
-                      value="none" />
+                      value="public" />
                   </stereotypeInstanceHasPropertyInstances>
                 </propertyInstances>
               </stereotypeInstance>
@@ -415,6 +574,72 @@
                 Id="caac4a22-5df2-47ca-9be5-6690edac8fc7"
                 LastKnownName="Game"
                 LastKnownLocation="Package2_1553.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="549518eb-65ff-46d5-a261-a77b1e764b58"
+            name="SwitchButtons"
+            isLeaf="false"
+            isStatic="true"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="00455ab4-f972-4bf0-9d5d-423a271779d7"
+                handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FSander%2FDropbox%2FAvans ICT%2FBlok 5%2FModeleren 3%2FGoudkoorts%2FGoudkoorts%2FGoudkoortsModelLib%2Fbin%2FDebug%2FGoudkoortsModelLib.dll&quot; Namespace%3DProcess Type%3DGameController Member%3DSwitchButtons"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="e12cd456-0b6a-4a1d-b13f-7448db1a5660"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8cb3748d-fd6f-4e13-94f7-7cb4bd582443">
+                    <propertyInstance
+                      Id="4c2e6656-60da-4d0b-a722-6920921c2707"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4f97d788-b4ed-4543-8446-9e9f1ac6f69b">
+                    <propertyInstance
+                      Id="2a5eb25f-af2f-41a1-8823-f0ba8c502e6d"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="05fbd61f-96e1-4a03-b4fd-39259c2ddb20">
+                    <propertyInstance
+                      Id="08577410-1dc4-46c4-9929-e1f1567b230a"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="df25ab4d-7dbc-4dc9-9a4a-c5b0150a7527">
+                    <propertyInstance
+                      Id="62f7e760-6b7d-48be-89ab-77760f752031"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="397d68fb-d25a-4eff-b896-2e32bea7ff09">
+                    <propertyInstance
+                      Id="d68c3ed7-ab27-40e2-bd19-d291e9ec38e0"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="4b91e111-3514-4888-847e-fe86f898a827"
+                LastKnownName="List&lt;Char‎&gt;"
+                LastKnownLocation="Package3_2137.uml" />
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
@@ -427,6 +652,12 @@
             isAbstract="false"
             concurrency="Sequential"
             isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="0ecd89c1-b7a9-4ffc-8d0c-8fffb456504a"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FSander%2FDropbox%2FAvans ICT%2FBlok 5%2FModeleren 3%2FGoudkoorts%2FGoudkoorts%2FGoudkoortsModelLib%2Fbin%2FDebug%2FGoudkoortsModelLib.dll&quot; Namespace%3DProcess Type%3DGameController Member%3DStop"
+                tag="ViewCode" />
+            </referencesInternal>
             <appliedStereotypesInternal>
               <stereotypeInstance
                 Id="1493cf2e-3111-48b2-a30d-fd9903884213"
@@ -486,6 +717,12 @@
             isAbstract="false"
             concurrency="Sequential"
             isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="11685dd9-c93d-43c5-b72f-7e9483ba7b66"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FSander%2FDropbox%2FAvans ICT%2FBlok 5%2FModeleren 3%2FGoudkoorts%2FGoudkoorts%2FGoudkoortsModelLib%2Fbin%2FDebug%2FGoudkoortsModelLib.dll&quot; Namespace%3DProcess Type%3DGameController Member%3DStart"
+                tag="ViewCode" />
+            </referencesInternal>
             <appliedStereotypesInternal>
               <stereotypeInstance
                 Id="8d31cc72-51d0-4c36-a80a-704303d47ef9"
@@ -545,6 +782,12 @@
             isAbstract="false"
             concurrency="Sequential"
             isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="465bd130-0bf3-42f1-ba55-ab1bffb951f2"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FSander%2FDropbox%2FAvans ICT%2FBlok 5%2FModeleren 3%2FGoudkoorts%2FGoudkoorts%2FGoudkoortsModelLib%2Fbin%2FDebug%2FGoudkoortsModelLib.dll&quot; Namespace%3DProcess Type%3DGameController Member%3DRun"
+                tag="ViewCode" />
+            </referencesInternal>
             <appliedStereotypesInternal>
               <stereotypeInstance
                 Id="50bcd5f0-2e8d-4697-8824-73ac49526ddc"
@@ -589,6 +832,299 @@
                     Id="7eaefa89-91e1-4947-b755-9146f28a64cd">
                     <propertyInstance
                       Id="66ded3a1-a470-4115-824c-77a71fabbb09"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="5cc692dd-5010-4038-9fb5-f66565639981"
+            name="DrawTick"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="98b0f8f2-a0a6-484d-be16-f11e3be6e871"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FSander%2FDropbox%2FAvans ICT%2FBlok 5%2FModeleren 3%2FGoudkoorts%2FGoudkoorts%2FGoudkoortsModelLib%2Fbin%2FDebug%2FGoudkoortsModelLib.dll&quot; Namespace%3DProcess Type%3DGameController Member%3DDrawTick"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="4c31e698-0344-4069-bb59-39434ad7a372"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ca5e1997-4cc5-483e-9149-15430be8c801">
+                    <propertyInstance
+                      Id="e4b648bb-e56f-4b5d-9780-35531e77f84a"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1db8eaa6-f36f-46a1-a768-48f270f1cc87">
+                    <propertyInstance
+                      Id="b12c982b-d0ac-40c1-8be4-1f8a695a3c3b"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cebbe683-f492-445b-8487-b44f765b1b46">
+                    <propertyInstance
+                      Id="5d9c7797-f15a-43b8-ab11-5d792264e72a"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5c56ec12-96d0-444a-ace6-d52dd29ab41a">
+                    <propertyInstance
+                      Id="49adfae3-fe67-4e8d-b9bf-d5060ff5be9a"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="62e63d9a-00e0-4e48-b9f7-5162f9e04c96">
+                    <propertyInstance
+                      Id="8faaea46-a702-463e-b988-fe5ca1479147"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="984830a5-dfb8-43d1-a9f2-c5093942c8e4">
+                    <propertyInstance
+                      Id="74276913-9d99-4f17-a155-e8434df4e7be"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="95933e44-dcec-4255-a958-eb84c4e063c0"
+            name="GetKeyIndex"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="ba36ca5c-5132-4c43-8e2d-d61141dad6f2"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FSander%2FDropbox%2FAvans ICT%2FBlok 5%2FModeleren 3%2FGoudkoorts%2FGoudkoorts%2FGoudkoortsModelLib%2Fbin%2FDebug%2FGoudkoortsModelLib.dll&quot; Namespace%3DProcess Type%3DGameController Member%3D(Name%3DGetKeyIndex OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DChar)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="21ee97fb-471f-4855-a344-65e59d871e12"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9cdb4c7f-0a0e-4b41-aabe-82d1c0558d7e">
+                    <propertyInstance
+                      Id="5e61fe09-4b24-4348-814f-0ff6324d3a8d"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c4e51f31-0dcc-44d4-b1b6-973e21ffd61f">
+                    <propertyInstance
+                      Id="4f45c2a3-4f67-4792-9a33-a2a9962696dc"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0ca08245-df24-44f3-87e4-abeea081726b">
+                    <propertyInstance
+                      Id="84a2b6b1-f6c4-40f9-8f89-f8866bb240ea"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f2c3665b-599f-4a96-99da-5cae62bca929">
+                    <propertyInstance
+                      Id="e9a4068f-3d7c-43b5-8979-ab16131d4c8e"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="055e9987-0320-4c5f-bec6-3e9007d6ebfe">
+                    <propertyInstance
+                      Id="c20330ea-4b1e-4e9e-8823-59d09c55bd7c"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="04c8d551-66e2-4037-8148-ed4ba7012f65">
+                    <propertyInstance
+                      Id="cc0c1a0b-cbce-49bd-a965-9605af9de749"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="4acd3366-40e2-42c9-9c8b-400aa133de2c"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="GoudkoortsModel.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="6092c231-d708-4e4b-a8ac-df9ab01c00cd"
+                  name="key"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="d7006838-adcf-41c2-bd15-9745311bf61f"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FSander%2FDropbox%2FAvans ICT%2FBlok 5%2FModeleren 3%2FGoudkoorts%2FGoudkoorts%2FGoudkoortsModelLib%2Fbin%2FDebug%2FGoudkoortsModelLib.dll&quot; Namespace%3DProcess Type%3DGameController Member%3D(Name%3DGetKeyIndex OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DChar)]) ParameterIdentifier%3Dkey"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="07da9e5e-c9f0-4704-a93c-4ca495f20f06"
+                      LastKnownName="Char"
+                      LastKnownLocation="Package1_2137.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="2b2623af-edba-4dd9-810c-3b1b3e9ed511"
+            name="OnGameOver"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="01222f00-ddae-4083-9a52-28e010374326"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FSander%2FDropbox%2FAvans ICT%2FBlok 5%2FModeleren 3%2FGoudkoorts%2FGoudkoorts%2FGoudkoortsModelLib%2Fbin%2FDebug%2FGoudkoortsModelLib.dll&quot; Namespace%3DProcess Type%3DGameController Member%3DOnGameOver"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="e5df0393-a094-4cd0-aefe-5f35f57b4b99"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a07ce356-5400-4de0-9b6f-88cfdacc1eb5">
+                    <propertyInstance
+                      Id="0117f6cc-5848-47a9-bf22-5e8c0cefd989"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="56e38abc-e07f-4b26-8c7f-955ffd012126">
+                    <propertyInstance
+                      Id="309ecb76-04ff-4e2c-9c42-7a472c773a7e"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f1138816-77be-4984-8126-25b57e4e65ca">
+                    <propertyInstance
+                      Id="ad5c6bc6-5525-44eb-86ca-1a1d65045251"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="391dd9b6-88c9-43fe-823d-6bd309047522">
+                    <propertyInstance
+                      Id="698183ca-f055-459c-87f0-aa7038399066"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c590f6a9-261c-42d4-8e66-fddca0ceb17c">
+                    <propertyInstance
+                      Id="384c6544-9c11-4175-a955-8b3dede8f5f7"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ffe19b29-cc39-4f59-80d4-2d9044ee6dfe">
+                    <propertyInstance
+                      Id="9316705d-07a7-4d39-b3a9-0deab01e1a41"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="89aff334-ba98-4ed2-99ba-ffd87a2fc62e"
+            name="GameController"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="64d93157-0a95-4243-b1cb-894e4de42f9e"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FSander%2FDropbox%2FAvans ICT%2FBlok 5%2FModeleren 3%2FGoudkoorts%2FGoudkoorts%2FGoudkoortsModelLib%2Fbin%2FDebug%2FGoudkoortsModelLib.dll&quot; Namespace%3DProcess Type%3DGameController Member%3D.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="7e451e76-1a85-4d5d-a85c-1f05f9d9a812"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="99837b70-665d-441a-9f85-91b9a9ede647">
+                    <propertyInstance
+                      Id="a45e8694-12b6-4363-b893-6f98cb9999b6"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="34bf11cb-6cae-4f17-b612-ca2e8059f63e">
+                    <propertyInstance
+                      Id="27b810e0-1c7f-40e8-a15b-bdb5981205c0"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a461d7e3-83f1-483b-bc36-701d3076371d">
+                    <propertyInstance
+                      Id="118d39ba-c4fa-4400-90de-c2c181ffc7ab"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a4c4b360-2da1-4825-bee6-ea422d2ed40a">
+                    <propertyInstance
+                      Id="c3a76f86-3ae4-4396-ad74-ce3e215833ba"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="903324f3-30d9-4003-bda3-a8ec11d28745">
+                    <propertyInstance
+                      Id="d9f35644-04a0-44cf-99ff-3f014fd89fcc"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1248945c-3fcf-4653-be34-09bc79d50ea4">
+                    <propertyInstance
+                      Id="48acf275-3a43-45b5-b8b2-7b86da64162b"
                       name="params"
                       value="false" />
                   </stereotypeInstanceHasPropertyInstances>

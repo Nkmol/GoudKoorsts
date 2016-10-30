@@ -1,0 +1,967 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="d0254ee9-1a46-453f-a26e-dfb7bf5fcfe1"
+  name="Helper"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="ff6dcc13-2d34-4194-a1f1-7077abccaf94"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DHelper"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="77cc6e75-ca8e-4c8f-91ba-bd9780e349f3"
+        name="DynamicDoubleList"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="ec91a3ba-b24f-4fc8-a765-cce1a236e784"
+            handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FSander%2FDropbox%2FAvans ICT%2FBlok 5%2FModeleren 3%2FGoudkoorts%2FGoudkoorts%2FGoudkoortsModelLib%2Fbin%2FDebug%2FGoudkoortsModelLib.dll&quot; Namespace%3DHelper Type%3D(Name%3DDynamicDoubleList GenericParameterCount%3D1)"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="bbd32280-fe32-45de-9074-2905c178b1fd"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="9d7aabb6-d33c-469c-9883-973852bf6a89">
+                <propertyInstance
+                  Id="7c359fc2-049e-4b36-9840-0b03af47529f"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="486fd41f-103f-4db5-b823-f10c3bb51b87">
+                <propertyInstance
+                  Id="202fa4c9-6fa3-440d-9989-acd115259be5"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="1cc129a5-9849-44f0-82b8-3535d016503b">
+                <propertyInstance
+                  Id="2742dca9-cf82-419d-9f2b-5419e4f1b64b"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ed27a4cd-71bd-4085-9c45-eb85659401f6">
+                <propertyInstance
+                  Id="830d9264-6533-4397-b23f-9491a07436a8"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="85ac1231-bd4d-4c04-825a-f1f802ef8845">
+                <propertyInstance
+                  Id="fb994947-90c2-4672-9f1c-7ff1a4476b9c"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <generalsInternal>
+          <generalization
+            Id="d70e5b2d-63db-45d9-99cb-e4d95f2833f8"
+            isSubstitutable="false">
+            <classMoniker
+              Id="eb32e5de-e3b5-4d04-841c-073247f08041"
+              LastKnownName="List&lt;List‎&lt;T‎&gt;‎&gt;"
+              LastKnownLocation="Package3_2137.uml" />
+          </generalization>
+          <generalization
+            Id="89433988-705a-4e07-810a-546f7b8a9f0e"
+            isSubstitutable="false">
+            <classMoniker
+              Id="9766fcd2-d563-4bb3-a897-d6e4b8e7b6a5"
+              LastKnownName="List&lt;T‎&gt;"
+              LastKnownLocation="Package3_2137.uml" />
+          </generalization>
+          <generalization
+            Id="8a6888a4-8490-44ed-a79e-ec45710aab0f"
+            isSubstitutable="false">
+            <classMoniker
+              Id="9ac13f02-0ac5-4935-bbfb-8a0583ab0bce"
+              LastKnownName="List"
+              LastKnownLocation="Package3_2137.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedRedefinableTemplateSignatureInternal>
+          <redefinableTemplateSignature
+            Id="fa8bfbcc-703d-4379-86ec-c25bf758b0f5"
+            parameters=""
+            name="RedefinableTemplateSignature1"
+            isLeaf="false">
+            <ownedParameters>
+              <classifierTemplateParameter
+                Id="4e39029c-0af3-46e4-b7f7-88fae53edcc6">
+                <referencesInternal>
+                  <reference
+                    Id="02b59550-740f-479b-9b8f-25932f0271fd"
+                    handle="viewcode://./CodeSchema_GenericParameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FSander%2FDropbox%2FAvans ICT%2FBlok 5%2FModeleren 3%2FGoudkoorts%2FGoudkoorts%2FGoudkoortsModelLib%2Fbin%2FDebug%2FGoudkoortsModelLib.dll&quot; Namespace%3DHelper Type%3D(Name%3DDynamicDoubleList GenericParameterCount%3D1) ParameterIdentifier%3D0"
+                    tag="ViewCode" />
+                </referencesInternal>
+                <ownedParameterableElement>
+                  <class
+                    Id="4aa355c3-7695-4ab3-b2bc-3f485ba9a60b"
+                    name="T"
+                    isAbstract="false"
+                    isLeaf="false"
+                    isActiveClass="false" />
+                </ownedParameterableElement>
+              </classifierTemplateParameter>
+            </ownedParameters>
+          </redefinableTemplateSignature>
+        </ownedRedefinableTemplateSignatureInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="f2e2da4f-2e4f-44c7-a727-84a43e4da669"
+            name="_typeArray"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="9434f631-2a2b-45fd-8a59-2809c852bdf6"
+                handle="viewcode://./CodeSchema_Field?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FSander%2FDropbox%2FAvans ICT%2FBlok 5%2FModeleren 3%2FGoudkoorts%2FGoudkoorts%2FGoudkoortsModelLib%2Fbin%2FDebug%2FGoudkoortsModelLib.dll&quot; Namespace%3DHelper Type%3D(Name%3DDynamicDoubleList GenericParameterCount%3D1) Member%3D_typeArray"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="eb883966-8939-4061-8b7f-6ec23708d66c"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="99b3d4cc-c46f-4784-8bd6-5562598c0df8">
+                    <propertyInstance
+                      Id="1f7ed257-a8c5-43fe-a250-17b65904cf8b"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="eb32131d-871b-401b-9380-744644d4d271">
+                    <propertyInstance
+                      Id="ea8618fe-d871-4eec-baba-25761cad4bcb"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f0f22c8d-ebd8-428d-9fc0-303203c8e2b9">
+                    <propertyInstance
+                      Id="7ccb179f-c1b8-4f95-82d1-9e595c129342"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b4cbc7fc-a5c6-44cf-b26d-5da443adbc0d">
+                    <propertyInstance
+                      Id="efa957e2-c8bb-4644-b5d5-b4477f4be636"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5264fa36-72ec-4963-8a64-81af9faf559b">
+                    <propertyInstance
+                      Id="ef448454-a168-4f6e-920e-f36764d796e0"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="a04196f2-391e-4fa7-b3a4-b5cff2b944f1"
+                LastKnownName="Dictionary&lt;Type‎, Dictionary‎&lt;Point‎, T‎&gt;‎&gt;"
+                LastKnownLocation="Package3_2137.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="6f3d1f4b-67be-4fad-a9a7-ce1b841b69f6"
+            name="Get‎&lt;TClass‎&gt;"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="906073e4-8c12-4b13-8c32-d0dbbf4822cc"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FSander%2FDropbox%2FAvans ICT%2FBlok 5%2FModeleren 3%2FGoudkoorts%2FGoudkoorts%2FGoudkoortsModelLib%2Fbin%2FDebug%2FGoudkoortsModelLib.dll&quot; Namespace%3DHelper Type%3D(Name%3DDynamicDoubleList GenericParameterCount%3D1) Member%3D(Name%3DGet GenericParameterCount%3D1)"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="324fa86e-ca98-4125-9e75-1100b81f9f13"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="81f9963c-201f-4bda-9a04-35c208db4089">
+                    <propertyInstance
+                      Id="0d2df88e-d953-4be0-9ee5-5c6530b89fb7"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9998e123-4446-4977-92ac-afed94625ae1">
+                    <propertyInstance
+                      Id="60484254-aa2d-4a6c-96cd-ba295ff84459"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d26dde3d-aacd-4844-8b82-6ea9469e804f">
+                    <propertyInstance
+                      Id="6a41b0be-2185-479d-b30e-7450b79ca657"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bc7c47e7-42ee-4ac8-aee1-6d08ea147b2a">
+                    <propertyInstance
+                      Id="b3609252-97ca-43fc-b783-8e640f6deb2b"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="642e8573-f75e-4fdd-a5b0-4e466b19c872">
+                    <propertyInstance
+                      Id="0f287c2e-3ebf-4c5d-83ab-7425bd39b4bd"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="abe1c308-9262-4a7a-ae0a-48b8ff081702">
+                    <propertyInstance
+                      Id="f21c4182-efdd-4efe-87dd-7fc7fdcd2a32"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="5e43e13e-5749-4808-a193-1f27746db9b8"
+                  direction="Return">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="9766fcd2-d563-4bb3-a897-d6e4b8e7b6a5"
+                      LastKnownName="List&lt;T‎&gt;"
+                      LastKnownLocation="Package3_2137.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="b106beac-22f4-4ea6-a51e-b4dc26208972"
+            name="Get"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="3a9e6ce0-9e16-4cfc-acb8-c0bb02c04363"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FSander%2FDropbox%2FAvans ICT%2FBlok 5%2FModeleren 3%2FGoudkoorts%2FGoudkoorts%2FGoudkoortsModelLib%2Fbin%2FDebug%2FGoudkoortsModelLib.dll&quot; Namespace%3DHelper Type%3D(Name%3DDynamicDoubleList GenericParameterCount%3D1) Member%3D(Name%3DGet OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FSander%2FDropbox%2FAvans ICT%2FBlok 5%2FModeleren 3%2FGoudkoorts%2FGoudkoorts%2FGoudkoortsModelLib%2Fbin%2FDebug%2FGoudkoortsModelLib.dll&quot; Namespace%3DModel Type%3DPoint)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="07ec1715-7d1f-403a-b737-71ded9f14040"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7e18abc0-3e36-48c6-8537-74b4c60b8ecc">
+                    <propertyInstance
+                      Id="cf2499b0-9f9e-4a0b-b8ee-2b1e5348f4ec"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9431cabc-2be6-43cb-a3a1-e5ab5db6f905">
+                    <propertyInstance
+                      Id="d1bf0e53-b609-4d3a-9487-2ea9a9e885dd"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6c1614ec-5645-48c3-8ca6-255238250e7a">
+                    <propertyInstance
+                      Id="4318403f-0f8b-4cff-95ce-717057091100"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c775371b-e7d8-4a75-8f5c-02ce4edd7ac6">
+                    <propertyInstance
+                      Id="73f0f627-00b1-4914-9c66-26ec4454c7f6"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a312e3ae-761c-4088-9351-93e721551f49">
+                    <propertyInstance
+                      Id="155004e8-3fe8-4182-b2ef-9b8e3b55ac94"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fb792f40-ad92-40c2-aea0-b8bfba3353d9">
+                    <propertyInstance
+                      Id="548670fe-0358-47cc-944d-d38ada0e6742"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="d42753a0-8829-4880-ae7b-689eba2b3bb9"
+                  direction="Return">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="4aa355c3-7695-4ab3-b2bc-3f485ba9a60b"
+                      LastKnownName="T"
+                      LastKnownLocation="Package_2137.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="97f1e4be-6985-4953-83b9-55e2fc2fb554"
+                  name="p"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="018d07c2-2ec3-46f6-ab0c-35ab6dc70d47"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FSander%2FDropbox%2FAvans ICT%2FBlok 5%2FModeleren 3%2FGoudkoorts%2FGoudkoorts%2FGoudkoortsModelLib%2Fbin%2FDebug%2FGoudkoortsModelLib.dll&quot; Namespace%3DHelper Type%3D(Name%3DDynamicDoubleList GenericParameterCount%3D1) Member%3D(Name%3DGet OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FSander%2FDropbox%2FAvans ICT%2FBlok 5%2FModeleren 3%2FGoudkoorts%2FGoudkoorts%2FGoudkoortsModelLib%2Fbin%2FDebug%2FGoudkoortsModelLib.dll&quot; Namespace%3DModel Type%3DPoint)]) ParameterIdentifier%3Dp"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="945b632c-9f79-4d96-9b45-128ba8bd63f6"
+                      LastKnownName="Point"
+                      LastKnownLocation="Package2_1553.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="d2553d16-5f9e-4efc-bd87-c3652e62d3c6"
+            name="Get‎&lt;TClass‎&gt;"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="83977482-44b1-4470-a68b-92d5812506ba"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FSander%2FDropbox%2FAvans ICT%2FBlok 5%2FModeleren 3%2FGoudkoorts%2FGoudkoorts%2FGoudkoortsModelLib%2Fbin%2FDebug%2FGoudkoortsModelLib.dll&quot; Namespace%3DHelper Type%3D(Name%3DDynamicDoubleList GenericParameterCount%3D1) Member%3D(Name%3DGet GenericParameterCount%3D1 OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FSander%2FDropbox%2FAvans ICT%2FBlok 5%2FModeleren 3%2FGoudkoorts%2FGoudkoorts%2FGoudkoortsModelLib%2Fbin%2FDebug%2FGoudkoortsModelLib.dll&quot; Namespace%3DModel Type%3DPoint)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="9c716083-8018-494e-ac4e-b2838c92bc9d"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7f7997e7-3981-4b63-836c-35c71c636803">
+                    <propertyInstance
+                      Id="50cce3bc-12fb-495e-af8a-56d5f1089c2e"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="594b663d-d7e9-4741-a5ce-d6e35d85ca67">
+                    <propertyInstance
+                      Id="0ffe9728-a14e-4ee6-a4cc-7877b50ba047"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="76498bdd-75b4-47f8-aaf7-e4edee3242c0">
+                    <propertyInstance
+                      Id="a793a437-9ad9-43f6-9b53-533d6db7c35f"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="35697546-6a04-4007-8ab9-5642492c21bc">
+                    <propertyInstance
+                      Id="d3a58942-ec7c-470c-80be-78d332ec4725"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4bb37b01-66b2-4331-b2a8-444bd03f280e">
+                    <propertyInstance
+                      Id="7d888c52-9d26-42ab-bfec-eeba8fed9d0c"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="11327e88-081d-40bf-870c-b7de0d8de53c">
+                    <propertyInstance
+                      Id="12f5c833-22b3-46ac-a3b7-8c1f91b89d7f"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="4e879fd4-2915-4a91-bc89-5f660311afe4"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="7c8412f5-fa6d-4d6e-8809-69d58be908b0"
+                      LastKnownName="TClass"
+                      LastKnownLocation="Package_2137.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="36defeb0-7eae-4423-a42a-7165c82f7142"
+                  name="p"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="e4e22b63-e5a5-47ad-978a-f38e38d3d120"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FSander%2FDropbox%2FAvans ICT%2FBlok 5%2FModeleren 3%2FGoudkoorts%2FGoudkoorts%2FGoudkoortsModelLib%2Fbin%2FDebug%2FGoudkoortsModelLib.dll&quot; Namespace%3DHelper Type%3D(Name%3DDynamicDoubleList GenericParameterCount%3D1) Member%3D(Name%3DGet GenericParameterCount%3D1 OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FSander%2FDropbox%2FAvans ICT%2FBlok 5%2FModeleren 3%2FGoudkoorts%2FGoudkoorts%2FGoudkoortsModelLib%2Fbin%2FDebug%2FGoudkoortsModelLib.dll&quot; Namespace%3DModel Type%3DPoint)]) ParameterIdentifier%3Dp"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="945b632c-9f79-4d96-9b45-128ba8bd63f6"
+                      LastKnownName="Point"
+                      LastKnownLocation="Package2_1553.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="a74aa5fc-87f3-42ce-a84f-100bf9c68cd0"
+            name="this"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="63b1f541-8aa2-4d46-aeb7-7d3f4e9f287d"
+                handle="viewcode://./CodeSchema_Property?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FSander%2FDropbox%2FAvans ICT%2FBlok 5%2FModeleren 3%2FGoudkoorts%2FGoudkoorts%2FGoudkoortsModelLib%2Fbin%2FDebug%2FGoudkoortsModelLib.dll&quot; Namespace%3DHelper Type%3D(Name%3DDynamicDoubleList GenericParameterCount%3D1) Member%3D(Name%3DItem OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="42ab9721-7ec7-4547-aa5e-11a65cd9ea98"
+                name="indexer"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="21b97502-a5ea-4fa4-b725-4e01987a8c5b">
+                    <propertyInstance
+                      Id="c839a2ba-eea8-4c8b-8e88-f3881ff082fb"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f8b93b99-7049-47e2-8664-a44023a25d18">
+                    <propertyInstance
+                      Id="601acf46-14a1-44c4-ad61-15c24b90ce2e"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b38207b4-ce9f-482f-b4da-4f146de0ddf4">
+                    <propertyInstance
+                      Id="ac4c1310-a39d-4aff-8301-29aa552b02d5"
+                      name="Get"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6f4952ff-0aec-463f-b0f9-e7e232a98318">
+                    <propertyInstance
+                      Id="283e20ff-e7ab-4ba4-b679-f36505c9b35c"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c9e6da37-0ff5-4169-94cb-f40a6160ba12">
+                    <propertyInstance
+                      Id="d2f19212-c28c-4fb8-927f-89dfd8a37ff0"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="07b2d93c-72ad-4e73-bc53-349b43cccd7f">
+                    <propertyInstance
+                      Id="f6e2a47d-60b6-4050-aab5-8d5a5991e691"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="41b92f2d-d8eb-4425-a283-da4b040bea6f"
+                  direction="Return">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="4aa355c3-7695-4ab3-b2bc-3f485ba9a60b"
+                      LastKnownName="T"
+                      LastKnownLocation="Package_2137.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="7bc80908-ad90-4a23-a792-51f66f1dc0a3"
+                  name="x"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="dfba9016-41fb-4b7d-b0ed-0ed5cf99a53f"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FSander%2FDropbox%2FAvans ICT%2FBlok 5%2FModeleren 3%2FGoudkoorts%2FGoudkoorts%2FGoudkoortsModelLib%2Fbin%2FDebug%2FGoudkoortsModelLib.dll&quot; Namespace%3DHelper Type%3D(Name%3DDynamicDoubleList GenericParameterCount%3D1) Member%3D(Name%3DItem OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)]) ParameterIdentifier%3Dx"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="GoudkoortsModel.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="9bd0be5b-a763-4f22-9e42-d62161657955"
+                  name="y"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="08fd6911-aa83-4905-89b5-28425855eeba"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FSander%2FDropbox%2FAvans ICT%2FBlok 5%2FModeleren 3%2FGoudkoorts%2FGoudkoorts%2FGoudkoortsModelLib%2Fbin%2FDebug%2FGoudkoortsModelLib.dll&quot; Namespace%3DHelper Type%3D(Name%3DDynamicDoubleList GenericParameterCount%3D1) Member%3D(Name%3DItem OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)]) ParameterIdentifier%3Dy"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="GoudkoortsModel.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="073f4017-4157-4d55-b311-cdb038955848"
+            name="DynamicDoubleList"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="7a1fa8ed-1a4e-4359-ab91-a067f3d135c3"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FSander%2FDropbox%2FAvans ICT%2FBlok 5%2FModeleren 3%2FGoudkoorts%2FGoudkoorts%2FGoudkoortsModelLib%2Fbin%2FDebug%2FGoudkoortsModelLib.dll&quot; Namespace%3DHelper Type%3D(Name%3DDynamicDoubleList GenericParameterCount%3D1) Member%3D.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="cbf6e057-f663-4842-a486-237182cf6f10"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1a7a36ae-6cd9-42c7-b132-c22ba8225bd8">
+                    <propertyInstance
+                      Id="6a059dcd-716f-4208-bb6a-8072a8a5a2db"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d4c3017b-8d7b-45b8-8f01-133f1ff07aca">
+                    <propertyInstance
+                      Id="c5ee4f8d-1976-4918-8ac2-0fd145665248"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3c5e689c-b6bf-48a7-83de-7842812e5685">
+                    <propertyInstance
+                      Id="e1510c61-d9fa-4177-8bbf-209b7cc260e9"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4d8076ba-e2ba-477d-8a6f-e2d892521b99">
+                    <propertyInstance
+                      Id="cf9677f1-f2bc-434f-a4ce-c3782759ad9f"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="905ffc96-cadb-46d4-9647-b4fa4dbd6cfa">
+                    <propertyInstance
+                      Id="96a86639-1c90-467c-b8f8-c1288496641f"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="72d112c5-83c5-4ef4-9b7d-1421c3dce671">
+                    <propertyInstance
+                      Id="7595b8eb-0b4c-4afc-b06d-be0f3476bf6a"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="7c8412f5-fa6d-4d6e-8809-69d58be908b0"
+        name="TClass">
+        <referencesInternal>
+          <reference
+            Id="e41a9611-3d38-43fc-8ff6-104d708a4d2b"
+            handle="viewcode://./CodeSchema_GenericParameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FSander%2FDropbox%2FAvans ICT%2FBlok 5%2FModeleren 3%2FGoudkoorts%2FGoudkoorts%2FGoudkoortsModelLib%2Fbin%2FDebug%2FGoudkoortsModelLib.dll&quot; Namespace%3DHelper Type%3D(Name%3DDynamicDoubleList GenericParameterCount%3D1) Member%3D(Name%3DGet GenericParameterCount%3D1 OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FSander%2FDropbox%2FAvans ICT%2FBlok 5%2FModeleren 3%2FGoudkoorts%2FGoudkoorts%2FGoudkoortsModelLib%2Fbin%2FDebug%2FGoudkoortsModelLib.dll&quot; Namespace%3DModel Type%3DPoint)]) ParameterIdentifier%3D0"
+            tag="ViewCode" />
+        </referencesInternal>
+      </undefinedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="bd476b84-c041-4a07-b4f6-e598a3347d56"
+        name="FileParser"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="d61b3cae-c07f-488c-bb0d-6bef62da666d"
+            handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FSander%2FDropbox%2FAvans ICT%2FBlok 5%2FModeleren 3%2FGoudkoorts%2FGoudkoorts%2FGoudkoortsModelLib%2Fbin%2FDebug%2FGoudkoortsModelLib.dll&quot; Namespace%3DHelper Type%3DFileParser"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="279f919c-dfa7-4e7a-bc4f-c734115885d9"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="795a633c-af51-41fe-b1df-177322a86962">
+                <propertyInstance
+                  Id="d2df67a8-fc6b-44ba-aaf8-039b7ebe1ffe"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c6d6393f-ed69-4394-a8b4-d6319f1f6fc7">
+                <propertyInstance
+                  Id="c1cb2d37-17e7-4c88-9c37-b696e7c12ff3"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="87fe2e71-ef44-4cdb-8554-6165ea0b6e3e">
+                <propertyInstance
+                  Id="3d8262c6-0b99-436f-b1df-6c5202eb2874"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="2d2e5eb5-bbf5-4119-b278-32a9574c29a2">
+                <propertyInstance
+                  Id="e3ef9e0c-048f-4ad7-806a-7db1fbae06ad"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c3a3516a-f014-4540-8e19-26065a1c393c">
+                <propertyInstance
+                  Id="5da7bf4d-59f6-4ed2-bfa0-c26ede7c99fb"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="196fce27-b85e-428a-8e82-decb57e352e6"
+            name="readFileLines"
+            isLeaf="false"
+            isStatic="true"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="6c20fda7-f8d2-40d0-a745-9e42f5c1d259"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FSander%2FDropbox%2FAvans ICT%2FBlok 5%2FModeleren 3%2FGoudkoorts%2FGoudkoorts%2FGoudkoortsModelLib%2Fbin%2FDebug%2FGoudkoortsModelLib.dll&quot; Namespace%3DHelper Type%3DFileParser Member%3D(Name%3DreadFileLines OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="c5af46df-d060-4ba4-88a1-4d47f125fe70"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5f3cad19-82ea-44ae-a803-1966ab6f077a">
+                    <propertyInstance
+                      Id="c9546fcd-8943-4844-95f4-469cfade26a3"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="27f87b6c-80a5-469f-b565-6d1a9a222e01">
+                    <propertyInstance
+                      Id="56a3a24f-c023-490a-918e-bbf1bf8d18c5"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3ee61cc2-4217-4663-bb15-08f3e25c38a8">
+                    <propertyInstance
+                      Id="b113e93e-f9e0-43a7-a9d9-c78a0c2d1e20"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="950c70f0-a874-4532-bd21-52d2479aee59">
+                    <propertyInstance
+                      Id="f0175a3c-29b4-42d7-ad55-68c8b5c975dc"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4e4b7c08-122e-428e-ae60-1790e1681db9">
+                    <propertyInstance
+                      Id="b3b1997d-ffc1-4712-84bc-016bae40cef3"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="22b9f77d-46ca-4af0-82c4-3b040bc5e247">
+                    <propertyInstance
+                      Id="46e9d18f-8016-4798-829b-961b0f4f5c59"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="dc272fbe-9d80-414e-bbe5-1894ebb54cfc"
+                  direction="Return">
+                  <type_NamedElement>
+                    <interfaceMoniker
+                      Id="91fe7da5-47ff-44bf-809b-92423d86940f"
+                      LastKnownName="IEnumerable&lt;String‎&gt;"
+                      LastKnownLocation="Package3_2137.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f27c8e3b-baa6-4f56-a18e-e2ce1ea6e222"
+                  name="path"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="1ae94a53-8af5-4ddd-93fe-aa3f30e0c2e9"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FSander%2FDropbox%2FAvans ICT%2FBlok 5%2FModeleren 3%2FGoudkoorts%2FGoudkoorts%2FGoudkoortsModelLib%2Fbin%2FDebug%2FGoudkoortsModelLib.dll&quot; Namespace%3DHelper Type%3DFileParser Member%3D(Name%3DreadFileLines OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3Dpath"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="GoudkoortsModel.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="d4766da8-6f84-4eb6-9609-56b9c10a0d24"
+            name="FileParser"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="5fef0979-950e-4a8b-93f4-64618422afa2"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FSander%2FDropbox%2FAvans ICT%2FBlok 5%2FModeleren 3%2FGoudkoorts%2FGoudkoorts%2FGoudkoortsModelLib%2Fbin%2FDebug%2FGoudkoortsModelLib.dll&quot; Namespace%3DHelper Type%3DFileParser Member%3D.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="5343e49a-f207-49d7-9617-c22ca2f9de70"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9504c5e5-3893-4963-8d75-c8285920aa54">
+                    <propertyInstance
+                      Id="687dd11e-46a1-43da-90d9-2dc7eb999047"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="091dbda6-02e2-45d2-a980-9deb2a62423e">
+                    <propertyInstance
+                      Id="6c01bb81-ba1a-4d6a-a479-8a434c17feb1"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4862b8f6-0280-4728-b3a6-466adefc990a">
+                    <propertyInstance
+                      Id="41944352-6b50-40da-bbf3-25896739cac3"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="259b91f9-2027-4158-908f-5f03fabef6e0">
+                    <propertyInstance
+                      Id="df76f559-c836-43b4-80ec-1fa1fe0507ba"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0607a69d-551f-453f-b3d3-21434fb28cf6">
+                    <propertyInstance
+                      Id="7dc44508-1d1d-4280-93b0-933d8c86355e"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="25eb74b0-9c72-4946-aa04-4e30291ba8f7">
+                    <propertyInstance
+                      Id="05389f46-5f11-4ded-80aa-94e1f5069ed9"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="fb4b75b1-ceb7-451b-9f0b-83af1d039f37"
+        name="DynamicDoubleList&lt;Tile‎&gt;"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="fd761471-079a-427a-912b-2120a72e5ebe"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="99e57f56-d87f-4fdd-9840-77e85db5a95c">
+                <propertyInstance
+                  Id="bd806d5e-738b-4682-b979-252f21f58b07"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="4d7a6b0a-744c-4a94-8b78-7a0cc91bbd3a">
+                <propertyInstance
+                  Id="76ebd6bc-6f6e-45a7-84ee-cb536d2d2e40"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="33f66b51-e263-4328-ba88-86ad95ba578e">
+                <propertyInstance
+                  Id="fcf2b890-d5cd-4fb1-8208-a20d93c734c1"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="32d71def-d92b-499d-9ac7-1d7f962da645">
+                <propertyInstance
+                  Id="4f106bc9-26f7-4ca0-af87-0b794056e1ea"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b61450d8-b827-4f47-8b93-c0dd6705c299">
+                <propertyInstance
+                  Id="5d7fb612-88db-4b42-8008-0cd060fd08b9"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <signatures>
+          <templateBinding
+            Id="2bf6d742-d3af-4385-9db5-6726f97bb17a">
+            <redefinableTemplateSignatureMoniker
+              Id="fa8bfbcc-703d-4379-86ec-c25bf758b0f5"
+              LastKnownLocation="Package_2137.uml" />
+            <relationshipOwnedElementsInternal>
+              <templateBindingHasTemplateParameterSubstitution>
+                <templateParameterSubstitution
+                  Id="b45a371f-937e-4d6e-a226-08804b41a3cc">
+                  <actuals>
+                    <classMoniker
+                      Id="c7522489-3392-4f3f-8a31-4d784602c760"
+                      LastKnownName="Tile"
+                      LastKnownLocation="Package2_1553.uml" />
+                  </actuals>
+                  <formal>
+                    <classifierTemplateParameterMoniker
+                      Id="4e39029c-0af3-46e4-b7f7-88fae53edcc6"
+                      LastKnownLocation="Package_2137.uml" />
+                  </formal>
+                </templateParameterSubstitution>
+              </templateBindingHasTemplateParameterSubstitution>
+            </relationshipOwnedElementsInternal>
+          </templateBinding>
+        </signatures>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

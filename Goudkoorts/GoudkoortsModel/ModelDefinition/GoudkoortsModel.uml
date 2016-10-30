@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
   Id="d0407d7b-7190-416a-95d6-5e7580f1e68b"
   name="GoudkoortsModel" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -132,9 +132,21 @@
     </packageHasNamedElement>
     <packageHasNamedElement>
       <packageMoniker
-        Id="0304ec72-b3f6-4517-adfe-694342fe1ba7"
+        Id="d0254ee9-1a46-453f-a26e-dfb7bf5fcfe1"
         LastKnownName="Helper"
-        LastKnownLocation="Package_1646.uml" />
+        LastKnownLocation="Package_2137.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="7eca00b5-01b8-4511-b581-c11756a46911"
+        LastKnownName="System"
+        LastKnownLocation="Package1_2137.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="1bb5f829-0574-4e44-b625-a1d856c849f3"
+        LastKnownName="GoudkoortsModelLib"
+        LastKnownLocation="Package_2210.uml" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType
