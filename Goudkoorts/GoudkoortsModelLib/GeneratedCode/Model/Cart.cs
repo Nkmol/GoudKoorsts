@@ -25,6 +25,17 @@ namespace Model
         {
             if (Tile is ParkTile)
                 return Tile.GetNext() != null;
+            if (Tile is PortTile)
+            {
+                PortTile tile = Tile as PortTile;
+
+                Unload(tile);
+
+                if (!isEmpty) 
+                    return false;
+
+                return true;
+            }
             else
                 return true;
         }
@@ -33,10 +44,6 @@ namespace Model
         {
             if (IsMoveAble())
                 Move();
-
-            // Move Cart
-            // Psuedo code
-            // Get next BaanVak : Vak.Board.SetVak(this, Vak.Coords + Vak.Direction);
         }
 
         public override void Move()
@@ -47,9 +54,6 @@ namespace Model
                 Despawn();
             else
             {
-                if (nextTile is PortTile)
-                    Unload(nextTile);
-
                 if (!nextTile.IsOccupied() && CanMoveTo(nextTile))
                 {
                     Tile.Contain = null;
