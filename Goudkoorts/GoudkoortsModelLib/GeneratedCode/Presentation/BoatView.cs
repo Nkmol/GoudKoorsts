@@ -18,7 +18,7 @@ namespace Presentation
             else if (reference.Cargo >= Boat.MAX_CARGO)
                 Console.ForegroundColor = ConsoleColor.DarkRed;
             else if(reference.Cargo >= Boat.MAX_CARGO / 2)
-                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                Console.ForegroundColor = ConsoleColor.Yellow;
 
                 base.Draw();
         }

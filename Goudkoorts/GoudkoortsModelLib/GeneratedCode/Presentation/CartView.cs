@@ -16,10 +16,13 @@ namespace Presentation
 
         public override void Draw()
         {
-            if(GetReferenceObject<Cart>().Tile is ParkTile)
+            Cart reference = GetReferenceObject<Cart>();
+            if (reference.Tile is ParkTile)
                 Console.ForegroundColor = ConsoleColor.DarkCyan;
-            else if (GetReferenceObject<Cart>().isEmpty)
+            else if (reference.isEmpty)
                 Console.ForegroundColor = ConsoleColor.Green;
+            else if(reference.Tile is PortTile)
+                Console.ForegroundColor = ConsoleColor.Blue;
             else
                 Console.ForegroundColor = ConsoleColor.Red;
 
