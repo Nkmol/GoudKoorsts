@@ -82,10 +82,22 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Board_Generate.sequencediagram" />
+    <None Include="Cart_Move.sequencediagram" />
+    <None Include="Cart_Tick.sequencediagram" />
+    <None Include="Game_Tick.sequencediagram" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Board_Generate.sequencediagram.layout">
       <DependentUpon>Board_Generate.sequencediagram</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cart_Move.sequencediagram.layout">
+      <DependentUpon>Cart_Move.sequencediagram</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cart_Tick.sequencediagram.layout">
+      <DependentUpon>Cart_Tick.sequencediagram</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Game_Tick.sequencediagram.layout">
+      <DependentUpon>Game_Tick.sequencediagram</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

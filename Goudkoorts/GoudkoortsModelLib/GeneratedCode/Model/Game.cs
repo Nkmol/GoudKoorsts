@@ -17,7 +17,7 @@ namespace Model
 
     public class Game : ITickAble, IRunAble
 	{
-        public const int TimeInterval = 1000; // Miliseconds
+        public const int TimeInterval = 3000; // Miliseconds
         public int Score = 0;
 
         public int TimeTick
@@ -60,7 +60,6 @@ namespace Model
 
 		public virtual void Tick()
 		{
-		    Board.GetAllThatContains<Storage>().ForEach(x => x.Tick());
             if (TimeTick <= 0)
 		    {
                 Board.Tick();
@@ -70,8 +69,9 @@ namespace Model
 		    else
 		        TimeTick -= 1000;
 
-		    // TODO : Board.Lock()
-		}
+            Board.GetAllThatContains<Storage>().ForEach(x => x.Tick());
+            // TODO : Board.Lock()
+        }
 
         public void Run()
         {

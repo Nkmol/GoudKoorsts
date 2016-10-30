@@ -7,6 +7,7 @@
 
 using System;
 using System.Collections.Generic;
+using GoudkoortsModelLib.GeneratedCode.Presentation;
 using Model;
 using Presentation;
 
@@ -88,8 +89,7 @@ namespace Process
         public void OnGameOver()
         {
             //TODO
-            Console.Clear();
-            Console.WriteLine("GAME OVER");
+            new GameOverView().Print(Game.Board);
         }
     }
 }

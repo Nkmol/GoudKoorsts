@@ -17,7 +17,7 @@ namespace Model
 
 	public class Storage : ITickAble, IRunAble, IContainObject
     {
-        private static int SPAWN_TIME = 5; // Seconds
+        private static int SPAWN_TIME = 15000; // Seconds
         private int CurrentTime;
         private Timer timer;
 
@@ -54,7 +54,7 @@ namespace Model
 
         public void Tick()
         {
-            if (CurrentTime >= SPAWN_TIME)
+            if (CurrentTime >= SPAWN_TIME / 1000f)
             {
                 CurrentTime = 0;
                 SpawnCart();

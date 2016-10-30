@@ -20,6 +20,8 @@ namespace GoudkoortsModelLib.GeneratedCode.Presentation
             gameover += " \\_____/\\_____|_|_|_|_____)   \\___/ \\_/ |_____)_|    \n";
             gameover += "                                                     \n";
 
+            Console.Clear();
+            Console.WriteLine(gameover);
             Console.WriteLine("Your score was: " + board.Game.Score);
 
             Console.ReadKey();
