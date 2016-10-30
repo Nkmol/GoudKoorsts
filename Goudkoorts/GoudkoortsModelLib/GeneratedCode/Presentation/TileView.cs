@@ -12,9 +12,11 @@ namespace Presentation
     {
         protected ContainView _contain;
         protected char CharacterToDraw;
+        protected Tile ReferenceTile;
 
         public TileView(Tile tile)
         {
+            ReferenceTile = tile;
             CharacterToDraw = ' ';
             _contain = FactoryView.CreateContain(tile.Contain);
         }

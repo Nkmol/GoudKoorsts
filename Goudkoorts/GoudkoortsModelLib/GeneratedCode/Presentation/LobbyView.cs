@@ -57,6 +57,10 @@ namespace Presentation
             Console.Clear();
 		}
 
+	    public LobbyView()
+	    {
+	        Console.OutputEncoding = System.Text.Encoding.Unicode;
+	    }
 	}
 }
 
