@@ -6,6 +6,7 @@
 //------------------------------------------------------------------------------
 
 using System;
+using System.Diagnostics;
 using GoudkoortsModelLib.GeneratedCode.Model;
 
 namespace Model
@@ -41,18 +42,28 @@ namespace Model
         {
             dynamic nextTile = Tile.GetNext();
 
-            if (nextTile == null) return; 
 
-            if (!nextTile.IsOccupied() && CanMoveTo(nextTile))
+            if (nextTile == null)
+                Despawn();
+            else
             {
-                Tile.Contain = null;
-                nextTile.Contain = this;
-                this.Tile = nextTile;
+                if (!nextTile.IsOccupied() && CanMoveTo(nextTile))
+                {
+                    Tile.Contain = null;
+                    nextTile.Contain = this;
+                    this.Tile = nextTile;
+                }
             }
+        }
+
+        public void Despawn()
+        {
+            Tile.Contain = null; 
         }
 
         private bool CanMoveTo(RailTile nextTile)
         {
+            if (nextTile.Direction == null) nextTile.Direction = Tile.Direction;
             return true;
         }
 

@@ -116,7 +116,7 @@ namespace Model
 
         public bool IsInside(Point coords)
         {
-            return coords.y > 0 && coords.x > 0 && coords.y < Field.Count &&
+            return coords.y >= 0 && coords.x >= 0 && coords.y < Field.Count &&
                    coords.x < Field[coords.y].Count;
         }
 

@@ -54,8 +54,11 @@ namespace Model
 
 	    public virtual RailTile GetNext()
 	    {
-            return Board.Field.Get<RailTile>(Coords + Direction);
-        }
+            if(Board.IsInside(Coords + Direction))
+                return Board.Field.Get<RailTile>(Coords + Direction);
+            else
+	            return null;
+	    }
 	}
 }
 
