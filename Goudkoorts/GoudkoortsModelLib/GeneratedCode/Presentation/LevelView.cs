@@ -35,6 +35,10 @@ namespace Presentation
 		        }
                 Console.WriteLine();
 		    }
+
+            Console.WriteLine("\nDe volgende knoppen besturen de switches op map: ");
+            Console.WriteLine("Toetsbordknoppen: A, S, D, X, C");
+
 		}
 
 	}
