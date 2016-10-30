@@ -23,6 +23,7 @@ namespace Presentation
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("Time :" + Math.Round(board.Game.TimeTick / 1000f));
+            Console.WriteLine("Score : " + board.Game.Score);
 		    Console.WriteLine();
 
             foreach (List<Tile> row in board.Field)
