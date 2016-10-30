@@ -15,7 +15,43 @@ namespace Presentation
 	{
 		public virtual void ShowWelcome()
 		{
-			// TODO
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            string title = "\n  /$$$$$$                            /$$ /$$                                       /$$             \n";
+            title += " /$$__  $$                          | $$| $$                                      | $$             \n";
+            title += "| $$  \\__/  /$$$$$$  /$$   /$$  /$$$$$$$| $$   /$$  /$$$$$$   /$$$$$$   /$$$$$$  /$$$$$$   /$$$$$$$\n";
+            title += "| $$ /$$$$ /$$__  $$| $$  | $$ /$$__  $$| $$  /$$/ /$$__  $$ /$$__  $$ /$$__  $$|_  $$_/  /$$_____/\n";
+            title += "| $$|_  $$| $$  \\ $$| $$  | $$| $$  | $$| $$$$$$/ | $$  \\ $$| $$  \\ $$| $$  \\__/  | $$   |  $$$$$$ \n";
+            title += "| $$  \\ $$| $$  | $$| $$  | $$| $$  | $$| $$_  $$ | $$  | $$| $$  | $$| $$        | $$ /$$\\____  $$\n";
+            title += "|  $$$$$$/|  $$$$$$/|  $$$$$$/|  $$$$$$$| $$ \\  $$|  $$$$$$/|  $$$$$$/| $$        |  $$$$//$$$$$$$/\n";
+            title += " \\______/  \\______/  \\______/  \\_______/|__/  \\__/ \\______/  \\______/ |__/         \\___/ |_______/ \n";
+
+            Console.WriteLine(title);
+            Console.ForegroundColor = ConsoleColor.White;
+
+            Console.WriteLine(new string('—', 53));
+            Console.WriteLine("| Welkom bij Goudkoorts" + new string(' ', 29) + "|");
+            Console.WriteLine("|" + new string(' ', 51) + "|");
+            Console.WriteLine("| Betekenis van de symbolen   |  doel van het spel  |");
+            Console.WriteLine("|" + new string(' ', 29) + "|" + new string(' ', 21) + "|");
+            Console.WriteLine("|      - : Vaarroute          |  Wijs de karretjes  |");
+            Console.WriteLine("|      B : Boat               |  veilig de weg      |");
+            Console.WriteLine("|      . : Spoor              |  naar de bestemming |");
+            Console.WriteLine("|      C : Karretje           |  zonder ze te laten |");
+            Console.WriteLine("|      ~ : Zee                |  botsen met elkaar  |");
+            Console.WriteLine("|      G : Parkeerplek        |                     |");
+            Console.WriteLine("|      L : Loods              |                     |");
+            Console.WriteLine("|      S : Schakel            |                     |");
+            Console.WriteLine("|" + new string('—', 51) + "|");
+            Console.WriteLine("| Besturing van de switches                         |");
+            Console.WriteLine("| Toetsbordknoppen: A, S, D, X, C                   |");
+            Console.WriteLine("| - Bij elke toets hoort één schakel.               |");
+            Console.WriteLine("| - Bij een herhaalde druk, wordt de stand gewijzigd|");
+            Console.WriteLine("|" + new string('—', 51) + "|");
+
+
+
+
+            // TODO
             Console.WriteLine("Druk op een key om het spel te beginnen");
 		    Console.ReadKey();
             Console.Clear();
