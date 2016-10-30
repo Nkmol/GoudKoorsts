@@ -7,11 +7,10 @@
 
 using System;
 using System.Diagnostics;
-using GoudkoortsModelLib.GeneratedCode.Model;
 
 namespace Model
 {
-    public class Cart : MovingObject
+    public class Cart : MovingObject, IContainObject
     {
         public Cart(RailTile tile)
         {

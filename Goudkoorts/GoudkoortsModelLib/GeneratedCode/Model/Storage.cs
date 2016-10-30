@@ -15,7 +15,7 @@ namespace Model
 	using System.Text;
     using System.Timers;
 
-	public class Storage : ITickAble, IRunAble
+	public class Storage : ITickAble, IRunAble, IContainObject
     {
         private static int SPAWN_TIME = 1000;
 

@@ -5,8 +5,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using GoudkoortsModelLib.GeneratedCode.Model;
-
 namespace Model
 {
     using Helper;
@@ -15,8 +13,8 @@ namespace Model
     using System.Linq;
     using System.Text;
 
-    public class Boat : MovingObject
-	{
+    public class Boat : MovingObject, IContainObject
+    {
         public readonly Point direction;
         public static int MAX_CARGO = 8;
 

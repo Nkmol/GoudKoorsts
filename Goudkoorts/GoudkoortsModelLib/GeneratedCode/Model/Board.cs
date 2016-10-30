@@ -8,7 +8,6 @@
 
 using System.Runtime.CompilerServices;
 using System.Collections.Generic;
-using GoudkoortsModelLib.GeneratedCode.Model;
 using Helper;
 using Process;
 

@@ -43,6 +43,7 @@
     <Compile Include="GeneratedCode\Helper\DynamicDoubleList.cs" />
     <Compile Include="GeneratedCode\Helper\FileParser.cs" />
     <Compile Include="GeneratedCode\Model\DirectionTile.cs" />
+    <Compile Include="GeneratedCode\Model\IContainObject.cs" />
     <Compile Include="GeneratedCode\Model\IDirection.cs" />
     <Compile Include="GeneratedCode\Model\IRunAble.cs" />
     <Compile Include="GeneratedCode\Model\MovingObject.cs" />
@@ -60,10 +61,22 @@
     <Compile Include="GeneratedCode\Model\SailTile.cs" />
     <Compile Include="GeneratedCode\Model\Tile.cs" />
     <Compile Include="GeneratedCode\Model\WaterTile.cs" />
+    <Compile Include="GeneratedCode\Presentation\BoatView.cs" />
+    <Compile Include="GeneratedCode\Presentation\CartView.cs" />
+    <Compile Include="GeneratedCode\Presentation\ContainView.cs" />
+    <Compile Include="GeneratedCode\Presentation\FactoryView.cs" />
+    <Compile Include="GeneratedCode\Presentation\IDrawAble.cs" />
     <Compile Include="GeneratedCode\Presentation\InputController.cs" />
     <Compile Include="GeneratedCode\Presentation\LevelView.cs" />
     <Compile Include="GeneratedCode\Presentation\LobbyView.cs" />
+    <Compile Include="GeneratedCode\Presentation\ParkView.cs" />
+    <Compile Include="GeneratedCode\Presentation\PortView.cs" />
+    <Compile Include="GeneratedCode\Presentation\RailView.cs" />
+    <Compile Include="GeneratedCode\Presentation\SailView.cs" />
+    <Compile Include="GeneratedCode\Presentation\StorageView.cs" />
+    <Compile Include="GeneratedCode\Presentation\SwitchView.cs" />
     <Compile Include="GeneratedCode\Presentation\TileView.cs" />
+    <Compile Include="GeneratedCode\Presentation\WaterView.cs" />
     <Compile Include="GeneratedCode\Process\GameController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

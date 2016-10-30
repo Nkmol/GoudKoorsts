@@ -5,7 +5,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using GoudkoortsModelLib.GeneratedCode.Presentation;
+using System.Diagnostics;
 using Model;
 
 namespace Presentation
@@ -21,6 +21,7 @@ namespace Presentation
 		public virtual void Print(Board board)
 		{
             Console.Clear();
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("Time :" + Math.Round(board.Game.TimeTick / 1000f));
 		    Console.WriteLine();
 
@@ -28,7 +29,8 @@ namespace Presentation
 		    {
 		        foreach (Tile tile in row)
 		        {
-		            Console.Write(TileView.Create(tile));
+		            Console.ForegroundColor = ConsoleColor.White;
+		            FactoryView.CreateTile(tile)?.Draw();
 		        }
                 Console.WriteLine();
 		    }

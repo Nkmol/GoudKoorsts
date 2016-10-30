@@ -41,7 +41,7 @@ namespace Model
             Direction = DirectionMapping[direction];
         }
 
-        public override Object Contain
+        public override IContainObject Contain
         {
             get { return _contain; }
             set

@@ -1,33 +1,30 @@
 ﻿using Model;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GoudkoortsModelLib.GeneratedCode.Presentation
+namespace Presentation
 {
-    class TileView
+    class TileView : IDrawAble
     {
-        private static readonly Dictionary<String, char> tileViewMapping = new Dictionary<String, char>()
-        {
-            {"Boat", 'B' },
-            {"Cart", 'C' },
-            {"PortTile", 'P' },
-            {"RailTile", '.' },
-            {"ParkTile", 'G' },
-            {"SailTile", '-' },
-            {"SwitchTile", 'S' },
-            {"WaterTile", '~' },
-            {"Tile", ' ' },
-            {"Storage", 'L' },
-        };
+        protected ContainView _contain;
+        protected char CharacterToDraw;
 
-        public static char Create(Tile tile)
+        public TileView(Tile tile)
         {
-            var search = tile.Contain?.GetType().Name ?? tile.GetType().Name;
+            CharacterToDraw = ' ';
+            _contain = FactoryView.CreateContain(tile.Contain);
+        }
 
-            return TileView.tileViewMapping[search];
+        public virtual void Draw()
+        {
+            if (_contain != null)
+                _contain.Draw(); // if not null
+            else
+               Console.Write(CharacterToDraw);
         }
     }
 }

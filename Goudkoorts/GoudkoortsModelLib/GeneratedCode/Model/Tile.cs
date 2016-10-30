@@ -26,8 +26,8 @@ namespace Model
 
         public Board Board { get; set; }
 
-	    protected Object _contain;
-        public virtual Object Contain { get { return _contain; } set { _contain = value; } } // TODO: Change to Interface of object that can go inside a tile? PlaceAbleTileObject?
+	    protected IContainObject _contain;
+        public virtual IContainObject Contain { get { return _contain; } set { _contain = value; } } 
 
 	    public Tile(Point coords, Board board = null)
 	    {

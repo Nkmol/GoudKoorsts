@@ -18,15 +18,6 @@ namespace Model
 	{
         public Point Direction { get; set; }
 
-        public override Object Contain
-        {
-            get { return _contain; }
-            set
-            {
-                _contain = value;
-            }
-        }
-
 	    private static readonly Dictionary<char, Point> DirectionMap = new Dictionary<char, Point>()
 	    {
 	        {'→', Point.Right},
