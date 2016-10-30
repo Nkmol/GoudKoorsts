@@ -22,18 +22,20 @@ namespace Model
 
         public RailTile Tile { get; set; }
 
-        public bool isMoveAble()
+        public bool IsMoveAble()
         {
-            return true;
+            if (Tile is ParkTile)
+                return Tile.GetNext() != null;
+            else
+                return true;
         }
 
         public override void Tick()
         {
-            if (!isMoveAble())
-                return;
+            if (IsMoveAble())
+                Move();
 
             // Move Cart
-            Move();
             // Psuedo code
             // Get next BaanVak : Vak.Board.SetVak(this, Vak.Coords + Vak.Direction);
         }
@@ -41,7 +43,6 @@ namespace Model
         public override void Move()
         {
             dynamic nextTile = Tile.GetNext();
-
 
             if (nextTile == null)
                 Despawn();
@@ -71,6 +72,13 @@ namespace Model
         {
             // Check if tile switch is open
             return Tile.Direction.x != 0 && Tile.Direction.y == 0 || Tile.Direction.y != tile.OpenSide.y;
+        }
+
+        private bool CanMoveTo(ParkTile tile)
+        {
+            // Can only be placed in line
+            if (tile.Direction == null) tile.Direction = Tile.Direction; // Set same direction as current
+            return true;
         }
     }
 }
